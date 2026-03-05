@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TIVI FORGE — Master Index File
+     Simple orchestration file that pulls in all components
+
+     ASSEMBLY: Use `npm run build` or manual concatenation
+     Each component file is independent and can be modified separately
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- META, FONTS, & ANALYTICS -->
+<!-- @include components/00-meta.html -->
+
+<!-- TAILWIND + CUSTOM STYLES -->
+<!-- @include components/01-styles.html -->
+
+<body x-data="siteApp()" x-init="init()" class="bg-ink font-body">
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div id="scroll-progress" :style="'width:' + scrollProgress + '%'"></div>
+
+  <!-- LOADING SCREEN -->
+  <!-- @include components/01-loading-screen.html -->
+
+  <!-- NAVIGATION -->
+  <!-- @include components/02-nav.html -->
+
+  <!-- HERO SECTION -->
+  <!-- @include components/03-hero.html -->
+
+  <!-- TRUST BAR -->
+  <!-- @include components/04-trust-bar.html -->
+
+  <!-- SERVICES SECTION (3 LANES) -->
+  <!-- @include components/05-services.html -->
+
+  <!-- SECTION DIVIDER -->
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-2">
+    <div class="h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+  </div>
+
+  <!-- WHO WE SERVE SECTION -->
+  <!-- @include components/06-who-we-serve.html -->
+
+  <!-- MONETIZATION PHILOSOPHY -->
+  <!-- @include components/07-philosophy.html -->
+
+  <!-- FEATURED WORK / PORTFOLIO -->
+  <!-- @include components/08-portfolio.html -->
+
+  <!-- BEFORE & AFTER CASE STUDIES -->
+  <!-- @include components/09-case-studies.html -->
+
+  <!-- METRICS / PROOF SECTION -->
+  <!-- @include components/10-proof.html -->
+
+  <!-- PROCESS SECTION -->
+  <!-- @include components/11-process.html -->
+
+  <!-- SKILLS SECTION -->
+  <!-- @include components/12-skills.html -->
+
+  <!-- PRICING SECTION -->
+  <!-- @include components/13-pricing.html -->
+
+  <!-- FAQ SECTION -->
+  <!-- @include components/14-faq.html -->
+
+  <!-- TESTIMONIALS SECTION -->
+  <!-- @include components/15-testimonials.html -->
+
+  <!-- TEAM SECTION -->
+  <!-- @include components/16-team.html -->
+
+  <!-- ABOUT CTA SECTION -->
+  <!-- @include components/17-about-cta.html -->
+
+  <!-- CONTACT SECTION -->
+  <!-- @include components/18-contact.html -->
+
+  <!-- NEWSLETTER SECTION -->
+  <!-- @include components/19-newsletter.html -->
+
+  <!-- FOOTER -->
+  <!-- @include components/20-footer.html -->
+
+  <!-- MODALS & OVERLAYS -->
+  <!-- @include components/21-modals.html -->
+
+  <!-- FLOATING WIDGETS (Chat, Cookie Banner, Back to Top) -->
+  <!-- @include components/22-widgets.html -->
+
+  <!-- SCRIPTS -->
+  <!-- @include components/23-scripts.html -->
+
+</body>
+</html>
