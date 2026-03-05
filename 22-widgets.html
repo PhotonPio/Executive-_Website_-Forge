@@ -1,0 +1,122 @@
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner" x-show="!cookieAccepted" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-4" style="display:none;">
+  <div class="glass rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
+    <p class="text-slate-300 text-sm">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button @click="acceptCookies()" class="btn-primary text-sm py-2 px-4">Accept</button>
+      <a href="#" class="btn-ghost text-sm py-2 px-4">Privacy Policy</a>
+    </div>
+  </div>
+</div>
+
+<!-- BACK TO TOP BUTTON -->
+<div id="back-to-top" x-show="showBackToTop" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-75" style="display:none;">
+  <button @click="scrollToTop()" class="w-11 h-11 glass rounded-full flex items-center justify-center text-cyan hover:bg-cyan hover:text-ink transition-all duration-300 border border-border hover:border-cyan shadow-lg">
+    <i class="fa-solid fa-arrow-up text-sm"></i>
+  </button>
+</div>
+
+<!-- STICKY FLOATING CTA PILL -->
+<div id="sticky-pill" x-show="showStickyPill" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-4" style="display:none;">
+  <button @click="chatOpen=true" class="btn-primary pill-pulse rounded-full px-5 py-2.5 text-sm shadow-xl">
+    Start Your Project →
+  </button>
+</div>
+
+<!-- AI CHATBOT WIDGET -->
+<div id="chat-widget" x-data>
+  <!-- Floating Chat Icon -->
+  <div x-show="!chatOpen" @click="chatOpen=true" class="w-14 h-14 rounded-full flex items-center justify-center cursor-pointer chat-pulse" style="background: linear-gradient(135deg, #06d6f5, #334155); box-shadow: 0 4px 20px rgba(6,214,245,0.4);">
+    <i class="fa-solid fa-comment-dots text-white text-xl"></i>
+  </div>
+
+  <!-- Chat Panel -->
+  <div x-show="chatOpen" x-transition:enter="transition ease-out duration-250" x-transition:enter-start="opacity-0 scale-90 translate-y-4" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-4" class="chat-panel glass shadow-2xl absolute bottom-16 right-0" style="display:none; border: 1px solid #1e3a5f;">
+
+    <!-- Chat Header -->
+    <div class="flex items-center justify-between p-4 border-b border-border/50" style="background: linear-gradient(135deg, rgba(6,214,245,0.08), rgba(13,21,38,0.9));">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #06d6f5, #04a8c2);">
+          <i class="fa-solid fa-robot text-ink text-xs"></i>
+        </div>
+        <div>
+          <div class="text-white font-display font-bold text-sm">Tivi Forge Concierge</div>
+          <div class="text-green-400 text-xs flex items-center gap-1"><span class="w-1.5 h-1.5 bg-green-400 rounded-full inline-block"></span>Online now</div>
+        </div>
+      </div>
+      <button @click="chatOpen=false" class="text-slate-400 hover:text-white transition-colors p-1">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Quick Action Buttons -->
+    <div class="px-3 pt-3 pb-1 flex gap-2 flex-wrap border-b border-border/30">
+      <button @click="sendChatMessage('pricing')" class="text-xs bg-surface border border-border text-slate-300 hover:border-cyan hover:text-cyan transition-all rounded-full px-3 py-1.5 font-medium">Pricing</button>
+      <button @click="sendChatMessage('book a call')" class="text-xs bg-surface border border-border text-slate-300 hover:border-cyan hover:text-cyan transition-all rounded-full px-3 py-1.5 font-medium">Book a Call</button>
+      <button @click="sendChatMessage('portfolio')" class="text-xs bg-surface border border-border text-slate-300 hover:border-cyan hover:text-cyan transition-all rounded-full px-3 py-1.5 font-medium">Portfolio</button>
+      <button @click="sendChatMessage('services')" class="text-xs bg-surface border border-border text-slate-300 hover:border-cyan hover:text-cyan transition-all rounded-full px-3 py-1.5 font-medium">Services</button>
+    </div>
+
+    <!-- Messages Container -->
+    <div class="chat-messages" id="chat-messages-container">
+      <template x-if="chatMessages.length === 0">
+        <div>
+          <div class="chat-bubble-bot">
+            Hey there! Welcome to Tivi Forge. I'm your Strategy Concierge — here to answer questions about our services, pricing, portfolio, and how we build digital authority and revenue infrastructure.
+
+What are you looking to build?
+          </div>
+          <div class="chat-time ml-1 mt-1">Just now</div>
+        </div>
+      </template>
+
+      <!-- Chat Messages -->
+      <template x-for="(msg, i) in chatMessages" :key="i">
+        <div :class="msg.role === 'user' ? 'flex flex-col items-end' : 'flex flex-col items-start'">
+          <div :class="msg.role === 'user' ? 'chat-bubble-user' : 'chat-bubble-bot'" x-html="msg.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br/>')"></div>
+
+          <!-- Booking Form -->
+          <template x-if="msg.showBookingForm && !bookingSubmitted">
+            <div class="glass rounded-xl p-4 mt-2 w-full max-w-full border border-border/60 text-sm">
+              <div class="text-cyan font-semibold mb-3 text-xs uppercase tracking-wide">Book Your Strategy Call</div>
+              <div class="space-y-2">
+                <input type="text" x-model="bookingForm.name" class="form-input text-sm py-2" placeholder="Your full name" />
+                <input type="email" x-model="bookingForm.email" class="form-input text-sm py-2" placeholder="Email address" />
+                <input type="date" x-model="bookingForm.date" class="form-input text-sm py-2" />
+                <select x-model="bookingForm.time" class="form-input text-sm py-2">
+                  <option value="">Select a time...</option>
+                  <option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option>
+                  <option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option>
+                  <option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option>
+                </select>
+                <button @click="submitBooking()" :disabled="!bookingForm.name || !bookingForm.email || !bookingForm.date || !bookingForm.time" :class="(!bookingForm.name || !bookingForm.email || !bookingForm.date || !bookingForm.time) ? 'opacity-50 cursor-not-allowed' : ''" class="btn-primary w-full justify-center text-sm py-2">Confirm Booking</button>
+              </div>
+            </div>
+          </template>
+
+          <!-- Portfolio Button -->
+          <template x-if="msg.showPortfolioBtn">
+            <button @click="chatOpen=false; document.getElementById('work').scrollIntoView({behavior:'smooth'})" class="mt-2 text-xs bg-cyan/10 border border-cyan/30 text-cyan px-3 py-1.5 rounded-full hover:bg-cyan/20 transition-colors">Scroll to Portfolio →</button>
+          </template>
+
+          <div class="chat-time mx-1 mt-1" x-text="msg.time"></div>
+        </div>
+      </template>
+
+      <!-- Typing Indicator -->
+      <div x-show="chatTyping" class="flex items-center gap-1.5 px-3 py-2">
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="p-3 border-t border-border/50 flex gap-2">
+      <input type="text" x-model="chatInput" @keydown.enter="sendChat()" class="form-input text-sm py-2 flex-1" placeholder="Ask me anything..." />
+      <button @click="sendChat()" :disabled="!chatInput.trim()" class="btn-primary text-sm py-2 px-4 flex-shrink-0" :class="!chatInput.trim() ? 'opacity-50' : ''">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div>

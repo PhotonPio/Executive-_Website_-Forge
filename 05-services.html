@@ -1,0 +1,130 @@
+<section id="services" class="bg-surface/30">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+    <!-- Section header -->
+    <div class="text-center mb-14" data-aos="fade-up">
+      <div class="section-tag">Services</div>
+      <h2 class="section-heading mt-2">Three Lanes. Measurable Results.</h2>
+      <p class="section-sub mx-auto mt-3 text-center">
+        Every engagement is built to deliver specific, measurable outcomes — more revenue, better reputation, more customers. Choose the lane that fits where you're going.
+      </p>
+    </div>
+
+    <!-- 3-Lane Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      <!-- LANE 01: Personal Authority -->
+      <div class="glass rounded-2xl p-8 lane-card lane-card-cyan" data-aos="fade-up" data-aos-delay="0">
+        <div class="mb-7">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-display font-bold text-4xl text-cyan/15 select-none leading-none">01</span>
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-cyan mb-0.5">Lane 01</div>
+              <h3 class="font-display font-bold text-xl text-white leading-tight">Personal Authority</h3>
+            </div>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed font-semibold mb-1">Digital Identity for High-Impact Individuals</p>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            We craft professional online identities that position executives, founders, and thought leaders as top-tier experts — opening doors to boards, investors, and opportunities.
+          </p>
+          <p class="text-xs text-cyan/70 mt-2 font-medium italic">Ideal for: Executives in transition, founders building personal leverage, thought leaders entering new markets.</p>
+        </div>
+
+        <div class="space-y-0">
+          <template x-for="item in serviceLanes[0].services" :key="item.title">
+            <div class="lane-service-item">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-base" style="background: rgba(6,214,245,0.1); border: 1px solid rgba(6,214,245,0.2);" x-text="item.icon"></div>
+              <div>
+                <div class="font-display font-semibold text-sm text-white lane-service-title transition-colors" x-text="item.title"></div>
+                <div class="text-slate-500 text-xs leading-relaxed mt-0.5" x-text="item.desc"></div>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <button @click="chatOpen=true" class="btn-ghost w-full justify-center mt-7 text-sm">Start with Authority →</button>
+      </div>
+
+      <!-- LANE 02: Business Revenue Sites -->
+      <div class="glass rounded-2xl p-8 lane-card lane-card-lime" data-aos="fade-up" data-aos-delay="100">
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+          <span class="bg-lime text-ink text-xs font-display font-bold px-4 py-1 rounded-full shadow-lg" style="box-shadow: 0 0 20px rgba(178,247,36,0.4);">Most Requested</span>
+        </div>
+
+        <div class="mb-7 mt-2">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-display font-bold text-4xl select-none leading-none" style="color: rgba(178,247,36,0.15)">02</span>
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest mb-0.5" style="color:#b2f724">Lane 02</div>
+              <h3 class="font-display font-bold text-xl text-white leading-tight">Business Growth</h3>
+            </div>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed font-semibold mb-1">Revenue-Focused Digital Systems for Growing Businesses</p>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Websites that don't just look good — they attract leads, convert customers, and scale revenue. Built for service businesses and founders ready to grow.
+          </p>
+          <p class="text-xs mt-2 font-medium italic" style="color: rgba(178,247,36,0.6)">Ideal for: Service businesses, SaaS founders, agencies, and firms scaling from $1M to $20M.</p>
+        </div>
+
+        <div class="space-y-0">
+          <template x-for="item in serviceLanes[1].services" :key="item.title">
+            <div class="lane-service-item" style="border-color: rgba(178,247,36,0.12)">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-base" style="background: rgba(178,247,36,0.08); border: 1px solid rgba(178,247,36,0.2);" x-text="item.icon"></div>
+              <div>
+                <div class="font-display font-semibold text-sm text-white lane-service-title transition-colors" x-text="item.title"></div>
+                <div class="text-slate-500 text-xs leading-relaxed mt-0.5" x-text="item.desc"></div>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <button @click="chatOpen=true" class="w-full justify-center mt-7 text-sm font-display font-bold py-3 rounded-lg transition-all duration-300 flex items-center gap-2" style="background: linear-gradient(135deg, #b2f724, #7bc000); color: #080c14;">Start Growing Revenue →</button>
+      </div>
+
+      <!-- LANE 03: Mission-Driven Organizations -->
+      <div class="glass rounded-2xl p-8 lane-card lane-card-violet" data-aos="fade-up" data-aos-delay="200">
+        <div class="mb-7">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-display font-bold text-4xl select-none leading-none" style="color: rgba(167,139,250,0.15)">03</span>
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest mb-0.5" style="color:#a78bfa">Lane 03</div>
+              <h3 class="font-display font-bold text-xl text-white leading-tight">Mission-Driven Organizations</h3>
+            </div>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed font-semibold mb-1">Scale and Impact for Nonprofits, Churches & Institutions</p>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Grow community reach, increase donations, and expand mission impact with online platforms and engagement systems built to perform — not just to exist.
+          </p>
+          <p class="text-xs mt-2 font-medium italic" style="color: rgba(167,139,250,0.6)">Ideal for: Nonprofits, churches, faith-based orgs, and institutions with a mission to grow.</p>
+        </div>
+
+        <div class="space-y-0">
+          <template x-for="item in serviceLanes[2].services" :key="item.title">
+            <div class="lane-service-item" style="border-color: rgba(167,139,250,0.12)">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-base" style="background: rgba(167,139,250,0.08); border: 1px solid rgba(167,139,250,0.2);" x-text="item.icon"></div>
+              <div>
+                <div class="font-display font-semibold text-sm text-white lane-service-title transition-colors" x-text="item.title"></div>
+                <div class="text-slate-500 text-xs leading-relaxed mt-0.5" x-text="item.desc"></div>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <button @click="chatOpen=true" class="w-full justify-center mt-7 text-sm btn-ghost flex items-center gap-2" style="border-color: #a78bfa; color: #a78bfa;">Grow Your Mission →</button>
+      </div>
+
+    </div>
+
+    <!-- Bottom callout -->
+    <div class="mt-10 glass rounded-xl px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 border-border/30" data-aos="fade-up">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center flex-shrink-0">
+          <i class="fa-solid fa-layer-group text-cyan text-sm"></i>
+        </div>
+        <p class="text-slate-300 text-sm"><strong class="text-white">Not sure which lane fits?</strong> Most clients combine two or three. Book a free strategy call — we'll map the right build for your goals.</p>
+      </div>
+      <button @click="chatOpen=true" class="btn-primary text-sm flex-shrink-0">Free Strategy Call →</button>
+    </div>
+
+  </div>
+</section>
