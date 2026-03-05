@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TiviForge — Forge Your Digital Empire</title>
+<meta name="description" content="TiviForge builds powerful digital brands for founders and executives. Personal authority, founder websites, revenue systems, executive platforms. Las Vegas, NV.">
+<meta name="keywords" content="personal brand website, founder websites, revenue funnel build, executive brand platform, digital branding Las Vegas">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', {
+    send_page_view: true,
+    custom_map: { dimension1: 'scroll_depth', dimension2: 'engagement_time' }
+  });
+  // Track scroll depth
+  let maxScroll = 0;
+  window.addEventListener('scroll', () => {
+    const scrollPct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+    if (scrollPct > maxScroll) {
+      maxScroll = scrollPct;
+      if ([25, 50, 75, 90, 100].includes(scrollPct)) {
+        gtag('event', 'scroll_depth', { value: scrollPct, event_category: 'engagement' });
+      }
+    }
+  });
+  // Track CTA clicks
+  document.addEventListener('click', (e) => {
+    const cta = e.target.closest('[data-cta]');
+    if (cta) {
+      gtag('event', 'cta_click', {
+        event_category: 'conversion',
+        event_label: cta.dataset.cta
+      });
+    }
+  });
+  // Track engagement time
+  let startTime = Date.now();
+  window.addEventListener('beforeunload', () => {
+    const engagementTime = Math.round((Date.now() - startTime) / 1000);
+    gtag('event', 'engagement_time', { value: engagementTime, event_category: 'engagement' });
+  });
+</script>
+
+<!-- Hotjar Tracking -->
+<script>
+  (function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:0000000,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════
+   TIVIFORGE — LUXURY BRAND SYSTEM
+   ═══════════════════════════════════════════ */
+
+:root {
+  --black: #09090B;
+  --black-warm: #0E0D0B;
+  --charcoal: #1A1917;
+  --graphite: #2A2825;
+  --gold: #C8A044;
+  --gold-light: #D4AD5A;
+  --gold-pale: #E8D5A0;
+  --gold-dark: #A07828;
+  --cream: #F5F0E6;
+  --white: #FAF8F4;
+  --gray-300: #A8A49C;
+  --gray-500: #6B6760;
+  --ember: #E8652E;
+  --ember-glow: rgba(232, 101, 46, 0.15);
+  --gold-glow: rgba(200, 160, 68, 0.12);
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--black);
+  color: var(--cream);
+  line-height: 1.65;
+  font-weight: 400;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* Custom Cursor */
+.cursor-forge {
+  position: fixed;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  z-index: 100000;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  mix-blend-mode: difference;
+}
+.cursor-forge::before {
+  content: 'T';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gold);
+  text-shadow: 0 0 8px rgba(200,160,68,0.6);
+}
+.cursor-forge.hovering {
+  transform: scale(1.6);
+}
+.cursor-forge.hovering::before {
+  color: var(--ember);
+  text-shadow: 0 0 12px rgba(232,101,46,0.8);
+}
+
+@media (pointer: coarse) {
+  .cursor-forge { display: none; }
+  body { cursor: auto; }
+}
+@media (pointer: fine) {
+  body { cursor: none; }
+  a, button, input, textarea, select, [role="button"] { cursor: none; }
+}
+
+/* Selection */
+::selection { background: var(--gold); color: var(--black); }
+
+/* ─── SCROLL ANIMATIONS ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger children */
+.stagger-children .reveal:nth-child(1) { transition-delay: 0s; }
+.stagger-children .reveal:nth-child(2) { transition-delay: 0.1s; }
+.stagger-children .reveal:nth-child(3) { transition-delay: 0.2s; }
+.stagger-children .reveal:nth-child(4) { transition-delay: 0.3s; }
+.stagger-children .reveal:nth-child(5) { transition-delay: 0.4s; }
+
+/* ─── LAYOUT ─── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.container-narrow {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 120px 0;
+  position: relative;
+}
+
+/* Section Dividers */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+  opacity: 0.3;
+}
+
+/* ─── TYPOGRAPHY ─── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+h1 { font-size: clamp(2.8rem, 6vw, 5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
+h4 { font-size: 1.2rem; }
+
+.text-gold { color: var(--gold); }
+.text-gray { color: var(--gray-300); }
+.text-ember { color: var(--ember); }
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ─── BUTTONS ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  transition: all 0.4s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary {
+  background: var(--gold);
+  color: var(--black);
+}
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(200, 160, 68, 0.3);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid var(--gray-500);
+}
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--gold);
+  padding: 8px 0;
+  letter-spacing: 0.1em;
+}
+.btn-ghost::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.4s var(--ease-out-expo);
+}
+.btn-ghost:hover::after { width: 100%; }
+
+/* ═══════════════════════════════════════════
+   STICKY NAVIGATION
+   ═══════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 24px;
+  transition: all 0.4s var(--ease-out-expo);
+  background: rgba(9, 9, 11, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(200, 160, 68, 0.08);
+}
+.nav.scrolled {
+  background: rgba(9, 9, 11, 0.95);
+  border-bottom-color: rgba(200, 160, 68, 0.15);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--cream);
+}
+.nav-logo-mark {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(200,160,68,0.3);
+}
+.nav-logo-text {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--gray-300);
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--gold); }
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s var(--ease-out-expo);
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+.nav-cta {
+  padding: 10px 24px !important;
+  font-size: 0.72rem !important;
+}
+
+/* Progress Bar */
+.nav-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--ember));
+  transition: width 0.1s linear;
+  width: 0%;
+}
+
+/* Mobile Nav */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 8px;
+}
+.nav-toggle span {
+  width: 24px;
+  height: 1.5px;
+  background: var(--cream);
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(9,9,11,0.97);
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-links a { font-size: 1.1rem; }
+}
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 24px;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 40%, rgba(200,160,68,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(232,101,46,0.04) 0%, transparent 50%),
+    var(--black);
+}
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+/* Floating ember particles */
+.hero-embers {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ember-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ember-float linear infinite;
+}
+@keyframes ember-float {
+  0% { opacity: 0; transform: translateY(100vh) scale(0.5); }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.4; }
+  100% { opacity: 0; transform: translateY(-10vh) scale(0); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+.hero-label {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding: 8px 20px;
+  border: 1px solid rgba(200,160,68,0.2);
+  font-size: 0.68rem;
+  opacity: 0;
+  animation: hero-fade-in 1s var(--ease-out-expo) 0.2s forwards;
+}
+.hero h1 {
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: hero-fade-up 1s var(--ease-out-expo) 0.4s forwards;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+.hero-sub {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: hero-fade-up 1s var(--ease-out-expo) 0.6s forwards;
+}
+.hero-support {
+  font-size: 0.95rem;
+  color: var(--gray-300);
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: hero-fade-up 1s var(--ease-out-expo) 0.8s forwards;
+  font-weight: 300;
+}
+.hero-support strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: hero-fade-up 1s var(--ease-out-expo) 1s forwards;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: hero-fade-in 1s var(--ease-out-expo) 1.5s forwards;
+}
+.hero-scroll-indicator span {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scroll-pulse 2s ease-in-out infinite;
+}
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes hero-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════
+   SERVICE CARDS
+   ═══════════════════════════════════════════ */
+.services { background: var(--black-warm); }
+.services-header { text-align: center; margin-bottom: 64px; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+.service-card {
+  background: var(--charcoal);
+  border: 1px solid rgba(200,160,68,0.08);
+  padding: 40px 28px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s var(--ease-out-expo);
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--ember));
+  transition: width 0.5s var(--ease-out-expo);
+  box-shadow: 0 0 12px rgba(200,160,68,0.4);
+}
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center bottom, rgba(200,160,68,0.05) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(200,160,68,0.2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(200,160,68,0.08);
+}
+.service-card:hover::before { width: 80%; }
+.service-card:hover::after { opacity: 1; }
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  color: var(--gold);
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s;
+}
+.service-card:hover .service-icon {
+  text-shadow: 0 0 20px rgba(200,160,68,0.6);
+  transform: scale(1.1);
+}
+.service-card h3 {
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+  font-size: 1.3rem;
+}
+.service-card p {
+  font-size: 0.88rem;
+  color: var(--gray-300);
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+.service-card .service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  transition: gap 0.3s;
+}
+.service-card:hover .service-link { gap: 12px; }
+
+/* ═══════════════════════════════════════════
+   FORGE PHILOSOPHY
+   ═══════════════════════════════════════════ */
+.philosophy {
+  background: var(--black);
+  text-align: center;
+}
+.philosophy-equation {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 300;
+  margin: 40px 0;
+  color: var(--cream);
+}
+.philosophy-equation .eq-highlight {
+  color: var(--gold);
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+.philosophy-equation .eq-plus {
+  color: var(--gray-500);
+  margin: 0 12px;
+}
+.philosophy-equation .eq-equals {
+  color: var(--ember);
+  margin: 0 12px;
+}
+.philosophy-text {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--gray-300);
+  line-height: 1.8;
+}
+.philosophy-text p + p { margin-top: 20px; }
+
+/* ═══════════════════════════════════════════
+   METRICS / PROOF
+   ═══════════════════════════════════════════ */
+.metrics {
+  background: var(--charcoal);
+  padding: 80px 0;
+}
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.metric-item h3 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--gold);
+  font-weight: 600;
+  line-height: 1;
+}
+.metric-item p {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-300);
+}
+.counter-value {
+  display: inline-block;
+}
+
+/* ═══════════════════════════════════════════
+   TRANSFORMATIONS (CASE STUDIES)
+   ═══════════════════════════════════════════ */
+.transformations { background: var(--black-warm); }
+.transformation-story {
+  margin-bottom: 80px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid rgba(200,160,68,0.08);
+}
+.transformation-story:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.story-phase {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+  align-items: start;
+}
+@media (max-width: 640px) {
+  .story-phase {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+.phase-label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding-top: 4px;
+}
+.phase-label.believe { color: var(--gold); }
+.phase-label.action { color: var(--ember); }
+.phase-label.results { color: var(--gold-light); }
+
+.phase-content {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--cream);
+}
+.phase-content.results-content {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.result-number {
+  color: var(--gold);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════
+   TRUST / SOCIAL PROOF
+   ═══════════════════════════════════════════ */
+.trust { background: var(--black); text-align: center; }
+.trust-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+  opacity: 0.5;
+}
+.trust-logo {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  transition: color 0.3s;
+}
+.trust-logo:hover { color: var(--gold); }
+
+/* Testimonials */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+.testimonial-card {
+  background: var(--charcoal);
+  border: 1px solid rgba(200,160,68,0.06);
+  padding: 36px 28px;
+  text-align: left;
+  transition: all 0.4s var(--ease-out-expo);
+}
+.testimonial-card:hover {
+  border-color: rgba(200,160,68,0.15);
+  transform: translateY(-4px);
+}
+.testimonial-quote {
+  position: relative;
+  margin-bottom: 24px;
+}
+.testimonial-quote::before {
+  content: '"';
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--gold);
+  opacity: 0.2;
+  position: absolute;
+  top: -20px;
+  left: -4px;
+  line-height: 1;
+}
+.testimonial-quote p {
+  font-size: 0.95rem;
+  color: var(--cream);
+  line-height: 1.7;
+  font-style: italic;
+  padding-left: 4px;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  background: var(--graphite);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+.testimonial-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cream);
+}
+.testimonial-role {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+/* ═══════════════════════════════════════════
+   AI CONCIERGE
+   ═══════════════════════════════════════════ */
+.concierge {
+  background: var(--black-warm);
+}
+.concierge-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .concierge-wrapper { grid-template-columns: 1fr; }
+}
+.concierge-info h2 { margin-bottom: 20px; }
+.concierge-info p {
+  color: var(--gray-300);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.concierge-chat {
+  background: var(--charcoal);
+  border: 1px solid rgba(200,160,68,0.1);
+  overflow: hidden;
+}
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(200,160,68,0.08);
+}
+.chat-status {
+  width: 8px;
+  height: 8px;
+  background: #34D399;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.chat-header-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.chat-header-sub {
+  font-size: 0.7rem;
+  color: var(--gray-500);
+}
+
+.chat-body {
+  padding: 24px;
+  min-height: 360px;
+  max-height: 480px;
+  overflow-y: auto;
+}
+.chat-message {
+  margin-bottom: 16px;
+  animation: message-in 0.4s var(--ease-out-expo);
+}
+@keyframes message-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.chat-message.bot .chat-bubble {
+  background: rgba(200,160,68,0.08);
+  border: 1px solid rgba(200,160,68,0.12);
+  color: var(--cream);
+  display: inline-block;
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 90%;
+}
+.chat-message.user {
+  text-align: right;
+}
+.chat-message.user .chat-bubble {
+  background: var(--gold);
+  color: var(--black);
+  display: inline-block;
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.chat-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.chat-option {
+  padding: 10px 18px;
+  background: transparent;
+  border: 1px solid rgba(200,160,68,0.2);
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: none;
+  transition: all 0.3s;
+}
+.chat-option:hover {
+  background: rgba(200,160,68,0.1);
+  border-color: var(--gold);
+  transform: translateY(-1px);
+}
+
+.chat-input-area {
+  display: flex;
+  gap: 8px;
+  padding: 16px 24px;
+  border-top: 1px solid rgba(200,160,68,0.08);
+}
+.chat-input {
+  flex: 1;
+  padding: 12px 16px;
+  background: var(--graphite);
+  border: 1px solid rgba(200,160,68,0.08);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.chat-input:focus {
+  border-color: var(--gold);
+}
+.chat-input::placeholder { color: var(--gray-500); }
+.chat-send {
+  padding: 12px 20px;
+  background: var(--gold);
+  border: none;
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: none;
+  transition: all 0.3s;
+}
+.chat-send:hover { background: var(--gold-light); }
+
+/* Blueprint output */
+.forge-blueprint {
+  background: rgba(200,160,68,0.05);
+  border: 1px solid rgba(200,160,68,0.15);
+  padding: 24px;
+  margin-top: 12px;
+}
+.blueprint-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.blueprint-section {
+  margin-bottom: 12px;
+}
+.blueprint-section h5 {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.blueprint-section p {
+  font-size: 0.88rem;
+  color: var(--cream);
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════
+   NEWSLETTER — THE FORGE BRIEF
+   ═══════════════════════════════════════════ */
+.newsletter {
+  background: var(--charcoal);
+  text-align: center;
+}
+.newsletter-inner {
+  max-width: 560px;
+  margin: 0 auto;
+}
+.newsletter h2 { margin-bottom: 16px; }
+.newsletter p {
+  color: var(--gray-300);
+  font-size: 0.95rem;
+  margin-bottom: 36px;
+}
+.newsletter-form {
+  display: flex;
+  gap: 0;
+}
+.newsletter-input {
+  flex: 1;
+  padding: 16px 20px;
+  background: var(--black);
+  border: 1px solid rgba(200,160,68,0.15);
+  border-right: none;
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.newsletter-input:focus { border-color: var(--gold); }
+.newsletter-input::placeholder { color: var(--gray-500); }
+.newsletter-submit {
+  padding: 16px 28px;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: none;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+.newsletter-submit:hover { background: var(--gold-light); }
+.newsletter-note {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  margin-top: 12px;
+}
+
+@media (max-width: 540px) {
+  .newsletter-form { flex-direction: column; }
+  .newsletter-input { border-right: 1px solid rgba(200,160,68,0.15); border-bottom: none; }
+}
+
+/* ═══════════════════════════════════════════
+   GUARANTEE / RISK REVERSAL
+   ═══════════════════════════════════════════ */
+.guarantee {
+  background: var(--black);
+  text-align: center;
+}
+.guarantee-badge {
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 32px;
+  font-size: 2rem;
+}
+.guarantee-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.guarantee h2 { margin-bottom: 20px; }
+.guarantee p {
+  color: var(--gray-300);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.footer {
+  background: var(--black-warm);
+  border-top: 1px solid rgba(200,160,68,0.08);
+  padding: 64px 0 32px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
+.footer-brand .nav-logo { margin-bottom: 16px; }
+.footer-brand p {
+  font-size: 0.88rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+  max-width: 300px;
+}
+.footer-col h4 {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.footer-col a {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--gray-300);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  border-top: 1px solid rgba(200,160,68,0.06);
+  font-size: 0.78rem;
+  color: var(--gray-500);
+}
+@media (max-width: 540px) {
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* ═══════════════════════════════════════════
+   FLOATING ELEMENTS
+   ═══════════════════════════════════════════ */
+.floating-cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+.fab {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: none;
+  transition: all 0.3s var(--ease-out-expo);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.fab:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+}
+.fab-cta {
+  background: var(--gold);
+  color: var(--black);
+}
+.fab-cta:hover { background: var(--gold-light); }
+.fab-top {
+  background: var(--charcoal);
+  color: var(--cream);
+  border: 1px solid rgba(200,160,68,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.fab-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ═══════════════════════════════════════════
+   SEO LANDING PAGE STUBS
+   ═══════════════════════════════════════════ */
+/* /personal-brand-website, /founder-websites, /revenue-funnel-build, /executive-brand-platform */
+/* These are structured via the service card links and can be expanded as separate pages */
+
+</style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor-forge" id="cursor"></div>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <span class="nav-logo-mark">T</span>
+      <span class="nav-logo-text">TiviForge</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#transformations">Results</a></li>
+      <li><a href="#concierge">Strategist</a></li>
+      <li><a href="#contact" class="btn btn-primary nav-cta" data-cta="nav-forge">Forge My Brand</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-embers" id="embers"></div>
+  <div class="hero-content">
+    <div class="hero-label label">Las Vegas, NV — Digital Brand Architects</div>
+    <h1>You Already Have<br>The <em>Fire</em> Inside.</h1>
+    <p class="hero-sub">We Forge It Into A Digital Empire.</p>
+    <p class="hero-support"><strong>Belief + Action</strong> = Unstoppable Results.</p>
+    <div class="hero-actions">
+      <a href="#concierge" class="btn btn-primary" data-cta="hero-forge">Forge My Brand</a>
+      <a href="#transformations" class="btn btn-secondary" data-cta="hero-results">See Transformations</a>
+    </div>
+  </div>
+  <div class="hero-scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <span class="label">What We Build</span>
+      <h2 style="margin-top:12px">Four Pillars of<br><span class="text-gold">Digital Dominance</span></h2>
+    </div>
+    <div class="services-grid stagger-children">
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        </div>
+        <h3>Personal Authority</h3>
+        <p>Position yourself as the undeniable leader in your space. We build the digital presence that makes your expertise impossible to ignore.</p>
+        <a href="#concierge" class="service-link" data-cta="service-authority">Learn More <span>→</span></a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Founder Websites</h3>
+        <p>More than a website — a revenue engine. Crafted for founders who need a digital headquarters that converts visitors into believers.</p>
+        <a href="#concierge" class="service-link" data-cta="service-founder">Learn More <span>→</span></a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Revenue Systems</h3>
+        <p>Funnels, automations, and digital infrastructure designed to generate revenue while you sleep. Built for scale from day one.</p>
+        <a href="#concierge" class="service-link" data-cta="service-revenue">Learn More <span>→</span></a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21V3h18v18H3Z"/><path d="M9 3v18"/><path d="M3 9h18"/></svg>
+        </div>
+        <h3>Executive Platforms</h3>
+        <p>Enterprise-grade digital presence for C-suite leaders and executives. The platform that commands the respect your position demands.</p>
+        <a href="#concierge" class="service-link" data-cta="service-executive">Learn More <span>→</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ FORGE PHILOSOPHY ═══ -->
+<section class="philosophy" id="philosophy">
+  <div class="container-narrow">
+    <div class="reveal">
+      <span class="label">The Forge Philosophy</span>
+    </div>
+    <div class="philosophy-equation reveal">
+      <span class="eq-highlight">Belief</span>
+      <span class="eq-plus">+</span>
+      <span class="eq-highlight">Action</span>
+      <span class="eq-equals">=</span>
+      <span class="eq-highlight">Unstoppable Results</span>
+    </div>
+    <div class="philosophy-text reveal">
+      <p>Great companies are not built by strategy alone. They are forged by people who believe in something bigger than themselves and take action before they feel ready.</p>
+      <p>That is the philosophy behind everything we build. Every website, every funnel, every brand we craft carries this truth at its core — that the fire was always there. We simply give it form.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ METRICS ═══ -->
+<section class="metrics" id="metrics">
+  <div class="container">
+    <div class="metrics-grid stagger-children">
+      <div class="metric-item reveal">
+        <h3>$<span class="counter-value" data-target="4.2">0</span>M+</h3>
+        <p>Revenue Generated</p>
+      </div>
+      <div class="metric-item reveal">
+        <h3><span class="counter-value" data-target="120">0</span>+</h3>
+        <p>Brands Forged</p>
+      </div>
+      <div class="metric-item reveal">
+        <h3><span class="counter-value" data-target="340">0</span>%</h3>
+        <p>Avg. ROI Increase</p>
+      </div>
+      <div class="metric-item reveal">
+        <h3><span class="counter-value" data-target="97">0</span>%</h3>
+        <p>Client Retention</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ TRANSFORMATIONS ═══ -->
+<section class="transformations" id="transformations">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:72px;">
+      <span class="label">Transformations</span>
+      <h2 style="margin-top:12px">The Stories That<br><span class="text-gold">Prove It Works</span></h2>
+    </div>
+
+    <!-- Story 1 -->
+    <div class="transformation-story">
+      <h3 class="reveal" style="margin-bottom:32px;">The Consultant Who Became the Authority</h3>
+      <div class="story-phase reveal">
+        <div class="phase-label believe">The Belief</div>
+        <div class="phase-content">She had fifteen years of expertise and a client list that spoke for itself — but online, she was invisible. She knew her knowledge could reach thousands, but her digital presence told a different story. The decision to believe came quietly, during a late night scrolling through competitors who knew half of what she did but had ten times the visibility.</div>
+      </div>
+      <div class="story-phase reveal">
+        <div class="phase-label action">The Action</div>
+        <div class="phase-content">We built her a personal authority platform that positioned her as the definitive voice in executive coaching. A website that communicated expertise in seconds. A content system that converted her knowledge into consistent authority signals. A funnel that turned attention into high-ticket consultations.</div>
+      </div>
+      <div class="story-phase reveal">
+        <div class="phase-label results">The Results</div>
+        <div class="phase-content results-content"><span class="result-number">$380K</span> in new revenue within eight months. Featured in three industry publications. Waitlist for her services extended to fourteen weeks. Her words: "I finally look like who I've always been."</div>
+      </div>
+    </div>
+
+    <!-- Story 2 -->
+    <div class="transformation-story">
+      <h3 class="reveal" style="margin-bottom:32px;">The Founder Who Outgrew His Own Brand</h3>
+      <div class="story-phase reveal">
+        <div class="phase-label believe">The Belief</div>
+        <div class="phase-content">His SaaS product was gaining traction, but his website looked like it was built by an intern in 2017. Investors were interested but hesitant. He knew the product was world-class — the brand needed to match. The belief was simple: if the product deserves to win, the brand has to fight for it.</div>
+      </div>
+      <div class="story-phase reveal">
+        <div class="phase-label action">The Action</div>
+        <div class="phase-content">We redesigned his entire digital presence from the ground up. A founder website that told the story behind the product. Revenue systems that automated lead qualification. An executive platform that positioned him as a thought leader investors wanted to back.</div>
+      </div>
+      <div class="story-phase reveal">
+        <div class="phase-label results">The Results</div>
+        <div class="phase-content results-content">Series A closed at <span class="result-number">$2.1M</span>. Inbound leads increased by <span class="result-number">470%</span>. Three partnership deals signed within the first quarter of launch. The brand finally matched the vision.</div>
+      </div>
+    </div>
+
+    <!-- Story 3 -->
+    <div class="transformation-story">
+      <h3 class="reveal" style="margin-bottom:32px;">The Executive Who Built an Empire on the Side</h3>
+      <div class="story-phase reveal">
+        <div class="phase-label believe">The Belief</div>
+        <div class="phase-content">A VP at a Fortune 500 company with a vision for something of her own. She knew her insights on leadership and organizational transformation were valuable beyond her corporate role. But building a personal brand felt risky, even self-indulgent. Until she realized that staying quiet was the real risk.</div>
+      </div>
+      <div class="story-phase reveal">
+        <div class="phase-label action">The Action</div>
+        <div class="phase-content">We built her an executive platform — discreet yet powerful. A personal brand website that established authority without corporate conflict. A newsletter system that grew her audience to thousands. Speaking engagement funnels that brought opportunities to her inbox.</div>
+      </div>
+      <div class="story-phase reveal">
+        <div class="phase-label results">The Results</div>
+        <div class="phase-content results-content">Twelve paid speaking engagements in the first year. Newsletter audience surpassed <span class="result-number">8,000</span> subscribers. A book deal signed with a major publisher. She built the empire — on her own terms.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ TRUST / SOCIAL PROOF ═══ -->
+<section class="trust" id="trust">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">Trusted By</span>
+    </div>
+    <div class="trust-logos reveal" style="margin-top:32px;">
+      <span class="trust-logo">Fortune 500 Leaders</span>
+      <span class="trust-logo">SaaS Founders</span>
+      <span class="trust-logo">Executive Coaches</span>
+      <span class="trust-logo">Venture-Backed Startups</span>
+      <span class="trust-logo">Published Authors</span>
+    </div>
+
+    <div class="testimonials-grid stagger-children">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">
+          <p>TiviForge didn't just build me a website. They built me a revenue machine. Within 90 days I had a waitlist for my coaching program.</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">M</div>
+          <div>
+            <div class="testimonial-name">Marcus T.</div>
+            <div class="testimonial-role">Executive Coach</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">
+          <p>The level of strategic thinking behind the design was extraordinary. Every element served a purpose. Our conversion rate tripled.</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <div class="testimonial-name">Sarah K.</div>
+            <div class="testimonial-role">SaaS Founder</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">
+          <p>I went from unknown consultant to keynote speaker in under a year. The brand TiviForge created opened doors I didn't know existed.</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">J</div>
+          <div>
+            <div class="testimonial-name">James R.</div>
+            <div class="testimonial-role">Strategy Consultant</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ AI CONCIERGE ═══ -->
+<section class="concierge" id="concierge">
+  <div class="container">
+    <div class="concierge-wrapper">
+      <div class="concierge-info reveal-left">
+        <span class="label">Digital Brand Architect</span>
+        <h2 style="margin-top:12px">Your Personal<br><span class="text-gold">Brand Strategist</span></h2>
+        <p>Our AI-powered brand architect will guide you through a strategic assessment of your digital presence and generate a custom Forge Blueprint — your roadmap to authority, revenue, and influence.</p>
+        <p>Answer four questions. Receive your personalized strategy in seconds.</p>
+        <div style="margin-top:24px">
+          <a href="tel:6615715351" class="btn-ghost" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;position:relative">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            (661) 571-5351
+          </a>
+        </div>
+      </div>
+
+      <div class="concierge-chat reveal-right" id="chatWidget">
+        <div class="chat-header">
+          <div class="chat-status"></div>
+          <div>
+            <div class="chat-header-text">Forge Strategist</div>
+            <div class="chat-header-sub">Online — Ready to architect your brand</div>
+          </div>
+        </div>
+        <div class="chat-body" id="chatBody">
+          <!-- Messages injected by JS -->
+        </div>
+        <div class="chat-input-area" id="chatInputArea" style="display:none;">
+          <input type="text" class="chat-input" id="chatInput" placeholder="Type your answer...">
+          <button class="chat-send" id="chatSend">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ NEWSLETTER ═══ -->
+<section class="newsletter" id="newsletter">
+  <div class="container">
+    <div class="newsletter-inner reveal">
+      <span class="label">Weekly Insights</span>
+      <h2 style="margin-top:12px"><span class="text-gold">The Forge Brief</span></h2>
+      <p>A weekly insight on belief, action, authority, and building powerful digital brands. Join founders and executives who start their week with clarity.</p>
+      <div class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="Enter your email" aria-label="Email address">
+        <button class="newsletter-submit" data-cta="newsletter-subscribe">Subscribe</button>
+      </div>
+      <p class="newsletter-note">No spam. Unsubscribe anytime. Read by 2,400+ founders weekly.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ GUARANTEE ═══ -->
+<section class="guarantee" id="guarantee">
+  <div class="container">
+    <div class="guarantee-inner reveal">
+      <div class="guarantee-badge">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" color="var(--gold)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10" stroke="var(--gold)"/></svg>
+      </div>
+      <span class="label">Risk Reversal</span>
+      <h2 style="margin-top:12px">The Forge<br><span class="text-gold">Guarantee</span></h2>
+      <p>Book a complimentary strategy session. If you don't walk away with at least three actionable insights you can implement immediately — whether you work with us or not — we'll send you a $100 gift card for your time. That's how confident we are in the value of a single conversation.</p>
+      <a href="#concierge" class="btn btn-primary" data-cta="guarantee-session" id="contact">Book Strategy Session</a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo">
+          <span class="nav-logo-mark">T</span>
+          <span class="nav-logo-text">TiviForge</span>
+        </a>
+        <p>Forging digital empires for founders, executives, and leaders who believe in something bigger than themselves.</p>
+        <p style="margin-top:12px;color:var(--gray-500);font-size:0.85rem">Las Vegas, NV</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Personal Authority</a>
+        <a href="#services">Founder Websites</a>
+        <a href="#services">Revenue Systems</a>
+        <a href="#services">Executive Platforms</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#transformations">Transformations</a>
+        <a href="#newsletter">The Forge Brief</a>
+        <a href="#guarantee">Guarantee</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="tel:6615715351">(661) 571-5351</a>
+        <a href="mailto:hello@tiviforge.com">hello@tiviforge.com</a>
+        <a href="#concierge">Brand Strategist</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 TiviForge. All rights reserved.</span>
+      <span>Belief + Action = Unstoppable Results</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ FLOATING ELEMENTS ═══ -->
+<div class="floating-cta">
+  <button class="fab fab-top" id="fabTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+  <a href="#concierge" class="fab fab-cta" data-cta="floating-forge" aria-label="Forge My Brand">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+  </a>
+</div>
+
+
+<script>
+// ═══════════════════════════════════════════
+// TIVIFORGE — INTERACTION LAYER
+// ═══════════════════════════════════════════
+
+// ─── Custom Cursor ───
+const cursor = document.getElementById('cursor');
+if (window.matchMedia('(pointer: fine)').matches) {
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX - 14 + 'px';
+    cursor.style.top = e.clientY - 14 + 'px';
+  });
+  document.querySelectorAll('a, button, input, textarea, .chat-option, .service-card').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+  });
+}
+
+// ─── Mobile Nav ───
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// ─── Scroll Progress & Nav State ───
+const nav = document.getElementById('nav');
+const navProgress = document.getElementById('navProgress');
+const fabTop = document.getElementById('fabTop');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const scrollPct = (scrollTop / docHeight) * 100;
+  navProgress.style.width = scrollPct + '%';
+
+  nav.classList.toggle('scrolled', scrollTop > 50);
+  fabTop.classList.toggle('visible', scrollTop > 600);
+
+  // Active nav link
+  const sections = document.querySelectorAll('section[id]');
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    if (scrollTop >= sectionTop) {
+      current = section.getAttribute('id');
+    }
+  });
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
+});
+
+// ─── Scroll Reveal ───
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+  revealObserver.observe(el);
+});
+
+// ─── Counter Animation ───
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseFloat(el.dataset.target);
+      const isDecimal = target % 1 !== 0;
+      const duration = 2000;
+      const startTime = performance.now();
+
+      const animate = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out quart
+        const eased = 1 - Math.pow(1 - progress, 4);
+        const current = target * eased;
+        el.textContent = isDecimal ? current.toFixed(1) : Math.round(current);
+        if (progress < 1) requestAnimationFrame(animate);
+      };
+      requestAnimationFrame(animate);
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.counter-value').forEach(el => counterObserver.observe(el));
+
+// ─── Ember Particles ───
+const embersContainer = document.getElementById('embers');
+for (let i = 0; i < 20; i++) {
+  const particle = document.createElement('div');
+  particle.className = 'ember-particle';
+  particle.style.left = Math.random() * 100 + '%';
+  particle.style.animationDuration = (4 + Math.random() * 6) + 's';
+  particle.style.animationDelay = (Math.random() * 5) + 's';
+  particle.style.width = (2 + Math.random() * 3) + 'px';
+  particle.style.height = particle.style.width;
+  if (Math.random() > 0.5) particle.style.background = '#E8652E';
+  embersContainer.appendChild(particle);
+}
+
+// ═══════════════════════════════════════════
+// AI CONCIERGE — Interactive Brand Strategist
+// ═══════════════════════════════════════════
+
+const chatBody = document.getElementById('chatBody');
+const chatInputArea = document.getElementById('chatInputArea');
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+
+const conciergeFlow = {
+  step: 0,
+  answers: {},
+  questions: [
+    {
+      message: "Welcome to TiviForge. I'm your Digital Brand Architect. Let's build your Forge Blueprint — a personalized roadmap to authority, revenue, and influence.\n\nFirst, tell me: what are you building?",
+      options: ['Personal Brand', 'Business / Company', 'Startup', 'Authority Platform']
+    },
+    {
+      message: "Great choice. Now, what stage is your brand at currently?",
+      options: ['Just Starting', 'Growing (Some Traction)', 'Established (Needs Refresh)', 'Scaling Rapidly']
+    },
+    {
+      message: "What's your primary revenue goal for the next 12 months?",
+      options: ['Under $100K', '$100K — $500K', '$500K — $1M', '$1M+']
+    },
+    {
+      message: "Last question. What's the biggest obstacle standing between you and that goal?",
+      options: ['No Online Presence', 'Weak Brand / Positioning', 'No Lead Generation System', 'Need Authority & Visibility']
+    }
+  ]
+};
+
+function addBotMessage(text, options) {
+  const msgDiv = document.createElement('div');
+  msgDiv.className = 'chat-message bot';
+
+  const lines = text.split('\n').filter(l => l.trim());
+  let html = '<div class="chat-bubble">';
+  lines.forEach(line => { html += '<p style="margin-bottom:8px;">' + line + '</p>'; });
+  html += '</div>';
+  msgDiv.innerHTML = html;
+
+  if (options && options.length) {
+    const optionsDiv = document.createElement('div');
+    optionsDiv.className = 'chat-options';
+    options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'chat-option';
+      btn.textContent = opt;
+      btn.addEventListener('click', () => handleOptionClick(opt));
+      // Cursor effect
+      btn.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+      btn.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+      optionsDiv.appendChild(btn);
+    });
+    msgDiv.appendChild(optionsDiv);
+  }
+
+  chatBody.appendChild(msgDiv);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function addUserMessage(text) {
+  const msgDiv = document.createElement('div');
+  msgDiv.className = 'chat-message user';
+  msgDiv.innerHTML = '<div class="chat-bubble">' + text + '</div>';
+  chatBody.appendChild(msgDiv);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function handleOptionClick(answer) {
+  // Disable previous options
+  const prevOptions = chatBody.querySelectorAll('.chat-options');
+  prevOptions.forEach(optDiv => {
+    optDiv.querySelectorAll('.chat-option').forEach(btn => {
+      btn.disabled = true;
+      btn.style.opacity = '0.4';
+      btn.style.pointerEvents = 'none';
+    });
+  });
+
+  addUserMessage(answer);
+
+  const step = conciergeFlow.step;
+  const keys = ['building', 'stage', 'revenue', 'obstacle'];
+  conciergeFlow.answers[keys[step]] = answer;
+  conciergeFlow.step++;
+
+  setTimeout(() => {
+    if (conciergeFlow.step < conciergeFlow.questions.length) {
+      const q = conciergeFlow.questions[conciergeFlow.step];
+      addBotMessage(q.message, q.options);
+    } else {
+      generateBlueprint();
+    }
+  }, 600);
+}
+
+function generateBlueprint() {
+  const a = conciergeFlow.answers;
+
+  // Service recommendations based on answers
+  const services = [];
+  const nextSteps = [];
+
+  if (a.building === 'Personal Brand' || a.building === 'Authority Platform') {
+    services.push('Personal Authority Platform — Establish yourself as the definitive expert in your space');
+    services.push('Content Authority System — Automated thought leadership distribution');
+  }
+  if (a.building === 'Business / Company' || a.building === 'Startup') {
+    services.push('Founder Website — A digital headquarters that converts visitors into clients');
+    services.push('Revenue System — Automated funnels and lead generation infrastructure');
+  }
+  if (a.obstacle === 'No Lead Generation System' || a.revenue === '$500K — $1M' || a.revenue === '$1M+') {
+    services.push('Revenue Engine — Full-funnel automation designed for scale');
+  }
+  if (a.obstacle === 'Need Authority & Visibility') {
+    services.push('Executive Platform — Enterprise-grade presence that commands attention');
+  }
+  if (a.stage === 'Just Starting') {
+    nextSteps.push('Foundation Sprint — Get your core brand and digital presence built in 30 days');
+  } else if (a.stage === 'Established (Needs Refresh)') {
+    nextSteps.push('Brand Transformation — Complete redesign and repositioning for market dominance');
+  } else {
+    nextSteps.push('Growth Architecture — Strategic digital infrastructure to accelerate your trajectory');
+  }
+  nextSteps.push('Book your complimentary Strategy Session to discuss your custom roadmap');
+
+  const msgDiv = document.createElement('div');
+  msgDiv.className = 'chat-message bot';
+  msgDiv.innerHTML = `
+    <div class="chat-bubble" style="max-width:100%">
+      <p style="margin-bottom:16px;">Your Forge Blueprint is ready. Here's what I'd recommend based on your goals:</p>
+    </div>
+    <div class="forge-blueprint">
+      <div class="blueprint-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        Your Forge Blueprint
+      </div>
+      <div class="blueprint-section">
+        <h5>Profile</h5>
+        <p>${a.building} · ${a.stage} · Target: ${a.revenue} · Challenge: ${a.obstacle}</p>
+      </div>
+      <div class="blueprint-section">
+        <h5>Recommended Services</h5>
+        ${services.map(s => '<p style="margin-bottom:6px;">→ ' + s + '</p>').join('')}
+      </div>
+      <div class="blueprint-section">
+        <h5>Next Steps</h5>
+        ${nextSteps.map(s => '<p style="margin-bottom:6px;">→ ' + s + '</p>').join('')}
+      </div>
+      <div style="margin-top:20px;">
+        <a href="tel:6615715351" class="btn btn-primary" style="font-size:0.72rem;padding:12px 24px;text-decoration:none;display:inline-block" data-cta="blueprint-call">
+          Call (661) 571-5351
+        </a>
+      </div>
+    </div>
+  `;
+
+  chatBody.appendChild(msgDiv);
+  chatBody.scrollTop = chatBody.scrollHeight;
+
+  // Show free-form input after blueprint
+  chatInputArea.style.display = 'flex';
+}
+
+// Free-form chat after blueprint
+chatSend.addEventListener('click', sendFreeMessage);
+chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendFreeMessage(); });
+
+function sendFreeMessage() {
+  const msg = chatInput.value.trim();
+  if (!msg) return;
+  addUserMessage(msg);
+  chatInput.value = '';
+  setTimeout(() => {
+    addBotMessage("Thank you for your question. For a detailed discussion about your specific needs, I'd recommend scheduling a strategy session with our team. Call us at (661) 571-5351 or click the button above. We'll dive deep into your goals and create a comprehensive action plan together.");
+  }, 800);
+}
+
+// Start the concierge
+setTimeout(() => {
+  addBotMessage(
+    conciergeFlow.questions[0].message,
+    conciergeFlow.questions[0].options
+  );
+}, 500);
+
+// ─── Newsletter Form ───
+document.querySelector('.newsletter-submit').addEventListener('click', function() {
+  const input = document.querySelector('.newsletter-input');
+  const email = input.value.trim();
+  if (email && email.includes('@')) {
+    this.textContent = 'Subscribed ✓';
+    this.style.background = '#34D399';
+    input.value = '';
+    input.placeholder = 'You\'re in. Welcome to the forge.';
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'newsletter_subscribe', { event_category: 'conversion' });
+    }
+  } else {
+    input.style.borderColor = 'var(--ember)';
+    setTimeout(() => { input.style.borderColor = ''; }, 2000);
+  }
+});
+
+</script>
+</body>
+</html>
