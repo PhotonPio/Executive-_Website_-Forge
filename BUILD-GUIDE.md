@@ -36,7 +36,11 @@ Executive-_Website_-Forge/
 ├── BUILD-GUIDE.md            # This file
 ├── COMPONENT-REFERENCE.md    # Component documentation
 └── README.md                 # Project overview
-```
+Executive-_Website_-Forge/
+│
+├── index.html
+├── loader.js
+└── components/```
 
 ## How to Use This Repository
 
