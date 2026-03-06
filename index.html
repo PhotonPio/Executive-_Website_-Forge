@@ -1,490 +1,2312 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TiviForge — Digital Revenue Infrastructure for Scaling Brands</title>
-  <meta name="description" content="We build digital authority infrastructure that generates unlimited leads. Website design, SEO optimization, personal branding, and revenue systems for founders and executives.">
-  <meta name="keywords" content="digital agency, founder website, personal brand, executive positioning, authority platform, growth infrastructure">
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- PHASE 1: Updated title — repositioned from executive career tool to revenue/authority firm -->
+  <title>Tivi Forge — Digital Brand Architecture &amp; Revenue Infrastructure</title>
+
+  <!-- META: Broadened positioning — revenue infrastructure, conversion, authority -->
+  <meta name="description" content="Digital authority and revenue infrastructure for founders, executives, and growth-stage businesses. We architect personal brands, conversion-focused websites, funnel systems, and monetization strategy — engineered to compound." />
+  <meta name="keywords" content="conversion optimization, brand monetization, digital strategy, revenue systems, funnel architecture, executive branding, authority positioning, growth systems, SEO infrastructure, high-ticket sales pages" />
+
+  <!-- PHASE 1: Updated OG/Twitter meta -->
+  <meta property="og:title" content="Tivi Forge — Digital Brand Architecture &amp; Revenue Infrastructure" />
+  <meta property="og:description" content="High-performance digital brands and revenue infrastructure for founders, executives, and growth-stage businesses." />
+  <meta property="og:image" content="https://tiviforge.com/og-preview.png" />
+  <meta property="og:url" content="https://tiviforge.com" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tivi Forge — Digital Brand Architecture &amp; Revenue Infrastructure" />
+  <meta name="twitter:description" content="High-performance digital brands and revenue infrastructure for founders, executives, and growth-stage businesses." />
+  <meta name="twitter:image" content="https://tiviforge.com/og-preview.png" />
+  <link rel="canonical" href="https://tiviforge.com" />
+
+  <!-- JSON-LD: Broadened ProfessionalService — conversion optimization, funnel architecture, executive branding -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Tivi Forge",
+    "url": "https://tiviforge.com",
+    "description": "Digital authority and revenue infrastructure firm. We build personal brand platforms, conversion-focused websites, funnel architecture, and monetization systems for founders, executives, and growth-stage businesses.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "telephone": "+15558743920",
+    "email": "hello@tiviforge.com",
+    "priceRange": "$495 - $20,000+",
+    "serviceArea": {"@type": "Place", "name": "Worldwide"},
+    "knowsAbout": ["Conversion Optimization", "Brand Monetization", "Digital Strategy", "Revenue Systems", "Funnel Architecture", "Executive Branding", "Authority Positioning", "SEO Infrastructure", "Email Automation", "High-Ticket Sales Page Design"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Digital Authority & Revenue Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Personal Authority Build"}, "price": "2995", "priceCurrency": "USD"},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Full Brand Transformation"}, "price": "6995", "priceCurrency": "USD"},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business Revenue Website"}, "price": "6995", "priceCurrency": "USD"},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Revenue Infrastructure Build"}, "price": "18500", "priceCurrency": "USD"},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Growth Systems Retainer"}, "price": "1500", "priceCurrency": "USD"}
+      ]
+    }
+  }
+  </script>
+
+  <!-- PHASE 1: Updated JSON-LD Person — title and description repositioned to brand architect / revenue strategist -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tivi",
+    "jobTitle": "Founder & Digital Brand Architect",
+    "worksFor": {"@type": "Organization", "name": "Tivi Forge"},
+    "url": "https://tiviforge.com",
+    "email": "hello@tiviforge.com",
+    "address": {"@type": "PostalAddress", "addressLocality": "Los Angeles", "addressRegion": "CA", "addressCountry": "US"},
+    "description": "Digital brand architect and revenue strategist. Builds authority positioning, conversion infrastructure, and monetization systems for founders, executives, and growth-stage businesses.",
+    "knowsAbout": ["Digital Brand Architecture", "Revenue Infrastructure", "Authority Positioning", "Conversion Optimization", "Funnel Architecture", "Executive Branding", "Brand Monetization", "SEO Infrastructure", "Automation Systems", "Digital Strategy"]
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════
+       SECTION J: ANALYTICS TRACKING PLACEHOLDERS
+       Replace placeholder IDs with your actual tracking IDs
+       ═══════════════════════════════════════════════════ -->
+
+  <!-- GA4: Google Analytics 4
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_GA4_ID"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', {
-      send_page_view: true
-    });
+    gtag('config', 'G-YOUR_GA4_ID');
+  </script>
+  -->
 
-    // Track scroll depth
-    let maxScroll = 0;
-    window.addEventListener('scroll', () => {
-      const scrollPct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-      if (scrollPct > maxScroll) {
-        maxScroll = scrollPct;
-        if ([25, 50, 75, 90, 100].includes(scrollPct)) {
-          gtag('event', 'scroll_depth', {
-            value: scrollPct,
-            event_category: 'engagement',
-            scroll_percent: scrollPct
-          });
+  <!-- META PIXEL (Facebook/Instagram)
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  -->
+
+  <!-- LINKEDIN INSIGHT TAG
+  <script type="text/javascript">
+    _linkedin_partner_id = "YOUR_PARTNER_ID";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+  <script type="text/javascript">
+    (function(l) {if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b,s);})(window.lintrk);
+  </script>
+  -->
+
+  <!-- SERVER-SIDE TRACKING NOTE:
+       For higher accuracy, implement server-side tracking via:
+       - Google Tag Manager Server-Side container
+       - Stape.io or similar proxy
+       - Custom /api/track endpoint with first-party cookie
+       This bypasses ad blockers and improves attribution accuracy.
+  -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#080c14',
+            surface: '#0d1526',
+            card: '#111827',
+            border: '#1e3a5f',
+            cyan: '#06d6f5',
+            cyandim: '#04a8c2',
+            lime: '#b2f724',
+            muted: '#64748b',
+            steel: '#334155'
+          },
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          }
         }
       }
-    });
-
-    // Track CTA clicks
-    document.addEventListener('click', (e) => {
-      const cta = e.target.closest('[data-cta]');
-      if (cta) {
-        gtag('event', 'cta_click', {
-          event_category: 'conversion',
-          event_label: cta.dataset.cta,
-          button_text: cta.innerText
-        });
-      }
-    });
-
-    // Track form submission
-    document.addEventListener('submit', (e) => {
-      const form = e.target;
-      if (form.dataset.form) {
-        gtag('event', 'form_submit', {
-          event_category: 'lead',
-          event_label: form.dataset.form,
-          form_id: form.id
-        });
-      }
-    });
-
-    // Track engagement time
-    let startTime = Date.now();
-    window.addEventListener('beforeunload', () => {
-      const engagementTime = Math.round((Date.now() - startTime) / 1000);
-      gtag('event', 'engagement_time', {
-        value: engagementTime,
-        event_category: 'engagement'
-      });
-    });
+    }
   </script>
 
-  <!-- Hotjar -->
-  <script>
-    (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:YOUR_HOTJAR_ID,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
-      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  </script>
+  <style>
+    /* Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #080c14; color: #e2e8f0; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
 
-  <link rel="stylesheet" href="/styles/main.css">
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #080c14; }
+    ::-webkit-scrollbar-thumb { background: #06d6f5; border-radius: 2px; }
+
+    /* Glass card */
+    .glass {
+      background: rgba(17,24,39,0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(30,58,95,0.5);
+    }
+
+    /* Gradient text utilities */
+    .grad-cyan {
+      background: linear-gradient(90deg, #06d6f5, #04a8c2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .grad-white {
+      background: linear-gradient(90deg, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: linear-gradient(135deg, #06d6f5, #04a8c2);
+      color: #080c14;
+      font-weight: 700;
+      padding: 0.75rem 1.75rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Space Grotesk', sans-serif;
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(6,214,245,0.35); }
+    .btn-ghost {
+      background: transparent;
+      color: #06d6f5;
+      border: 1px solid #06d6f5;
+      font-weight: 600;
+      padding: 0.75rem 1.75rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Space Grotesk', sans-serif;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .btn-ghost:hover { background: rgba(6,214,245,0.1); transform: translateY(-2px); }
+
+    /* Scroll progress bar */
+    #scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #06d6f5, #b2f724);
+      z-index: 9999;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* Nav scrolled */
+    .nav-scrolled {
+      background: rgba(8,12,20,0.92) !important;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(30,58,95,0.4);
+    }
+
+    /* Loading screen */
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      background: #0d1526;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s ease;
+    }
+    #loading-screen.done { opacity: 0; pointer-events: none; }
+
+    .forge-logo-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #fff;
+      position: relative;
+      letter-spacing: -0.02em;
+    }
+    .forge-logo-text span { color: #06d6f5; }
+
+    .spark-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin-bottom: 1.5rem;
+    }
+    .spark-core {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px; height: 20px;
+      background: radial-gradient(circle, #b2f724, #06d6f5);
+      border-radius: 50%;
+      box-shadow: 0 0 20px #06d6f5, 0 0 40px rgba(6,214,245,0.5);
+      animation: corePulse 0.8s ease-in-out infinite alternate;
+    }
+    @keyframes corePulse {
+      from { transform: translate(-50%,-50%) scale(1); box-shadow: 0 0 20px #06d6f5; }
+      to   { transform: translate(-50%,-50%) scale(1.3); box-shadow: 0 0 40px #06d6f5, 0 0 60px rgba(6,214,245,0.4); }
+    }
+    .spark {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: #b2f724;
+      animation: sparkFly 1.4s ease-out infinite;
+      transform-origin: 0 0;
+    }
+    .spark:nth-child(1) { animation-delay: 0s;    --angle: 0deg;   --dist: 50px; }
+    .spark:nth-child(2) { animation-delay: 0.2s;  --angle: 60deg;  --dist: 45px; }
+    .spark:nth-child(3) { animation-delay: 0.4s;  --angle: 120deg; --dist: 55px; }
+    .spark:nth-child(4) { animation-delay: 0.6s;  --angle: 180deg; --dist: 48px; }
+    .spark:nth-child(5) { animation-delay: 0.8s;  --angle: 240deg; --dist: 52px; }
+    .spark:nth-child(6) { animation-delay: 1.0s;  --angle: 300deg; --dist: 46px; }
+    @keyframes sparkFly {
+      0%   { transform: translate(-50%,-50%) rotate(var(--angle)) translateX(0) scale(1); opacity: 1; }
+      100% { transform: translate(-50%,-50%) rotate(var(--angle)) translateX(var(--dist)) scale(0); opacity: 0; }
+    }
+    .loading-tagline {
+      color: #64748b;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 0.75rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .loading-bar-wrap {
+      width: 200px;
+      height: 2px;
+      background: rgba(30,58,95,0.5);
+      border-radius: 1px;
+      margin-top: 2rem;
+      overflow: hidden;
+    }
+    .loading-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #06d6f5, #b2f724);
+      border-radius: 1px;
+      animation: loadFill 1.8s ease-in-out forwards;
+    }
+    @keyframes loadFill {
+      from { width: 0%; }
+      to   { width: 100%; }
+    }
+
+    /* Hero orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      animation: float 8s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) translateX(0px); }
+      33%       { transform: translateY(-20px) translateX(10px); }
+      66%       { transform: translateY(10px) translateX(-15px); }
+    }
+
+    /* Scan line */
+    .scan-line {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(6,214,245,0.03) 50%, transparent 100%);
+      background-size: 100% 4px;
+      animation: scan 8s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes scan {
+      0%   { background-position: 0 -100%; }
+      100% { background-position: 0 100%; }
+    }
+
+    /* Grid noise overlay */
+    .grid-noise {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 0h1v1H0zM40 0h0v1H40zM0 40h1v0H0zM40 40h0v0H40z' fill='%2306d6f5' opacity='.5'/%3E%3Cpath d='M20 0v40M0 20h40' stroke='%2306d6f5' stroke-width='.5' opacity='.3'/%3E%3C/svg%3E");
+      background-size: 40px 40px;
+    }
+
+    /* Marquee */
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 25s linear infinite;
+      white-space: nowrap;
+    }
+    .marquee-track-reverse {
+      animation-direction: reverse;
+    }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Skill bar */
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, #06d6f5, #b2f724);
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Glow pulse */
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 20px rgba(6,214,245,0.3); }
+      50%       { box-shadow: 0 0 40px rgba(6,214,245,0.6); }
+    }
+    .glow-pulse { animation: glowPulse 2.5s ease-in-out infinite; }
+
+    /* Sticky pill pulse */
+    @keyframes pillPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(6,214,245,0.4); }
+      50%       { box-shadow: 0 0 0 8px rgba(6,214,245,0); }
+    }
+    .pill-pulse { animation: pillPulse 2s ease-in-out infinite; }
+
+    /* Chat bubble */
+    @keyframes chatPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(6,214,245,0.5); }
+      50%       { box-shadow: 0 0 0 10px rgba(6,214,245,0); }
+    }
+    .chat-pulse { animation: chatPulse 2.5s ease-in-out infinite; }
+
+    /* Typing dots */
+    .typing-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #06d6f5;
+      display: inline-block;
+      animation: typingBounce 1.2s ease-in-out infinite;
+    }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingBounce {
+      0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+      40%            { transform: translateY(-6px); opacity: 1; }
+    }
+
+    /* Before/After slider */
+    .ba-container { position: relative; width: 100%; height: 200px; overflow: hidden; border-radius: 0.5rem; cursor: ew-resize; user-select: none; }
+    .ba-before, .ba-after { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em; }
+    .ba-before { background: linear-gradient(135deg, #1e293b, #334155); color: #64748b; }
+    .ba-after  { background: linear-gradient(135deg, #0a2a35, #0d4a5a); color: #06d6f5; clip-path: inset(0 50% 0 0); }
+    .ba-divider { position: absolute; top: 0; left: 50%; width: 2px; height: 100%; background: #06d6f5; transform: translateX(-50%); pointer-events: none; }
+    .ba-handle {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px; height: 36px;
+      background: #06d6f5;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #080c14;
+      font-size: 0.9rem;
+      box-shadow: 0 0 15px rgba(6,214,245,0.6);
+      pointer-events: none;
+    }
+
+    /* FAQ accordion */
+    .faq-answer { overflow: hidden; transition: max-height 0.4s ease; max-height: 0; }
+    .faq-answer.open { max-height: 500px; }
+
+    /* Form input */
+    .form-input {
+      width: 100%;
+      background: rgba(13,21,38,0.8);
+      border: 1px solid #1e3a5f;
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      color: #e2e8f0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.3s ease;
+      outline: none;
+    }
+    .form-input:focus { border-color: #06d6f5; }
+    .form-input.error { border-color: #ef4444; }
+    .form-label { display: block; margin-bottom: 0.4rem; font-size: 0.85rem; color: #94a3b8; font-weight: 500; }
+    .form-error { color: #ef4444; font-size: 0.8rem; margin-top: 0.3rem; }
+
+    /* Modal overlay */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(8,12,20,0.85);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+    }
+    .modal-panel {
+      background: #111827;
+      border: 1px solid #1e3a5f;
+      border-radius: 1rem;
+      max-width: 700px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2rem;
+    }
+
+    /* Section spacing */
+    section { padding: 5rem 0; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(6,214,245,0.1);
+      border: 1px solid rgba(6,214,245,0.3);
+      color: #06d6f5;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+    }
+    .section-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+    }
+    .section-sub {
+      color: #94a3b8;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    /* Service card hover — used for individual service items within lanes */
+    .service-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(6,214,245,0.1); }
+
+    /* PHASE 2: Lane card styling — each vertical lane gets a top accent bar */
+    .lane-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .lane-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: 9999px 9999px 0 0;
+      transition: opacity 0.3s ease;
+    }
+    .lane-card:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0,0,0,0.3); }
+    .lane-card-cyan::before  { background: linear-gradient(90deg, #06d6f5, #04a8c2); }
+    .lane-card-lime::before  { background: linear-gradient(90deg, #b2f724, #7bc000); }
+    .lane-card-violet::before { background: linear-gradient(90deg, #a78bfa, #7c3aed); }
+
+    /* PHASE 2: Service item row within a lane */
+    .lane-service-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(30,58,95,0.35);
+      transition: background 0.2s ease;
+    }
+    .lane-service-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .lane-service-item:hover .lane-service-title { color: #06d6f5; }
+
+    /* Project card */
+    .project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
+    .project-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(6,214,245,0.12); }
+
+    /* Process step */
+    .process-step { transition: transform 0.3s ease; }
+    .process-step:hover { transform: translateX(4px); }
+
+    /* Testimonial card */
+    .testimonial-card { transition: transform 0.3s ease; }
+    .testimonial-card:hover { transform: translateY(-4px); }
+
+    /* Pricing card popular */
+    .pricing-popular {
+      border-color: #06d6f5 !important;
+      animation: glowPulse 2.5s ease-in-out infinite;
+    }
+    @media (min-width: 1024px) { .pricing-popular { transform: scale(1.03); } }
+
+    /* PHASE 3: Revenue ladder step styling */
+    .revenue-step {
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .revenue-step:hover {
+      transform: translateY(-2px);
+      background: rgba(6,214,245,0.06);
+    }
+    .revenue-step-active {
+      border-color: rgba(6,214,245,0.4) !important;
+      background: rgba(6,214,245,0.05);
+    }
+
+    /* Flagship pricing card fire glow — visually dominant */
+    @keyframes fireGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(249,115,22,0.2), 0 0 40px rgba(249,115,22,0.1); }
+      50%       { box-shadow: 0 0 40px rgba(249,115,22,0.4), 0 0 80px rgba(249,115,22,0.2); }
+    }
+    .pricing-fire { animation: fireGlow 2.5s ease-in-out infinite; }
+    @media (min-width: 1024px) {
+      .pricing-fire { transform: scale(1.04); }
+    }
+
+    /* Section divider utility */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(30,58,95,0.5), transparent);
+      margin: 0 auto;
+      max-width: 80%;
+    }
+
+    /* Cookie banner */
+    #cookie-banner {
+      position: fixed;
+      bottom: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9998;
+      width: calc(100% - 2rem);
+      max-width: 700px;
+    }
+
+    /* Back to top */
+    #back-to-top {
+      position: fixed;
+      bottom: 110px;
+      right: 1.5rem;
+      z-index: 9990;
+    }
+
+    /* Sticky pill */
+    #sticky-pill {
+      position: fixed;
+      bottom: 160px;
+      right: 1.5rem;
+      z-index: 9991;
+    }
+
+    /* Chat widget */
+    #chat-widget {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 9995;
+    }
+    .chat-panel {
+      width: 380px;
+      height: 520px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+    @media (max-width: 480px) {
+      .chat-panel {
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        width: 100%;
+        height: 70vh;
+        border-radius: 1rem 1rem 0 0;
+      }
+      #chat-widget { bottom: 0; right: 0; left: 0; }
+    }
+    .chat-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .chat-messages::-webkit-scrollbar { width: 3px; }
+    .chat-messages::-webkit-scrollbar-thumb { background: #1e3a5f; }
+    .chat-bubble-bot {
+      background: rgba(30,58,95,0.5);
+      border: 1px solid rgba(30,58,95,0.6);
+      border-radius: 0 0.75rem 0.75rem 0.75rem;
+      padding: 0.6rem 0.85rem;
+      max-width: 88%;
+      align-self: flex-start;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+    .chat-bubble-user {
+      background: linear-gradient(135deg, #06d6f5, #04a8c2);
+      border-radius: 0.75rem 0 0.75rem 0.75rem;
+      padding: 0.6rem 0.85rem;
+      max-width: 80%;
+      align-self: flex-end;
+      font-size: 0.85rem;
+      color: #080c14;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    .chat-time { font-size: 0.7rem; color: #64748b; margin-top: 0.2rem; }
+
+    /* Hero headline sizing */
+    .hero-h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+  </style>
 </head>
-<body>
+<body x-data="siteApp()" x-init="init()" class="bg-ink font-body">
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="/" class="logo">TiviForge</a>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="/blog">Insights</a></li>
-        <li><a href="/audit">Free Audit</a></li>
-        <li><a href="#contact" class="btn btn-primary btn-small" data-cta="nav-book-call">Book Call</a></li>
-      </ul>
+<!-- SCROLL PROGRESS BAR -->
+<div id="scroll-progress" :style="'width:' + scrollProgress + '%'"></div>
+
+<!-- LOADING SCREEN -->
+<div id="loading-screen" :class="loadingDone ? 'done' : ''">
+  <div class="spark-container">
+    <div class="spark-core"></div>
+    <span class="spark"></span>
+    <span class="spark"></span>
+    <span class="spark"></span>
+    <span class="spark"></span>
+    <span class="spark"></span>
+    <span class="spark"></span>
+  </div>
+  <div class="forge-logo-text">Tivi<span>Forge</span><span style="color:#b2f724">.</span></div>
+  <!-- PHASE 1: Updated loading tagline -->
+  <div class="loading-tagline">Building Digital Authority &amp; Revenue Infrastructure</div>
+  <div class="loading-bar-wrap"><div class="loading-bar-fill"></div></div>
+</div>
+
+<!-- NAVIGATION -->
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 lg:px-12" :class="scrolled ? 'nav-scrolled py-3' : ''">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <a href="#" class="text-xl font-display font-bold tracking-tight">
+      <span class="text-white">Tivi</span><span class="text-cyan">Forge</span><span class="text-lime">.</span>
+    </a>
+    <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+      <a href="#services" class="hover:text-cyan transition-colors">Services</a>
+      <a href="#work" class="hover:text-cyan transition-colors">Work</a>
+      <a href="#pricing" class="hover:text-cyan transition-colors">Pricing</a>
+      <a href="#about" class="hover:text-cyan transition-colors">About</a>
+      <a href="#faq" class="hover:text-cyan transition-colors">FAQ</a>
+      <a href="#contact" class="hover:text-cyan transition-colors">Contact</a>
     </div>
-  </nav>
+    <div class="hidden lg:flex">
+      <button @click="chatOpen = true" class="btn-primary text-sm py-2.5 px-5">Book Strategy Call</button>
+    </div>
+    <button @click="mobileMenu = !mobileMenu" class="lg:hidden text-slate-300 hover:text-cyan transition-colors p-2">
+      <i class="fa-solid" :class="mobileMenu ? 'fa-xmark fa-lg' : 'fa-bars fa-lg'"></i>
+    </button>
+  </div>
+  <div x-show="mobileMenu" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="lg:hidden mt-4 glass rounded-xl p-5">
+    <div class="flex flex-col gap-4 text-sm font-medium text-slate-300">
+      <a href="#services" @click="mobileMenu=false" class="hover:text-cyan transition-colors py-1 border-b border-border">Services</a>
+      <a href="#work" @click="mobileMenu=false" class="hover:text-cyan transition-colors py-1 border-b border-border">Work</a>
+      <a href="#pricing" @click="mobileMenu=false" class="hover:text-cyan transition-colors py-1 border-b border-border">Pricing</a>
+      <a href="#about" @click="mobileMenu=false" class="hover:text-cyan transition-colors py-1 border-b border-border">About</a>
+      <a href="#faq" @click="mobileMenu=false" class="hover:text-cyan transition-colors py-1 border-b border-border">FAQ</a>
+      <a href="#contact" @click="mobileMenu=false" class="hover:text-cyan transition-colors py-1">Contact</a>
+      <button @click="chatOpen=true; mobileMenu=false" class="btn-primary text-sm justify-center mt-2">Book Strategy Call</button>
+    </div>
+  </div>
+</nav>
 
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="container">
-      <h1>Digital Revenue Infrastructure<br>for Scaling Brands</h1>
-      <p class="tagline">We build the systems, processes, and authority that let founders and executives dominate their market. Not consultants. Not agencies. Infrastructure architects.</p>
+<!-- HERO SECTION -->
+<section id="hero" class="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
+  <div class="orb w-96 h-96 bg-cyan/10 top-10 -left-20" style="animation-delay:0s;"></div>
+  <div class="orb w-80 h-80 bg-lime/8 bottom-20 -right-16" style="animation-delay:3s;"></div>
+  <div class="orb w-64 h-64 bg-cyan/6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="animation-delay:1.5s;"></div>
+  <div class="scan-line"></div>
+  <div class="grid-noise"></div>
 
-      <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary" data-cta="hero-book-call">Book Strategy Session</a>
-        <a href="/audit" class="btn btn-ghost" data-cta="hero-free-audit">Get Free Digital Audit</a>
-      </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
+    <!-- HERO: Authority-first positioning — digital presence as infrastructure -->
+    <div class="section-tag" data-aos="fade-up" data-aos-duration="600">
+      Digital Authority Infrastructure · Conversion Architecture · Revenue Systems
+    </div>
 
-      <div class="scroll-indicator">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M12 5v14M19 13l-7 7-7-7"/>
+    <!-- HERO HEADLINE: Signal digital authority as an asset class -->
+    <div class="hero-h1 mt-4 mb-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
+      <div class="grad-white">Your Digital Presence</div>
+      <div class="grad-cyan" style="text-shadow: 0 0 40px rgba(6,214,245,0.3);">Is Revenue Infrastructure</div>
+      <div class="flex items-center gap-3 text-white flex-wrap">
+        We Engineer It
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" class="inline-block flex-shrink-0">
+          <circle cx="18" cy="18" r="18" fill="#b2f724"/>
+          <path d="M10 18l5.5 5.5L26 12" stroke="#080c14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
     </div>
-  </section>
 
-  <!-- Authority Indicators -->
-  <section class="authority-indicators">
-    <div class="container">
-      <div class="stat-grid">
-        <div class="stat">
-          <h3>312%</h3>
-          <p>Avg. Lead Increase</p>
+    <!-- HERO SUBHEADLINE: Brand, conversion, monetization alignment -->
+    <p class="text-slate-300 text-lg lg:text-xl max-w-2xl leading-relaxed mb-8" data-aos="fade-up" data-aos-delay="200">
+      We build authority platforms, conversion-focused websites, and monetization systems for founders, executives, and growth-stage businesses. Every asset we create is calibrated to generate trust, capture demand, and compound revenue.
+    </p>
+
+    <!-- HERO CTAs: Primary = Strategy Call, Secondary = View Services -->
+    <div class="flex flex-wrap gap-4 mb-10" data-aos="fade-up" data-aos-delay="300">
+      <button @click="chatOpen=true" class="btn-primary text-base">Book a Strategy Call <i class="fa-solid fa-arrow-right ml-1"></i></button>
+      <a href="#services" class="btn-ghost text-base">View Services</a>
+    </div>
+
+    <!-- HERO: Authority indicator row — trust signals -->
+    <div class="flex flex-wrap items-center gap-6 mb-12 text-slate-500 text-xs uppercase tracking-widest font-display font-semibold" data-aos="fade-up" data-aos-delay="350">
+      <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-cyan rounded-full"></span> Trusted by 50+ Founders & Executives</span>
+      <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-lime rounded-full"></span> $2.4M+ Client Revenue Influenced</span>
+      <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-cyan rounded-full"></span> 8.2× Average Engagement ROI</span>
+    </div>
+
+    <!-- Stats row -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="400">
+      <template x-for="s in stats" :key="s.value">
+        <div class="glass rounded-xl p-5 text-center">
+          <div class="font-display font-bold text-3xl text-cyan" x-text="s.value"></div>
+          <div class="text-slate-400 text-sm mt-1" x-text="s.label"></div>
         </div>
-        <div class="stat">
-          <h3>47+</h3>
-          <p>Companies Transformed</p>
-        </div>
-        <div class="stat">
-          <h3>$50M+</h3>
-          <p>Pipeline Generated</p>
-        </div>
+      </template>
+    </div>
+  </div>
+
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-500 text-xs animate-bounce">
+    <span>Scroll</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="border-t border-b border-border py-8 overflow-hidden bg-surface/40">
+  <div class="overflow-hidden mb-5">
+    <div class="flex">
+      <div class="marquee-track text-slate-400 font-display font-semibold text-sm uppercase tracking-widest">
+        <span>Clutch Top Rated 2025</span><span class="text-border">·</span>
+        <span>Google Partner</span><span class="text-border">·</span>
+        <span>AWS Certified</span><span class="text-border">·</span>
+        <span>Tailwind Expert</span><span class="text-border">·</span>
+        <span>Vercel Certified</span><span class="text-border">·</span>
+        <span>Shopify Partner</span><span class="text-border">·</span>
+        <span>React Specialist</span><span class="text-border">·</span>
+        <span>Webflow Expert</span><span class="text-border">·</span>
+        <span>Clutch Top Rated 2025</span><span class="text-border">·</span>
+        <span>Google Partner</span><span class="text-border">·</span>
+        <span>AWS Certified</span><span class="text-border">·</span>
+        <span>Tailwind Expert</span><span class="text-border">·</span>
+        <span>Vercel Certified</span><span class="text-border">·</span>
+        <span>Shopify Partner</span><span class="text-border">·</span>
+        <span>React Specialist</span><span class="text-border">·</span>
+        <span>Webflow Expert</span><span class="text-border">·</span>
       </div>
     </div>
-  </section>
-
-  <!-- Value Proposition -->
-  <section class="value-proposition" id="why">
-    <div class="container">
-      <h2>Why Brands Choose TiviForge</h2>
-
-      <div class="pillars">
-        <div class="pillar">
-          <h3>Authority Architecture</h3>
-          <p>We don't build websites. We build digital empires that position you as THE authority in your space. Investor-ready. Customer-magnetic. Revenue-generating.</p>
-          <ul>
-            <li>SEO infrastructure that compounds</li>
-            <li>Personal brand positioning</li>
-            <li>Thought leadership systems</li>
-          </ul>
-        </div>
-
-        <div class="pillar">
-          <h3>Revenue Systems</h3>
-          <p>Your website is silent sales infrastructure. We design it to convert at every stage: awareness → decision → revenue.</p>
-          <ul>
-            <li>Conversion optimization (not just traffic)</li>
-            <li>Lead magnet systems</li>
-            <li>Automation that scales</li>
-          </ul>
-        </div>
-
-        <div class="pillar">
-          <h3>Founder-Focused</h3>
-          <p>Built by founders, for founders. We understand the unique constraints of scaling companies and what actually moves the needle.</p>
-          <ul>
-            <li>Speed to revenue</li>
-            <li>Bootstrap-friendly approaches</li>
-            <li>Executive-level thinking</li>
-          </ul>
-        </div>
+  </div>
+  <div class="flex flex-wrap justify-center gap-3 px-6">
+    <template x-for="b in techBadges" :key="b.label">
+      <div class="glass rounded-full px-4 py-2 flex items-center gap-2 text-slate-300 text-xs font-semibold border border-border/50">
+        <i :class="b.icon + ' text-cyan text-xs'"></i>
+        <span x-text="b.label"></span>
       </div>
+    </template>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PHASE 2: SERVICES SECTION — RESTRUCTURED INTO 3 VERTICAL LANES
+     ═══════════════════════════════════════════════════ -->
+<section id="services" class="bg-surface/30">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+    <!-- Section header -->
+    <div class="text-center mb-14" data-aos="fade-up">
+      <div class="section-tag">Services</div>
+      <h2 class="section-heading mt-2">Three Lanes. One System.</h2>
+      <p class="section-sub mx-auto mt-3 text-center">
+        Every engagement is built across one or more of our strategic service lanes —
+        depending on where you are and where you need to go.
+      </p>
     </div>
-  </section>
 
-  <!-- Case Studies -->
-  <section class="case-studies" id="results">
-    <div class="container">
-      <h2>Transformation Results</h2>
-      <p>Real companies. Real results. Repeatable systems.</p>
+    <!-- 3-Lane Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-      <div class="case-study-grid">
-        <a href="/case-study-1" class="case-study-card" data-cta="case-study-1">
-          <div class="metrics">
-            <div class="metric">
-              <span class="number">+212%</span>
-              <span class="label">Traffic</span>
-            </div>
-            <div class="metric">
-              <span class="number">+312%</span>
-              <span class="label">Leads</span>
-            </div>
-            <div class="metric">
-              <span class="number">$500K</span>
-              <span class="label">Pipeline</span>
-            </div>
-          </div>
-          <h3>Tech Founder Personal Brand</h3>
-          <p>How we positioned an unknown founder as the industry authority, attracting investors, partnerships, and high-value clients.</p>
-          <span class="link">View Full Case Study →</span>
-        </a>
-
-        <a href="/case-study-2" class="case-study-card" data-cta="case-study-2">
-          <div class="metrics">
-            <div class="metric">
-              <span class="number">+89%</span>
-              <span class="label">Qualified</span>
-            </div>
-            <div class="metric">
-              <span class="number">+212%</span>
-              <span class="label">Conversations</span>
-            </div>
-            <div class="metric">
-              <span class="number">$1.2M</span>
-              <span class="label">New Pipeline</span>
+      <!-- ── LANE 01: Personal Authority ── -->
+      <div class="glass rounded-2xl p-8 lane-card lane-card-cyan" data-aos="fade-up" data-aos-delay="0">
+        <div class="mb-7">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-display font-bold text-4xl text-cyan/15 select-none leading-none">01</span>
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-cyan mb-0.5">Lane 01</div>
+              <h3 class="font-display font-bold text-xl text-white leading-tight">Personal Authority</h3>
             </div>
           </div>
-          <h3>Executive Authority Positioning</h3>
-          <p>How we repositioned a buried executive as a market leader, generating inbound opportunities worth $1.2M+ in new pipeline.</p>
-          <span class="link">View Full Case Study →</span>
-        </a>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Build the digital presence that makes you undeniable — to boards, investors, clients, and recruiters.
+          </p>
+          <p class="text-xs text-cyan/70 mt-2 font-medium italic">Ideal for: Executives in transition, founders building personal leverage, thought leaders entering new markets.</p>
+        </div>
 
-        <a href="/case-study-3" class="case-study-card" data-cta="case-study-3">
-          <div class="metrics">
-            <div class="metric">
-              <span class="number">60%</span>
-              <span class="label">Higher CVC</span>
+        <div class="space-y-0">
+          <template x-for="item in serviceLanes[0].services" :key="item.title">
+            <div class="lane-service-item">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-base" style="background: rgba(6,214,245,0.1); border: 1px solid rgba(6,214,245,0.2);" x-text="item.icon"></div>
+              <div>
+                <div class="font-display font-semibold text-sm text-white lane-service-title transition-colors" x-text="item.title"></div>
+                <div class="text-slate-500 text-xs leading-relaxed mt-0.5" x-text="item.desc"></div>
+              </div>
             </div>
-            <div class="metric">
-              <span class="number">+45%</span>
-              <span class="label">Lead Quality</span>
+          </template>
+        </div>
+
+        <button @click="chatOpen=true" class="btn-ghost w-full justify-center mt-7 text-sm">Start with Authority →</button>
+      </div>
+
+      <!-- ── LANE 02: Business Revenue Sites ── -->
+      <div class="glass rounded-2xl p-8 lane-card lane-card-lime" data-aos="fade-up" data-aos-delay="100">
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+          <span class="bg-lime text-ink text-xs font-display font-bold px-4 py-1 rounded-full shadow-lg" style="box-shadow: 0 0 20px rgba(178,247,36,0.4);">Most Requested</span>
+        </div>
+
+        <div class="mb-7 mt-2">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-display font-bold text-4xl select-none leading-none" style="color: rgba(178,247,36,0.15)">02</span>
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest mb-0.5" style="color:#b2f724">Lane 02</div>
+              <h3 class="font-display font-bold text-xl text-white leading-tight">Business Revenue Sites</h3>
             </div>
-            <div class="metric">
-              <span class="number">$500K</span>
-              <span class="label">Add'l Revenue</span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Conversion-focused digital infrastructure that turns traffic and attention into revenue.
+          </p>
+          <p class="text-xs mt-2 font-medium italic" style="color: rgba(178,247,36,0.6)">Ideal for: Service businesses, SaaS founders, agencies, and firms scaling from $1M to $20M.</p>
+        </div>
+
+        <div class="space-y-0">
+          <template x-for="item in serviceLanes[1].services" :key="item.title">
+            <div class="lane-service-item" style="border-color: rgba(178,247,36,0.12)">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-base" style="background: rgba(178,247,36,0.08); border: 1px solid rgba(178,247,36,0.2);" x-text="item.icon"></div>
+              <div>
+                <div class="font-display font-semibold text-sm text-white lane-service-title transition-colors" x-text="item.title"></div>
+                <div class="text-slate-500 text-xs leading-relaxed mt-0.5" x-text="item.desc"></div>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <button @click="chatOpen=true" class="w-full justify-center mt-7 text-sm font-display font-bold py-3 rounded-lg transition-all duration-300 flex items-center gap-2" style="background: linear-gradient(135deg, #b2f724, #7bc000); color: #080c14;">Build Revenue Infrastructure →</button>
+      </div>
+
+      <!-- ── LANE 03: Growth Systems ── -->
+      <div class="glass rounded-2xl p-8 lane-card lane-card-violet" data-aos="fade-up" data-aos-delay="200">
+        <div class="mb-7">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-display font-bold text-4xl select-none leading-none" style="color: rgba(167,139,250,0.15)">03</span>
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest mb-0.5" style="color:#a78bfa">Lane 03</div>
+              <h3 class="font-display font-bold text-xl text-white leading-tight">Growth Systems</h3>
             </div>
           </div>
-          <h3>Agency Premium Positioning</h3>
-          <p>How we repositioned an agency from competing on price to commanding 60% higher rates through authority infrastructure.</p>
-          <span class="link">View Full Case Study →</span>
-        </a>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Automated systems that generate leads, nurture relationships, and close high-ticket deals while you focus on the work.
+          </p>
+          <p class="text-xs mt-2 font-medium italic" style="color: rgba(167,139,250,0.6)">Ideal for: Coaches, consultants, PE-backed operators, and any business selling $5K+ offers.</p>
+        </div>
+
+        <div class="space-y-0">
+          <template x-for="item in serviceLanes[2].services" :key="item.title">
+            <div class="lane-service-item" style="border-color: rgba(167,139,250,0.12)">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-base" style="background: rgba(167,139,250,0.08); border: 1px solid rgba(167,139,250,0.2);" x-text="item.icon"></div>
+              <div>
+                <div class="font-display font-semibold text-sm text-white lane-service-title transition-colors" x-text="item.title"></div>
+                <div class="text-slate-500 text-xs leading-relaxed mt-0.5" x-text="item.desc"></div>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <button @click="chatOpen=true" class="w-full justify-center mt-7 text-sm btn-ghost flex items-center gap-2" style="border-color: #a78bfa; color: #a78bfa;">Activate Growth Systems →</button>
+      </div>
+
+    </div>
+
+    <!-- Bottom callout -->
+    <div class="mt-10 glass rounded-xl px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 border-border/30" data-aos="fade-up">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center flex-shrink-0">
+          <i class="fa-solid fa-layer-group text-cyan text-sm"></i>
+        </div>
+        <p class="text-slate-300 text-sm"><strong class="text-white">Not sure which lane fits?</strong> Most clients combine two or three. Book a free strategy call — we'll map the right build for your goals.</p>
+      </div>
+      <button @click="chatOpen=true" class="btn-primary text-sm flex-shrink-0">Free Strategy Call →</button>
+    </div>
+
+  </div>
+</section>
+<!-- END PHASE 2: Services Section -->
+
+<!-- ═══════════════════════════════════════════════════
+     SECTION DIVIDER: Executive Authority ↔ Business Revenue Infrastructure
+     ═══════════════════════════════════════════════════ -->
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-2">
+  <div class="h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     NEW SECTION A: WHO WE WORK WITH
+     Purpose: Clear ICP segmentation — builds trust through specificity
+     ═══════════════════════════════════════════════════ -->
+<section id="who-we-serve" class="py-16">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <div class="section-tag">Who We Work With</div>
+      <h2 class="section-heading mt-2">Built for Decision-Makers</h2>
+      <p class="section-sub mx-auto mt-3 text-center">We serve a specific kind of client — people and organizations where digital presence directly impacts revenue.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5" data-aos="fade-up" data-aos-delay="100">
+      <div class="glass rounded-xl p-6 text-center border border-border/30">
+        <div class="w-12 h-12 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-rocket text-cyan"></i></div>
+        <h4 class="font-display font-bold text-white text-sm mb-2">Founders Scaling $1M–$20M</h4>
+        <p class="text-slate-500 text-xs leading-relaxed">Your website should be your best salesperson. We build digital infrastructure that scales with your revenue.</p>
+      </div>
+      <div class="glass rounded-xl p-6 text-center border border-border/30">
+        <div class="w-12 h-12 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-user-tie text-cyan"></i></div>
+        <h4 class="font-display font-bold text-white text-sm mb-2">Executives Preparing for Board Roles</h4>
+        <p class="text-slate-500 text-xs leading-relaxed">Your digital presence is your first impression. We engineer it to open doors at the highest levels.</p>
+      </div>
+      <div class="glass rounded-xl p-6 text-center border border-border/30">
+        <div class="w-12 h-12 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-building text-cyan"></i></div>
+        <h4 class="font-display font-bold text-white text-sm mb-2">Growth-Stage Service Firms</h4>
+        <p class="text-slate-500 text-xs leading-relaxed">From consulting to SaaS to professional services — we build conversion systems that turn attention into pipeline.</p>
+      </div>
+      <div class="glass rounded-xl p-6 text-center border border-border/30">
+        <div class="w-12 h-12 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-chart-line text-cyan"></i></div>
+        <h4 class="font-display font-bold text-white text-sm mb-2">PE-Backed Operators</h4>
+        <p class="text-slate-500 text-xs leading-relaxed">When the board requires a digital presence that matches leadership caliber, we deliver under deadline.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Process Overview -->
-  <section class="process" id="process">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 60px;">How We Build Digital Revenue Infrastructure</h2>
-
-      <div class="process-steps">
-        <div class="step">
-          <div class="number">1</div>
-          <h3>Audit</h3>
-          <p>We map your current digital presence, authority gaps, and revenue leaks</p>
-          <span class="deliverable">Deliverable: Digital Authority Assessment</span>
-        </div>
-
-        <div class="step">
-          <div class="number">2</div>
-          <h3>Strategy</h3>
-          <p>We design your infrastructure stack: positioning, authority channels, automation</p>
-          <span class="deliverable">Deliverable: 90-Day Growth Blueprint</span>
-        </div>
-
-        <div class="step">
-          <div class="number">3</div>
-          <h3>Foundation</h3>
-          <p>We build the core: website, brand positioning, SEO infrastructure, lead systems</p>
-          <span class="deliverable">Deliverable: Foundation Infrastructure</span>
-        </div>
-
-        <div class="step">
-          <div class="number">4</div>
-          <h3>Authority</h3>
-          <p>We establish thought leadership: content, positioning, market presence</p>
-          <span class="deliverable">Deliverable: Authority Growth Plan</span>
-        </div>
-
-        <div class="step">
-          <div class="number">5</div>
-          <h3>Systems</h3>
-          <p>We automate and scale: email sequences, lead scoring, sales workflows</p>
-          <span class="deliverable">Deliverable: Revenue Operating System</span>
-        </div>
+<!-- ═══════════════════════════════════════════════════
+     NEW SECTION B: MONETIZATION PHILOSOPHY
+     Purpose: Frame digital presence as ROI-generating asset
+     ═══════════════════════════════════════════════════ -->
+<section class="bg-surface/30 py-16">
+  <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center" data-aos="fade-up">
+    <div class="section-tag">Philosophy</div>
+    <h2 class="section-heading mt-2 mb-6">A Website Should Pay For Itself.</h2>
+    <p class="text-slate-300 text-lg leading-relaxed mb-6 max-w-3xl mx-auto">Most agencies treat websites as digital brochures. We treat them as revenue infrastructure — engineered assets that generate authority, capture demand, and convert at scale.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+      <div class="glass rounded-xl p-6 border border-border/30">
+        <div class="font-display font-bold text-cyan text-2xl mb-2">Asset</div>
+        <p class="text-slate-400 text-sm leading-relaxed">Your digital presence is not a cost. It's an asset with measurable return — compounding authority, inbound leads, and closed revenue.</p>
+      </div>
+      <div class="glass rounded-xl p-6 border border-border/30">
+        <div class="font-display font-bold text-lime text-2xl mb-2">ROI</div>
+        <p class="text-slate-400 text-sm leading-relaxed">Every design decision, every word of copy, every system we install is calibrated for one outcome: return on investment.</p>
+      </div>
+      <div class="glass rounded-xl p-6 border border-border/30">
+        <div class="font-display font-bold text-2xl mb-2" style="color:#a78bfa">Leverage</div>
+        <p class="text-slate-400 text-sm leading-relaxed">Authority scales. The right positioning, paired with the right infrastructure, creates compounding leverage that works while you don't.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Services -->
-  <section class="services" id="services">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 60px;">Services Engineered for Your Stage</h2>
-
-      <div class="service-tiers">
-        <div class="tier">
-          <h3>Audit & Strategy</h3>
-          <p class="price">$5,000 - $15,000</p>
-          <ul>
-            <li>Digital audit</li>
-            <li>90-day blueprint</li>
-            <li>Competitive analysis</li>
-            <li>Positioning clarity session</li>
-          </ul>
-          <p class="best-for">Best for: Founders exploring options</p>
-          <a href="#contact" class="btn btn-outline" data-cta="service-audit">Explore</a>
-        </div>
-
-        <div class="tier">
-          <h3>Foundation Build</h3>
-          <p class="price">$25,000 - $75,000</p>
-          <ul>
-            <li>Complete website build</li>
-            <li>Brand foundation</li>
-            <li>SEO optimization</li>
-            <li>Lead magnet system</li>
-            <li>Initial email sequences</li>
-          </ul>
-          <p class="best-for">Best for: Ready to establish authority</p>
-          <a href="#contact" class="btn btn-outline" data-cta="service-foundation">Explore</a>
-        </div>
-
-        <div class="tier">
-          <h3>Growth Engine</h3>
-          <p class="price">$150,000+ / year</p>
-          <ul>
-            <li>Everything above</li>
-            <li>Content strategy</li>
-            <li>Authority building</li>
-            <li>Full automation</li>
-            <li>Growth coaching</li>
-            <li>Ongoing optimization</li>
-          </ul>
-          <p class="best-for">Best for: Scaling enterprises</p>
-          <a href="#contact" class="btn btn-outline" data-cta="service-growth">Explore</a>
-        </div>
-      </div>
+<!-- FEATURED WORK / PORTFOLIO SECTION -->
+<section id="work">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-14" data-aos="fade-up">
+      <div class="section-tag">Portfolio</div>
+      <h2 class="section-heading mt-2">Work That Speaks</h2>
+      <p class="section-sub mx-auto mt-3 text-center">Real clients. Real outcomes. Real revenue.</p>
     </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 60px;">What Our Partners Say</h2>
-
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <div class="video-wrapper">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position: absolute; top: 0; left: 0; border: none;" allowfullscreen></iframe>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <template x-for="(proj, i) in projects" :key="proj.title">
+        <div class="glass rounded-2xl overflow-hidden project-card" @click="openProject(proj)" :data-aos="'fade-up'" :data-aos-delay="(i % 3) * 80">
+          <div class="relative h-48 flex items-center justify-center overflow-hidden" :style="'background:' + proj.bg">
+            <template x-if="proj.hasBeforeAfter">
+              <div class="ba-container w-full h-full" id="ba-slider" @mousedown.prevent="startBA($event)" @touchstart.prevent="startBA($event)">
+                <div class="ba-before">BEFORE — Generic Online Presence</div>
+                <div class="ba-after" id="ba-after">AFTER — Revenue-Driving Digital Brand</div>
+                <div class="ba-divider" id="ba-divider"></div>
+                <div class="ba-handle" id="ba-handle">↔</div>
+              </div>
+            </template>
+            <template x-if="!proj.hasBeforeAfter">
+              <div class="flex flex-col items-center gap-2">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center text-xl font-display font-bold text-white" :style="'background: linear-gradient(135deg, #06d6f5 0%, #04a8c2 100%); opacity: 0.9;'" x-text="proj.initials"></div>
+                <div class="text-xs text-slate-400 font-medium" x-text="proj.type"></div>
+              </div>
+            </template>
           </div>
-          <blockquote>"We went from completely unknown to getting 3 strategic partnerships in 6 months. TiviForge didn't just build a website—they built our market presence."</blockquote>
-          <footer>
-            <p class="name">Sarah Chen</p>
-            <p class="title">CEO, Growth Tech Services</p>
-            <div class="rating">★★★★★</div>
-          </footer>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="video-wrapper">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position: absolute; top: 0; left: 0; border: none;" allowfullscreen></iframe>
-          </div>
-          <blockquote>"As someone who hates marketing BS, TiviForge's approach is refreshingly straightforward. They speak executive language and deliver infrastructure, not fluff."</blockquote>
-          <footer>
-            <p class="name">James Mitchell</p>
-            <p class="title">VP of Strategy, B2B SaaS</p>
-            <div class="rating">★★★★★</div>
-          </footer>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="video-wrapper">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position: absolute; top: 0; left: 0; border: none;" allowfullscreen></iframe>
-          </div>
-          <blockquote>"This transformed how we position ourselves. We went from competing on price to commanding premium rates. The case study system alone was worth it."</blockquote>
-          <footer>
-            <p class="name">Michael Rodriguez</p>
-            <p class="title">Founder, Premium Agency</p>
-            <div class="rating">★★★★★</div>
-          </footer>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Newsletter -->
-  <section class="newsletter">
-    <div class="container">
-      <h2>Get Weekly Insights</h2>
-      <p>The Forge Brief: Strategic insights on building digital authority and revenue systems</p>
-
-      <form id="newsletter-form" data-form="homepage-newsletter">
-        <input type="email" placeholder="your@email.com" required>
-        <button type="submit" data-cta="newsletter-subscribe">Subscribe</button>
-      </form>
-
-      <p class="privacy">No spam. Unsubscribe anytime.</p>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="final-cta" id="contact">
-    <div class="container">
-      <h2>Ready to Build Your Digital Revenue Infrastructure?</h2>
-      <p>Choose your next step:</p>
-
-      <div class="cta-options">
-        <div class="cta-box">
-          <h3>Book Strategy Session</h3>
-          <p>45-minute conversation with our founder about your growth roadmap</p>
-          <ul>
-            <li>Competitive analysis</li>
-            <li>90-day roadmap</li>
-            <li>Next steps outlined</li>
-          </ul>
-          <a href="https://calendly.com/tiviforge" target="_blank" class="btn btn-primary" data-cta="final-book-call">Schedule Call</a>
-        </div>
-
-        <div class="cta-box">
-          <h3>Get Free Digital Audit</h3>
-          <p>See exactly where you stand now (no commitment, results in 24-48 hours)</p>
-          <ul>
-            <li>SEO score</li>
-            <li>Authority gaps identified</li>
-            <li>Revenue roadmap</li>
-          </ul>
-          <a href="/audit" class="btn btn-primary" data-cta="final-free-audit">Get Audit</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>TiviForge</h4>
-          <p>Building digital authority infrastructure for scaling brands. Personal authority, founder websites, revenue systems, executive platforms.</p>
-          <div class="social-links">
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-            <a href="https://twitter.com" target="_blank">Twitter</a>
+          <div class="p-6">
+            <div class="text-xs text-cyan font-semibold uppercase tracking-wider mb-1" x-text="proj.industry"></div>
+            <h3 class="font-display font-bold text-white text-base mb-3" x-text="proj.title"></h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <template x-for="m in proj.metrics" :key="m">
+                <span class="text-xs bg-lime/10 text-lime border border-lime/20 px-2 py-0.5 rounded-full font-semibold" x-text="m"></span>
+              </template>
+            </div>
+            <div class="flex items-center gap-1 text-xs text-cyan font-medium">
+              View Case Study <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+            </div>
           </div>
         </div>
+      </template>
+    </div>
+  </div>
+</section>
 
-        <div class="footer-section">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="#services">Audit & Strategy</a></li>
-            <li><a href="#services">Foundation Build</a></li>
-            <li><a href="#services">Growth Engine</a></li>
-            <li><a href="/case-studies">Case Studies</a></li>
-          </ul>
+<!-- PROJECT MODAL -->
+<div x-show="activeProject" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="modal-overlay" @click.self="closeProject()" @keydown.escape.window="closeProject()" style="display:none;">
+  <div class="modal-panel" x-show="activeProject" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95">
+    <template x-if="activeProject">
+      <div>
+        <div class="flex items-start justify-between mb-6">
+          <div>
+            <div class="section-tag" x-text="activeProject.type"></div>
+            <h2 class="font-display font-bold text-2xl text-white mt-2" x-text="activeProject.title"></h2>
+            <div class="text-cyan text-sm mt-1" x-text="activeProject.industry"></div>
+          </div>
+          <button @click="closeProject()" class="text-slate-400 hover:text-white transition-colors p-1">
+            <i class="fa-solid fa-xmark fa-lg"></i>
+          </button>
         </div>
-
-        <div class="footer-section">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="/blog">Insights Blog</a></li>
-            <li><a href="/digital-authority-blueprint">Free Blueprint</a></li>
-            <li><a href="/audit">Free Audit</a></li>
-            <li><a href="https://calendly.com/tiviforge" target="_blank">Book Call</a></li>
-          </ul>
+        <div class="flex flex-wrap gap-3 mb-6">
+          <template x-for="m in activeProject.metrics" :key="m">
+            <span class="bg-lime/10 text-lime border border-lime/25 px-3 py-1 rounded-full text-sm font-bold" x-text="m"></span>
+          </template>
+        </div>
+        <div class="glass rounded-xl p-5 mb-4">
+          <div class="text-xs text-cyan font-bold uppercase tracking-wider mb-2">The Challenge</div>
+          <p class="text-slate-300 text-sm leading-relaxed" x-text="activeProject.challenge"></p>
+        </div>
+        <div class="glass rounded-xl p-5 mb-4">
+          <div class="text-xs text-lime font-bold uppercase tracking-wider mb-2">Our Solution</div>
+          <p class="text-slate-300 text-sm leading-relaxed" x-text="activeProject.solution"></p>
+        </div>
+        <div>
+          <div class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-3">Tech &amp; Strategy Stack</div>
+          <div class="flex flex-wrap gap-2">
+            <template x-for="t in activeProject.stack" :key="t">
+              <span class="glass text-sm text-slate-300 px-3 py-1 rounded-full border border-border/60" x-text="t"></span>
+            </template>
+          </div>
+        </div>
+        <div class="mt-6 flex gap-3">
+          <button @click="chatOpen=true; closeProject()" class="btn-primary text-sm">Start Your Project</button>
+          <button @click="closeProject()" class="btn-ghost text-sm">Close</button>
         </div>
       </div>
+    </template>
+  </div>
+</div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2024 TiviForge. Building digital authority infrastructure. Las Vegas, NV.</p>
+<!-- PROCESS SECTION -->
+<section id="process" class="bg-surface/30">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+      <div data-aos="fade-right">
+        <div class="section-tag">Our Process</div>
+        <h2 class="section-heading mt-3 mb-4">No Surprises.<br/>Just Results.</h2>
+        <p class="text-slate-400 leading-relaxed mb-6">Our proven 5-step forge process delivers high-performance digital infrastructure on time, every time. No vague timelines. No scope creep. Just focused execution.</p>
+        <p class="text-slate-300 leading-relaxed mb-8">Every step is collaborative — you see and approve deliverables before we move forward. We work in staging environments, share preview links, and communicate proactively throughout.</p>
+        <button @click="chatOpen=true" class="btn-primary">Book a Strategy Call →</button>
+      </div>
+      <div class="flex flex-col gap-4" data-aos="fade-left">
+        <template x-for="(step, i) in process" :key="step.title">
+          <div class="glass rounded-xl p-5 process-step flex items-start gap-4" :data-aos="'fade-left'" :data-aos-delay="i * 80">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-cyan to-cyandim flex items-center justify-center text-ink font-display font-bold text-sm flex-shrink-0" x-text="i + 1"></div>
+            <div>
+              <h3 class="font-display font-bold text-white mb-1" x-text="step.title"></h3>
+              <p class="text-slate-400 text-sm leading-relaxed" x-text="step.desc"></p>
+            </div>
+          </div>
+        </template>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    // Newsletter form
-    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = this.querySelector('input[type="email"]').value;
-      gtag('event', 'newsletter_signup', {
-        event_category: 'lead_generation',
-        event_label: 'homepage_newsletter',
-        email: email
+<!-- SKILLS SECTION -->
+<section id="skills">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <div class="section-tag">Capabilities</div>
+      <h2 class="section-heading mt-2">Full-Stack Capability</h2>
+      <p class="section-sub mx-auto mt-3 text-center">We own every layer of your digital brand and revenue infrastructure.</p>
+    </div>
+    <div class="flex flex-wrap justify-center gap-3 mb-10" data-aos="fade-up" data-aos-delay="100">
+      <template x-for="cat in skillCats" :key="cat">
+        <button @click="activeCat = cat" :class="activeCat === cat ? 'bg-cyan text-ink border-cyan' : 'glass text-slate-300 border-border hover:border-cyan hover:text-cyan'" class="px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-200 font-display" x-text="cat"></button>
+      </template>
+    </div>
+    <div class="max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="150" id="skills-container">
+      <template x-for="skill in skillsData[activeCat]" :key="skill.name">
+        <div class="mb-5">
+          <div class="flex justify-between mb-1.5">
+            <span class="text-slate-300 text-sm font-medium" x-text="skill.name"></span>
+            <span class="text-cyan text-sm font-bold" x-text="skill.pct + '%'"></span>
+          </div>
+          <div class="h-2 bg-surface rounded-full overflow-hidden border border-border/40">
+            <div class="skill-bar-fill" :style="'width:' + skill.pct + '%'" :id="'bar-' + skill.name.replace(/[^a-z0-9]/gi,'')"></div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     PHASE 3: PRICING SECTION — RESTRUCTURED WITH REVENUE LAYERING
+     Old: 3 flat pricing cards (career-focused)
+     New: Revenue ladder visual + 4 pricing cards + entry/low-ticket strip + recurring retainer
+     Why: Communicates a full revenue ecosystem, not just "pick a package."
+          Revenue layering shows buyers the strategic path from $0 → $20K+,
+          increases perceived sophistication, and justifies higher ACV.
+     ═══════════════════════════════════════════════════ -->
+<section id="pricing" class="bg-surface/30">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+    <!-- Section header -->
+    <div class="text-center mb-10" data-aos="fade-up">
+      <div class="section-tag">Investment</div>
+      <h2 class="section-heading mt-2">Revenue-Layered Pricing</h2>
+      <p class="section-sub mx-auto mt-3 text-center">
+        Every engagement starts with understanding where you are. Our pricing is structured as a revenue ladder — enter at any level, scale as you grow.
+      </p>
+    </div>
+
+    <!-- PHASE 3: Revenue Ladder — compact visual showing the full $0→$20K+ path
+         Why: Psychologically anchors the buyer to the FULL ecosystem before they see cards.
+         Shows strategic intentionality, not a-la-carte randomness. -->
+    <div class="glass rounded-2xl p-6 lg:p-8 mb-10" data-aos="fade-up" data-aos-delay="50">
+      <div class="flex items-center gap-2 mb-5">
+        <i class="fa-solid fa-stairs text-cyan text-sm"></i>
+        <h3 class="font-display font-semibold text-white text-sm uppercase tracking-widest">The Revenue Ladder</h3>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
+        <template x-for="(step, i) in revenueLadder" :key="step.label">
+          <div class="revenue-step glass rounded-xl p-4 text-center border border-border/30 cursor-default" :class="step.highlight ? 'revenue-step-active' : ''">
+            <div class="text-xs font-bold uppercase tracking-wider mb-1.5" :style="'color:' + step.color" x-text="step.tier"></div>
+            <div class="font-display font-bold text-white text-lg leading-tight" x-text="step.price"></div>
+            <div class="text-slate-500 text-xs mt-1 leading-snug" x-text="step.label"></div>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <!-- PHASE 3: Entry + Low-Ticket strip — captures leads who aren't ready for core offers
+         Why: $0 and $495 tiers widen the top of funnel, build trust, and create
+         an upsell path into core/high-ticket without high-pressure sales. -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8" data-aos="fade-up" data-aos-delay="100">
+      <!-- Entry: $0 Audit -->
+      <div class="glass rounded-xl p-6 flex items-start gap-4 border border-border/30">
+        <div class="w-10 h-10 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center flex-shrink-0">
+          <i class="fa-solid fa-magnifying-glass-chart text-cyan text-sm"></i>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center justify-between mb-1">
+            <h4 class="font-display font-bold text-white text-sm">Free Strategy Audit</h4>
+            <span class="text-cyan font-display font-bold text-sm">$0</span>
+          </div>
+          <p class="text-slate-500 text-xs leading-relaxed mb-3">Personalized audit of your digital presence with a revenue positioning report. Zero commitment.</p>
+          <button @click="chatOpen=true" class="text-xs text-cyan font-semibold hover:underline">Claim Your Audit →</button>
+        </div>
+      </div>
+      <!-- Low Ticket: $495 Website Review -->
+      <div class="glass rounded-xl p-6 flex items-start gap-4 border border-border/30">
+        <div class="w-10 h-10 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center flex-shrink-0">
+          <i class="fa-solid fa-clipboard-check text-cyan text-sm"></i>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center justify-between mb-1">
+            <h4 class="font-display font-bold text-white text-sm">Website Revenue Review</h4>
+            <span class="text-cyan font-display font-bold text-sm">$495</span>
+          </div>
+          <p class="text-slate-500 text-xs leading-relaxed mb-3">Comprehensive teardown of your current site: conversion gaps, SEO issues, revenue leaks, and a prioritized fix list.</p>
+          <button @click="chatOpen=true" class="text-xs text-cyan font-semibold hover:underline">Book Your Review →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 3: Core pricing grid — 4 cards (was 3, added Revenue Infrastructure Build)
+         Layout: 2×2 grid on desktop for balanced visual weight with the new top-tier card -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+
+      <!-- Card 1: Executive Portfolio Build — $2,995 (Core entry) -->
+      <div class="glass rounded-2xl p-8" data-aos="fade-up" data-aos-delay="0">
+        <div class="text-sm text-slate-400 mb-1 font-medium">For senior managers &amp; rising executives</div>
+        <h3 class="font-display font-bold text-xl text-white mb-1">Executive Portfolio Build</h3>
+        <div class="text-3xl font-display font-bold text-white mb-2">$2,995</div>
+        <p class="text-xs text-slate-500 italic mb-5">Ideal for: Senior managers positioning for VP/C-suite roles, or founders who need a professional digital presence fast.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check text-cyan mt-0.5 flex-shrink-0"></i>Single-page premium portfolio site</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check text-cyan mt-0.5 flex-shrink-0"></i>Mobile-responsive, fast (sub-2s load)</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check text-cyan mt-0.5 flex-shrink-0"></i>Basic SEO optimization</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check text-cyan mt-0.5 flex-shrink-0"></i>AI chat assistant integration</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check text-cyan mt-0.5 flex-shrink-0"></i>2 revision rounds · 2-week delivery</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check text-cyan mt-0.5 flex-shrink-0"></i>30-day post-launch support</li>
+        </ul>
+        <button @click="chatOpen=true" class="btn-ghost w-full justify-center">Book Strategy Call</button>
+      </div>
+
+      <!-- Card 2: Full Personal Brand Transformation — $6,995 (Most Popular) -->
+      <div class="glass rounded-2xl p-8 pricing-popular relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+          <span class="bg-cyan text-ink text-xs font-display font-bold px-4 py-1.5 rounded-full">Most Popular</span>
+        </div>
+        <div class="text-sm text-slate-400 mb-1 font-medium">For directors, VPs &amp; founders scaling revenue</div>
+        <h3 class="font-display font-bold text-xl text-white mb-1">Full Personal Brand Transformation</h3>
+        <div class="text-3xl font-display font-bold text-cyan mb-2">$6,995</div>
+        <p class="text-xs text-slate-500 italic mb-5">Ideal for: Directors, VPs, and founders building a multi-channel authority platform to drive inbound opportunities.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check text-cyan mt-0.5 flex-shrink-0"></i>Multi-page executive site (5+ pages)</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check text-cyan mt-0.5 flex-shrink-0"></i>LinkedIn profile full rewrite &amp; optimization</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check text-cyan mt-0.5 flex-shrink-0"></i>Content strategy document (3-month roadmap)</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check text-cyan mt-0.5 flex-shrink-0"></i>Executive bio (long + short form)</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check text-cyan mt-0.5 flex-shrink-0"></i>4 revision rounds · 4-week delivery</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check text-cyan mt-0.5 flex-shrink-0"></i>60-day post-launch support</li>
+        </ul>
+        <button @click="chatOpen=true" class="btn-primary w-full justify-center">Book Strategy Call</button>
+      </div>
+
+      <!-- Card 3: C-Suite Digital Leadership — $12,995 (High Ticket) -->
+      <div class="glass rounded-2xl p-8 relative" style="border-color: rgba(178,247,36,0.35);" data-aos="fade-up" data-aos-delay="200">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+          <span class="text-xs font-display font-bold px-4 py-1.5 rounded-full" style="background: linear-gradient(135deg, #b2f724, #7bc000); color: #080c14;">Premium</span>
+        </div>
+        <div class="text-sm text-slate-400 mb-1 font-medium">For C-suite, board candidates &amp; PE-backed leaders</div>
+        <h3 class="font-display font-bold text-xl text-white mb-1">C-Suite Digital Leadership Package</h3>
+        <div class="text-3xl font-display font-bold mb-2" style="color:#b2f724">$12,995</div>
+        <p class="text-xs text-slate-500 italic mb-5">Ideal for: C-suite executives, board candidates, and PE-backed leaders who need the full ecosystem.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#b2f724"></i>Full site (unlimited pages)</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#b2f724"></i>AI executive concierge chatbot (custom-trained)</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#b2f724"></i>60-sec video showreel editing</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#b2f724"></i>3 months of monthly strategy calls</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#b2f724"></i>Ghost-written thought leadership articles (2)</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#b2f724"></i>Unlimited revisions · 6–8 week delivery</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#b2f724"></i>90-day post-launch support</li>
+        </ul>
+        <button @click="chatOpen=true" class="btn-primary w-full justify-center" style="background: linear-gradient(135deg, #b2f724, #7bc000); color: #080c14;">Book Strategy Call</button>
+      </div>
+
+      <!-- FLAGSHIP: Revenue Infrastructure Build — $18,500+
+           Visually dominant: larger padding, scale boost, stronger shadow, subtle gradient background -->
+      <div class="glass rounded-2xl p-10 relative pricing-fire" style="border-color: rgba(249,115,22,0.5); background: linear-gradient(135deg, rgba(249,115,22,0.04), rgba(17,24,39,0.6)); box-shadow: 0 30px 80px rgba(249,115,22,0.12);" data-aos="fade-up" data-aos-delay="300">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+          <span class="text-sm font-display font-bold px-5 py-2 rounded-full shadow-xl" style="background: linear-gradient(135deg, #f97316, #ea580c); color: #fff; box-shadow: 0 8px 30px rgba(249,115,22,0.4);">🔥 Revenue Infrastructure Build</span>
+        </div>
+        <div class="text-sm text-slate-400 mb-1 font-medium mt-2">For founders &amp; businesses ready to build the complete revenue machine</div>
+        <h3 class="font-display font-bold text-2xl text-white mb-1">Revenue Infrastructure Build</h3>
+        <div class="text-4xl font-display font-bold mb-2" style="color:#f97316">$18,500<span class="text-lg text-slate-400 font-normal">+</span></div>
+        <p class="text-xs text-slate-500 italic mb-5">Ideal for: Growth-stage businesses, PE portfolio companies, and founders building the complete digital revenue system from the ground up.</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#f97316"></i>Multi-page conversion-focused website</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#f97316"></i>Full funnel architecture (top → bottom)</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#f97316"></i>CRM configuration &amp; sales pipeline setup</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#f97316"></i>Email automation (capture + nurture sequences)</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#f97316"></i>High-ticket sales page development</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#f97316"></i>Offer strategy &amp; packaging</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#f97316"></i>Analytics dashboard integration</li>
+          <li class="flex items-start gap-2 text-slate-300 text-sm"><i class="fa-solid fa-check flex-shrink-0 mt-0.5" style="color:#f97316"></i>8–12 week delivery · 90-day priority support</li>
+        </ul>
+        <button @click="chatOpen=true" class="btn-primary w-full justify-center text-white text-base py-3.5" style="background: linear-gradient(135deg, #f97316, #ea580c); box-shadow: 0 8px 30px rgba(249,115,22,0.3);">Book Strategy Call</button>
+      </div>
+
+    </div>
+
+    <!-- PHASE 3: Recurring Retainer strip — ongoing revenue layer
+         Why: Retainers create predictable recurring revenue and extend client lifetime value.
+         Positioned after cards so the buyer sees it as a natural "what happens after launch" answer. -->
+    <div class="mt-8 glass rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border border-border/30" data-aos="fade-up">
+      <div class="flex items-center gap-4">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.25);">
+          <i class="fa-solid fa-arrows-rotate text-sm" style="color:#a78bfa"></i>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-white text-sm">Ongoing Growth Retainer</h4>
+          <p class="text-slate-500 text-xs leading-relaxed mt-0.5">Monthly strategy calls, content updates, conversion optimization, and priority support. Scale without rebuilding.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 flex-shrink-0">
+        <div class="font-display font-bold text-lg" style="color:#a78bfa">$250 – $1,500<span class="text-slate-500 text-sm font-normal">/mo</span></div>
+        <button @click="chatOpen=true" class="btn-ghost text-sm py-2 px-4" style="border-color: #a78bfa; color: #a78bfa;">Learn More</button>
+      </div>
+    </div>
+
+    <!-- Alignment statement — replaces refund guarantee language -->
+    <div class="mt-8 text-center" data-aos="fade-up">
+      <div class="glass inline-block rounded-xl px-8 py-4 border-border/40">
+        <div class="flex items-center gap-3 text-slate-300 text-sm">
+          <i class="fa-solid fa-shield-halved text-cyan text-xl"></i>
+          <span><strong class="text-white">Built for alignment, not compromise.</strong> We only take engagements where we can deliver measurable impact. If the fit isn't right, we'll tell you before you spend a dollar.</span>
+        </div>
+      </div>
+      <p class="text-slate-500 text-sm mt-3"><i class="fa-solid fa-credit-card mr-1.5 text-cyan"></i>Payment plans available — 50/50 split or 3-payment structure for packages over $4,000</p>
+    </div>
+  </div>
+</section>
+<!-- END PHASE 3: Pricing Section -->
+
+<!-- FAQ SECTION -->
+<section id="faq">
+  <div class="max-w-4xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-14" data-aos="fade-up">
+      <div class="section-tag">Questions Answered</div>
+      <h2 class="section-heading mt-2">Everything You Need to Know</h2>
+    </div>
+    <div class="space-y-3">
+      <template x-for="(faq, i) in faqs" :key="i">
+        <div class="glass rounded-xl overflow-hidden" :data-aos="'fade-up'" :data-aos-delay="i * 40">
+          <button @click="toggleFaq(i)" class="w-full flex items-center justify-between p-5 text-left gap-4 group">
+            <span class="font-display font-semibold text-white group-hover:text-cyan transition-colors" x-text="faq.q"></span>
+            <i class="fa-solid text-cyan flex-shrink-0 transition-transform duration-300" :class="faqOpen === i ? 'fa-minus' : 'fa-plus'"></i>
+          </button>
+          <div :class="faqOpen === i ? 'open' : ''" class="faq-answer">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed border-t border-border/40 pt-4" x-text="faq.a"></div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section id="about" class="bg-surface/30">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-14" data-aos="fade-up">
+      <div class="section-tag">Client Outcomes</div>
+      <h2 class="section-heading mt-2">Don't take our word for it.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <template x-for="(t, i) in testimonials" :key="i">
+        <div class="glass rounded-2xl p-7 testimonial-card" :data-aos="'fade-up'" :data-aos-delay="(i % 3) * 80">
+          <div class="flex gap-1 mb-4">
+            <template x-for="s in 5" :key="s">
+              <i class="fa-solid fa-star text-sm" :style="'color:' + t.color"></i>
+            </template>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed mb-5 italic" x-text="'&quot;' + t.quote + '&quot;'"></p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold font-display text-ink" :style="'background:' + t.color" x-text="t.initials"></div>
+            <div>
+              <div class="text-white font-semibold text-sm" x-text="t.name"></div>
+              <div class="text-slate-500 text-xs" x-text="t.role"></div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM SECTION -->
+<section id="team">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <div class="section-tag">The Forge Team</div>
+      <h2 class="section-heading mt-2">Small team. Outsized results.</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <template x-for="(member, i) in team" :key="member.name">
+        <div class="glass rounded-2xl p-7 text-center testimonial-card" :data-aos="'fade-up'" :data-aos-delay="i * 100">
+          <div class="w-20 h-20 rounded-full flex items-center justify-center text-xl font-display font-bold text-white mx-auto mb-4" :style="'background:' + member.avatarBg" x-text="member.initials"></div>
+          <h3 class="font-display font-bold text-white text-lg mb-0.5" x-text="member.name"></h3>
+          <div class="text-cyan text-sm font-medium mb-3" x-text="member.title"></div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-5" x-text="member.bio"></p>
+          <a href="#" class="inline-flex items-center gap-2 text-slate-400 hover:text-cyan transition-colors text-sm">
+            <i class="fa-brands fa-linkedin text-base"></i> LinkedIn
+          </a>
+        </div>
+      </template>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT CTA SECTION -->
+<section class="bg-surface/30">
+  <div class="max-w-5xl mx-auto px-6 lg:px-12">
+    <div class="glass rounded-3xl p-10 lg:p-16 text-center relative overflow-hidden glow-pulse" data-aos="fade-up">
+      <div class="orb w-64 h-64 bg-cyan/10 -top-16 -left-16 pointer-events-none"></div>
+      <div class="orb w-48 h-48 bg-lime/8 -bottom-12 -right-12 pointer-events-none" style="animation-delay:2s"></div>
+      <div class="relative z-10">
+        <div class="section-tag mb-4">Free Strategy Audit</div>
+        <h2 class="font-display font-bold text-3xl lg:text-4xl text-white mb-4">Is your digital presence generating revenue?</h2>
+        <p class="text-slate-300 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">We'll audit your online presence, identify your highest-leverage gaps, and send you a personalized revenue positioning report. Zero commitment. Completely free.</p>
+        <button @click="chatOpen=true" class="btn-primary text-base px-8 py-3.5">Claim Your Free Audit →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <div data-aos="fade-right">
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="section-heading mt-3 mb-4">Let's build<br/>something that earns.</h2>
+        <p class="text-slate-400 leading-relaxed mb-8">We respond to every inquiry within 2 hours. Tell us where you're at and where you want to be — we'll map out exactly how to get you there.</p>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-center gap-3 text-slate-300">
+            <div class="w-9 h-9 rounded-lg bg-cyan/10 border border-cyan/20 flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-envelope text-cyan text-sm"></i>
+            </div>
+            <a href="mailto:hello@tiviforge.com" class="hover:text-cyan transition-colors">hello@tiviforge.com</a>
+          </div>
+          <div class="flex items-center gap-3 text-slate-300">
+            <div class="w-9 h-9 rounded-lg bg-cyan/10 border border-cyan/20 flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-phone text-cyan text-sm"></i>
+            </div>
+            <a href="tel:+15558743920" class="hover:text-cyan transition-colors">+1 (555) 874-3920</a>
+          </div>
+          <div class="flex items-center gap-3 text-slate-300">
+            <div class="w-9 h-9 rounded-lg bg-cyan/10 border border-cyan/20 flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-location-dot text-cyan text-sm"></i>
+            </div>
+            <span>Los Angeles, CA · Remote Worldwide</span>
+          </div>
+        </div>
+        <div class="glass rounded-xl p-5 border-border/40">
+          <div class="grid grid-cols-3 gap-4 text-center">
+            <div>
+              <div class="text-cyan font-display font-bold text-lg">2–12 Wks</div>
+              <div class="text-slate-500 text-xs mt-0.5">Project Timeline</div>
+            </div>
+            <div class="border-x border-border/40">
+              <div class="text-cyan font-display font-bold text-lg">&lt;2 Hrs</div>
+              <div class="text-slate-500 text-xs mt-0.5">Response Time</div>
+            </div>
+            <div>
+              <div class="text-lime font-display font-bold text-sm">Open</div>
+              <div class="text-slate-500 text-xs mt-0.5">Taking New Clients</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-8" data-aos="fade-left">
+        <template x-if="formSent">
+          <div class="text-center py-8">
+            <div class="w-16 h-16 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center mx-auto mb-4">
+              <i class="fa-solid fa-check text-green-400 text-xl"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-2">Message sent!</h3>
+            <p class="text-slate-400 text-sm">We'll be in touch within 2 hours. Looking forward to building something great together.</p>
+          </div>
+        </template>
+        <template x-if="!formSent">
+          <form @submit.prevent="submitForm()" novalidate>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="form-label">First Name</label>
+                <input type="text" x-model="form.first" @blur="validateField('first')" :class="formErrors.first ? 'form-input error' : 'form-input'" placeholder="Marcus" />
+                <div x-show="formErrors.first" class="form-error" x-text="formErrors.first"></div>
+              </div>
+              <div>
+                <label class="form-label">Last Name</label>
+                <input type="text" x-model="form.last" :class="'form-input'" placeholder="Chen" />
+              </div>
+            </div>
+            <div class="mb-4">
+              <label class="form-label">Email Address</label>
+              <input type="email" x-model="form.email" @blur="validateField('email')" :class="formErrors.email ? 'form-input error' : 'form-input'" placeholder="marcus@company.com" />
+              <div x-show="formErrors.email" class="form-error" x-text="formErrors.email"></div>
+            </div>
+            <div class="mb-4">
+              <label class="form-label">Service Interest</label>
+              <select x-model="form.type" class="form-input">
+                <option value="">Select a service...</option>
+                <option>Free Strategy Audit ($0)</option>
+                <option>Website Revenue Review ($495)</option>
+                <option>Executive Portfolio Build ($2,995)</option>
+                <option>Full Brand Transformation ($6,995)</option>
+                <option>C-Suite Digital Leadership ($12,995)</option>
+                <option>Revenue Infrastructure Build ($18,500+)</option>
+                <option>Growth Retainer ($250–$1,500/mo)</option>
+                <option>Custom / Multi-Lane</option>
+              </select>
+            </div>
+            <div class="mb-6">
+              <label class="form-label">Message / Project Description</label>
+              <textarea x-model="form.message" @blur="validateField('message')" :class="formErrors.message ? 'form-input error' : 'form-input'" rows="4" placeholder="Tell us about your current situation, goals, and timeline..."></textarea>
+              <div x-show="formErrors.message" class="form-error" x-text="formErrors.message"></div>
+            </div>
+            <button type="submit" class="btn-primary w-full justify-center text-base py-3.5" :disabled="!form.first || !form.email || !form.message" :class="(!form.first || !form.email || !form.message) ? 'opacity-50 cursor-not-allowed' : ''">
+              Send Message <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+        </template>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     NEW SECTION D: NEWSLETTER / EXECUTIVE BRIEFING
+     Purpose: Email capture — simple, minimal, executive tone
+     ═══════════════════════════════════════════════════ -->
+<section class="py-16">
+  <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center" data-aos="fade-up">
+    <div class="section-tag">The Forge Brief</div>
+    <h2 class="font-display font-bold text-2xl text-white mb-3">Weekly insights on digital authority and revenue infrastructure.</h2>
+    <p class="text-slate-400 text-sm mb-6">No fluff. No spam. One concise email per week with actionable strategy for founders, executives, and operators.</p>
+    <!-- ESP INTEGRATION HOOK: Replace action URL with ConvertKit/Mailchimp/Klaviyo endpoint -->
+    <div class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+      <input type="email" placeholder="your@email.com" class="form-input flex-1 text-center sm:text-left" />
+      <button class="btn-primary text-sm flex-shrink-0">Subscribe</button>
+    </div>
+    <p class="text-slate-600 text-xs mt-3">Join 1,200+ decision-makers. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     NEW SECTION G: CALENDLY EMBED PLACEHOLDER
+     Purpose: Embed container for calendar scheduling tool
+     Insert Calendly inline widget script here:
+     <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_LINK" style="min-width:320px;height:700px;"></div>
+     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+     ═══════════════════════════════════════════════════ -->
+<!-- Calendly embed will render inside the contact section's booking flow -->
+
+<!-- FOOTER -->
+<footer class="bg-surface/50 border-t border-border/50 py-12">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+      <div class="md:col-span-2">
+        <div class="text-2xl font-display font-bold mb-3">
+          <span class="text-white">Tivi</span><span class="text-cyan">Forge</span><span class="text-lime">.</span>
+        </div>
+        <p class="text-slate-500 text-sm leading-relaxed max-w-xs">Digital authority and revenue infrastructure for founders, executives, and growth-stage businesses. Authority. Conversion. Leverage.</p>
+        <div class="flex gap-4 mt-4">
+          <a href="#" class="text-slate-500 hover:text-cyan transition-colors">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" class="text-slate-500 hover:text-cyan transition-colors">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.857L1.534 2.25h6.844l4.258 5.629 5.608-5.629zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="text-slate-500 hover:text-cyan transition-colors">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="text-white font-semibold text-sm mb-4 font-display">Services</div>
+        <ul class="space-y-2 text-slate-500 text-sm">
+          <li><a href="#services" class="hover:text-cyan transition-colors">Personal Authority Build</a></li>
+          <li><a href="#services" class="hover:text-cyan transition-colors">Business Revenue Sites</a></li>
+          <li><a href="#services" class="hover:text-cyan transition-colors">Funnel Architecture</a></li>
+          <li><a href="#services" class="hover:text-cyan transition-colors">Growth Systems</a></li>
+          <li><a href="#services" class="hover:text-cyan transition-colors">Revenue Infrastructure</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="text-white font-semibold text-sm mb-4 font-display">Company</div>
+        <ul class="space-y-2 text-slate-500 text-sm">
+          <li><a href="#work" class="hover:text-cyan transition-colors">Portfolio</a></li>
+          <li><a href="#pricing" class="hover:text-cyan transition-colors">Pricing</a></li>
+          <li><a href="#about" class="hover:text-cyan transition-colors">About</a></li>
+          <li><a href="#faq" class="hover:text-cyan transition-colors">FAQ</a></li>
+          <li><a href="#contact" class="hover:text-cyan transition-colors">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-border/40 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-slate-500 text-sm">&copy; 2026 Tivi Forge. All rights reserved.</div>
+      <div class="flex gap-5 text-slate-500 text-sm">
+        <a href="#" class="hover:text-cyan transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-cyan transition-colors">Terms of Service</a>
+        <a href="#" class="hover:text-cyan transition-colors">Sitemap</a>
+      </div>
+      <div class="text-slate-600 text-xs text-center">Authority. Revenue. Leverage. — Built by Tivi Forge.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════
+     NEW SECTION C: LEAD MAGNET MODAL
+     Purpose: Email capture modal for lead magnet / guide download
+     ESP INTEGRATION HOOK: Wire form action to ConvertKit, Mailchimp, or Klaviyo
+     ═══════════════════════════════════════════════════ -->
+<div id="lead-magnet-modal" x-show="false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="modal-overlay" style="display:none;" @click.self="$el.style.display='none'">
+  <div class="modal-panel max-w-md">
+    <div class="text-center">
+      <div class="w-14 h-14 rounded-full bg-cyan/10 border border-cyan/20 flex items-center justify-center mx-auto mb-4">
+        <i class="fa-solid fa-file-arrow-down text-cyan text-xl"></i>
+      </div>
+      <h3 class="font-display font-bold text-xl text-white mb-2">Download: The Revenue Positioning Framework</h3>
+      <p class="text-slate-400 text-sm mb-6 leading-relaxed">The same framework we use to audit every client's digital presence. Identify your highest-leverage gaps in 15 minutes.</p>
+      <!-- ESP HOOK: Replace with your email service provider form action -->
+      <div class="space-y-3">
+        <input type="text" placeholder="First name" class="form-input" />
+        <input type="email" placeholder="Email address" class="form-input" />
+        <button class="btn-primary w-full justify-center">Get the Framework</button>
+      </div>
+      <p class="text-slate-600 text-xs mt-3">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     NEW SECTION E: CASE STUDY PAGE TEMPLATE (structural only)
+     Purpose: Reusable template for individual case study pages
+     To use: Copy this structure to a new HTML file per case study
+     ═══════════════════════════════════════════════════ -->
+<!--
+CASE STUDY TEMPLATE STRUCTURE:
+====================================
+<section class="case-hero">
+  [Hero: Client name, industry, engagement type, key metric]
+</section>
+<section class="case-problem">
+  [Problem: Business context, pain points, what wasn't working]
+</section>
+<section class="case-strategy">
+  [Strategy: Our approach, why we chose it, strategic rationale]
+</section>
+<section class="case-execution">
+  [Execution: What we built, tech stack, timeline, process]
+</section>
+<section class="case-results">
+  [Results: Measurable outcomes, before/after metrics]
+</section>
+<section class="case-metrics">
+  [Metrics: Key numbers displayed prominently — ROI, revenue, engagement]
+</section>
+<section class="case-cta">
+  [CTA: Book a strategy call, link to related services]
+</section>
+====================================
+-->
+
+<!-- ═══════════════════════════════════════════════════
+     NEW SECTION F: STRIPE CHECKOUT PLACEHOLDER
+     Purpose: Payment processing hook for productized services
+     ═══════════════════════════════════════════════════ -->
+<!--
+STRIPE CHECKOUT INTEGRATION:
+====================================
+1. Set your Stripe publishable key:
+   const stripe = Stripe('pk_live_YOUR_PUBLISHABLE_KEY_HERE');
+
+2. Create checkout session via your server:
+   fetch('/api/create-checkout-session', {
+     method: 'POST',
+     headers: { 'Content-Type': 'application/json' },
+     body: JSON.stringify({ priceId: 'price_XXXXX', tier: 'revenue-infrastructure' })
+   })
+   .then(res => res.json())
+   .then(session => stripe.redirectToCheckout({ sessionId: session.id }));
+
+3. Webhook endpoint for fulfillment:
+   POST /api/webhook/stripe → handle checkout.session.completed
+====================================
+-->
+
+<!-- ═══════════════════════════════════════════════════
+     NEW SECTION H: AIRTABLE CRM HOOK
+     Purpose: Lightweight CRM data pipeline for lead tracking
+     ═══════════════════════════════════════════════════ -->
+<!--
+AIRTABLE CRM INTEGRATION:
+====================================
+Data pipeline intention:
+- On form submit → POST to Airtable API (base: appXXXXXX, table: Leads)
+- Fields: Name, Email, Service Interest, Message, Source, Timestamp
+- API endpoint: https://api.airtable.com/v0/YOUR_BASE_ID/Leads
+- Auth: Bearer YOUR_API_KEY
+- Trigger: Contact form submission, chat booking form, newsletter signup
+- Status tracking: New → Qualified → Proposal → Closed
+====================================
+-->
+
+<!-- ═══════════════════════════════════════════════════
+     NEW SECTION I: ZAPIER AUTOMATION
+     Purpose: Workflow trigger architecture for lead nurture
+     ═══════════════════════════════════════════════════ -->
+<!--
+ZAPIER AUTOMATION ARCHITECTURE:
+====================================
+Trigger 1: New Airtable Lead → Send Slack notification → Add to ConvertKit sequence
+Trigger 2: Calendly booking confirmed → Update Airtable status → Send prep email
+Trigger 3: Stripe payment received → Update CRM → Send onboarding sequence → Notify team
+Trigger 4: Newsletter signup → Add to ConvertKit tag → Trigger welcome sequence
+Trigger 5: Form submission (high-ticket interest) → Priority Slack alert → Auto-assign to Tivi
+
+Webhook URLs:
+- Contact form: https://hooks.zapier.com/hooks/catch/YOUR_ZAP_ID_1/
+- Booking form: https://hooks.zapier.com/hooks/catch/YOUR_ZAP_ID_2/
+- Newsletter: https://hooks.zapier.com/hooks/catch/YOUR_ZAP_ID_3/
+====================================
+-->
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner" x-show="!cookieAccepted" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-4" style="display:none;">
+  <div class="glass rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
+    <p class="text-slate-300 text-sm">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button @click="acceptCookies()" class="btn-primary text-sm py-2 px-4">Accept</button>
+      <a href="#" class="btn-ghost text-sm py-2 px-4">Privacy Policy</a>
+    </div>
+  </div>
+</div>
+
+<!-- BACK TO TOP BUTTON -->
+<div id="back-to-top" x-show="showBackToTop" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-75" style="display:none;">
+  <button @click="scrollToTop()" class="w-11 h-11 glass rounded-full flex items-center justify-center text-cyan hover:bg-cyan hover:text-ink transition-all duration-300 border border-border hover:border-cyan shadow-lg">
+    <i class="fa-solid fa-arrow-up text-sm"></i>
+  </button>
+</div>
+
+<!-- STICKY FLOATING CTA PILL -->
+<div id="sticky-pill" x-show="showStickyPill" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-4" style="display:none;">
+  <button @click="chatOpen=true" class="btn-primary pill-pulse rounded-full px-5 py-2.5 text-sm shadow-xl">
+    Start Your Project →
+  </button>
+</div>
+
+<!-- AI CHATBOT WIDGET -->
+<div id="chat-widget" x-data>
+  <div x-show="!chatOpen" @click="chatOpen=true" class="w-14 h-14 rounded-full flex items-center justify-center cursor-pointer chat-pulse" style="background: linear-gradient(135deg, #06d6f5, #334155); box-shadow: 0 4px 20px rgba(6,214,245,0.4);">
+    <i class="fa-solid fa-comment-dots text-white text-xl"></i>
+  </div>
+  <div x-show="chatOpen" x-transition:enter="transition ease-out duration-250" x-transition:enter-start="opacity-0 scale-90 translate-y-4" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-4" class="chat-panel glass shadow-2xl absolute bottom-16 right-0" style="display:none; border: 1px solid #1e3a5f;">
+    <div class="flex items-center justify-between p-4 border-b border-border/50" style="background: linear-gradient(135deg, rgba(6,214,245,0.08), rgba(13,21,38,0.9));">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #06d6f5, #04a8c2);">
+          <i class="fa-solid fa-robot text-ink text-xs"></i>
+        </div>
+        <div>
+          <div class="text-white font-display font-bold text-sm">Tivi Forge Concierge</div>
+          <div class="text-green-400 text-xs flex items-center gap-1"><span class="w-1.5 h-1.5 bg-green-400 rounded-full inline-block"></span>Online now</div>
+        </div>
+      </div>
+      <button @click="chatOpen=false" class="text-slate-400 hover:text-white transition-colors p-1">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="px-3 pt-3 pb-1 flex gap-2 flex-wrap border-b border-border/30">
+      <button @click="sendChatMessage('pricing')" class="text-xs bg-surface border border-border text-slate-300 hover:border-cyan hover:text-cyan transition-all rounded-full px-3 py-1.5 font-medium">Pricing</button>
+      <button @click="sendChatMessage('book a call')" class="text-xs bg-surface border border-border text-slate-300 hover:border-cyan hover:text-cyan transition-all rounded-full px-3 py-1.5 font-medium">Book a Call</button>
+      <button @click="sendChatMessage('portfolio')" class="text-xs bg-surface border border-border text-slate-300 hover:border-cyan hover:text-cyan transition-all rounded-full px-3 py-1.5 font-medium">Portfolio</button>
+      <button @click="sendChatMessage('services')" class="text-xs bg-surface border border-border text-slate-300 hover:border-cyan hover:text-cyan transition-all rounded-full px-3 py-1.5 font-medium">Services</button>
+    </div>
+    <div class="chat-messages" id="chat-messages-container">
+      <template x-if="chatMessages.length === 0">
+        <div>
+          <div class="chat-bubble-bot">
+            Hey there! Welcome to Tivi Forge. I'm your Strategy Concierge — here to answer questions about our services, pricing, portfolio, and how we build digital authority and revenue infrastructure.
+
+What are you looking to build?
+          </div>
+          <div class="chat-time ml-1 mt-1">Just now</div>
+        </div>
+      </template>
+      <template x-for="(msg, i) in chatMessages" :key="i">
+        <div :class="msg.role === 'user' ? 'flex flex-col items-end' : 'flex flex-col items-start'">
+          <div :class="msg.role === 'user' ? 'chat-bubble-user' : 'chat-bubble-bot'" x-html="msg.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br/>')"></div>
+          <template x-if="msg.showBookingForm && !bookingSubmitted">
+            <div class="glass rounded-xl p-4 mt-2 w-full max-w-full border border-border/60 text-sm">
+              <div class="text-cyan font-semibold mb-3 text-xs uppercase tracking-wide">Book Your Strategy Call</div>
+              <div class="space-y-2">
+                <input type="text" x-model="bookingForm.name" class="form-input text-sm py-2" placeholder="Your full name" />
+                <input type="email" x-model="bookingForm.email" class="form-input text-sm py-2" placeholder="Email address" />
+                <input type="date" x-model="bookingForm.date" class="form-input text-sm py-2" />
+                <select x-model="bookingForm.time" class="form-input text-sm py-2">
+                  <option value="">Select a time...</option>
+                  <option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option>
+                  <option>12:00 PM</option><option>1:00 PM</option><option>2:00 PM</option>
+                  <option>3:00 PM</option><option>4:00 PM</option><option>5:00 PM</option>
+                </select>
+                <button @click="submitBooking()" :disabled="!bookingForm.name || !bookingForm.email || !bookingForm.date || !bookingForm.time" :class="(!bookingForm.name || !bookingForm.email || !bookingForm.date || !bookingForm.time) ? 'opacity-50 cursor-not-allowed' : ''" class="btn-primary w-full justify-center text-sm py-2">Confirm Booking</button>
+              </div>
+            </div>
+          </template>
+          <template x-if="msg.showPortfolioBtn">
+            <button @click="chatOpen=false; document.getElementById('work').scrollIntoView({behavior:'smooth'})" class="mt-2 text-xs bg-cyan/10 border border-cyan/30 text-cyan px-3 py-1.5 rounded-full hover:bg-cyan/20 transition-colors">Scroll to Portfolio →</button>
+          </template>
+          <div class="chat-time mx-1 mt-1" x-text="msg.time"></div>
+        </div>
+      </template>
+      <div x-show="chatTyping" class="flex items-center gap-1.5 px-3 py-2">
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+      </div>
+    </div>
+    <div class="p-3 border-t border-border/50 flex gap-2">
+      <input type="text" x-model="chatInput" @keydown.enter="sendChat()" class="form-input text-sm py-2 flex-1" placeholder="Ask me anything..." />
+      <button @click="sendChat()" :disabled="!chatInput.trim()" class="btn-primary text-sm py-2 px-4 flex-shrink-0" :class="!chatInput.trim() ? 'opacity-50' : ''">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<!-- Alpine.js -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script>
+function siteApp() {
+  return {
+    // Core UI state
+    scrolled: false,
+    scrollProgress: 0,
+    mobileMenu: false,
+    activeProject: null,
+    activeCat: 'Design',
+    formSent: false,
+    loadingDone: false,
+    form: { first: '', last: '', email: '', type: '', message: '' },
+    formErrors: { first: '', email: '', message: '' },
+
+    // Chat state
+    chatOpen: false,
+    chatMessages: [],
+    chatInput: '',
+    chatTyping: false,
+    showBookingForm: false,
+    bookingForm: { name: '', email: '', date: '', time: '' },
+    bookingSubmitted: false,
+    leadData: { name: '', email: '' },
+
+    // UI toggles
+    showBackToTop: false,
+    showStickyPill: false,
+    cookieAccepted: false,
+    faqOpen: null,
+
+    // PHASE 1: Updated stats
+    stats: [
+      { value: '50+', label: 'Brands Built' },
+      { value: '$2.4M', label: 'Client Revenue Influenced' },
+      { value: '8.2×', label: 'Avg. ROI on Engagement' },
+      { value: '4 Wks', label: 'Avg. Delivery' }
+    ],
+
+    techBadges: [
+      { icon: 'fa-solid fa-star', label: 'Clutch Top Rated' },
+      { icon: 'fa-brands fa-google', label: 'Google Partner' },
+      { icon: 'fa-brands fa-aws', label: 'AWS Certified' },
+      { icon: 'fa-solid fa-wind', label: 'Tailwind CSS Expert' },
+      { icon: 'fa-solid fa-triangle', label: 'Vercel Certified' }
+    ],
+
+    // PHASE 2: Service lanes (unchanged)
+    serviceLanes: [
+      {
+        id: 'lane-01',
+        title: 'Personal Authority',
+        accentColor: '#06d6f5',
+        services: [
+          { icon: '🌐', title: 'Executive Websites', desc: 'Precision-built personal sites that position you as the authority in your space.' },
+          { icon: '🎯', title: 'Founder Brand Positioning', desc: 'Strategic narrative architecture — who you are, what you stand for, why you win.' },
+          { icon: '💼', title: 'LinkedIn Optimization', desc: 'Keyword-rich profiles engineered for recruiter discovery and inbound opportunities.' },
+          { icon: '✍️', title: 'Thought Leadership Infrastructure', desc: 'Ghost-written content, publishing systems, and calendars that compound authority over time.' }
+        ]
+      },
+      {
+        id: 'lane-02',
+        title: 'Business Revenue Sites',
+        accentColor: '#b2f724',
+        services: [
+          { icon: '🏢', title: 'Conversion-Focused Business Websites', desc: 'Multi-page sites architected to move visitors from awareness to action.' },
+          { icon: '🔄', title: 'Funnel Architecture', desc: 'End-to-end funnel design — from cold traffic to closed deal, fully mapped and built.' },
+          { icon: '📄', title: 'Landing Page Systems', desc: 'High-converting landing pages for offers, services, and lead generation campaigns.' },
+          { icon: '💡', title: 'Service Monetization Strategy', desc: 'Productize your expertise. Package your services for maximum revenue per client.' },
+          { icon: '📈', title: 'SEO Infrastructure', desc: 'Technical and content SEO systems that compound organic visibility over time.' }
+        ]
+      },
+      {
+        id: 'lane-03',
+        title: 'Growth Systems',
+        accentColor: '#a78bfa',
+        services: [
+          { icon: '🔥', title: 'Content Engine Setup', desc: 'Full production system: strategy, templates, scheduling, and multi-channel distribution.' },
+          { icon: '📧', title: 'Email Capture + Nurture', desc: 'Lead magnet strategy, opt-in systems, and automated sequences that convert on autopilot.' },
+          { icon: '📦', title: 'Offer Packaging', desc: 'Structure your offers for clarity, perceived value, and maximum conversion rate.' },
+          { icon: '💎', title: 'High-Ticket Sales Page Design', desc: 'Long-form sales pages engineered for $5K–$50K offers. Persuasive. Premium. Precise.' }
+        ]
+      }
+    ],
+
+    // ─────────────────────────────────────────
+    // PHASE 3: Revenue Ladder data
+    // Why: Visual representation of the full pricing ecosystem from $0 to $20K+.
+    // Anchors buyers psychologically to the full revenue path before they see individual cards.
+    // ─────────────────────────────────────────
+    revenueLadder: [
+      { tier: 'Entry', price: '$0', label: 'Free Strategy Audit', color: '#64748b', highlight: false },
+      { tier: 'Low Ticket', price: '$495', label: 'Website Revenue Review', color: '#06d6f5', highlight: false },
+      { tier: 'Core', price: '$2,995 – $6,995', label: 'Portfolio & Brand Builds', color: '#06d6f5', highlight: true },
+      { tier: 'High Ticket', price: '$12,995 – $18,500+', label: 'C-Suite & Revenue Infrastructure', color: '#b2f724', highlight: true },
+      { tier: 'Recurring', price: '$250 – $1,500/mo', label: 'Growth Retainer', color: '#a78bfa', highlight: false }
+    ],
+
+    projects: [
+      {
+        title: 'Marcus Chen — Chief Operating Officer',
+        industry: 'Industrial Construction · Fortune 500 Transition',
+        type: 'Full Brand Transformation',
+        initials: 'MC',
+        bg: 'linear-gradient(135deg, #0f2027 0%, #1a3040 100%)',
+        metrics: ['+340% LinkedIn views', '$485K offer', '3 board inquiries'],
+        challenge: 'Marcus had 22 years of EPC project delivery experience but zero digital presence. His LinkedIn had 47 connections and a phone-photo headshot.',
+        solution: 'Full personal brand overhaul: executive portfolio site, LinkedIn rewrite with keyword optimization, headshot direction, and an AI concierge to represent him during his job search.',
+        stack: ['Next.js', 'Tailwind CSS', 'AI Chatbot', 'LinkedIn SEO', 'Vercel'],
+        hasBeforeAfter: true
+      },
+      {
+        title: 'Priya Nakamura — VP of Digital Transformation',
+        industry: 'Energy Infrastructure · Corporate Leadership',
+        type: 'Executive Portfolio Build',
+        initials: 'PN',
+        bg: 'linear-gradient(135deg, #0d1b2a 0%, #1a2640 100%)',
+        metrics: ['$610K package', '+520% recruiter contacts', 'Featured in Forbes'],
+        challenge: 'Priya was a recognized internal leader but invisible externally. She needed a presence that matched her caliber — fast.',
+        solution: 'Built a multi-page executive site with a video showreel, case study framework, and board-ready bio. Coordinated with her PR team for media placement.',
+        stack: ['React', 'Framer Motion', 'Video Production', 'SEO', 'AWS'],
+        hasBeforeAfter: false
+      },
+      {
+        title: 'James Okafor — Infrastructure CEO',
+        industry: 'Heavy Civil · Private Equity Backed',
+        type: 'C-Suite Package',
+        initials: 'JO',
+        bg: 'linear-gradient(135deg, #12101a 0%, #1e1828 100%)',
+        metrics: ['$720K total comp', 'PE board seat secured', '2.1s site load'],
+        challenge: 'PE firm required James to have an external-facing executive brand before announcing his CEO appointment. 4-week hard deadline.',
+        solution: 'Delivered full C-suite package: site, chatbot, showreel, LinkedIn, and content calendar. Hit the deadline in 3.5 weeks.',
+        stack: ['Webflow', 'AI Chat', 'Video Editing', 'LinkedIn', 'Content Strategy'],
+        hasBeforeAfter: false
+      },
+      {
+        title: 'Elena Vasquez — Chief Digital Officer',
+        industry: 'Tech + Industrial Convergence',
+        type: 'Personal Brand Transformation',
+        initials: 'EV',
+        bg: 'linear-gradient(135deg, #1a0f1a 0%, #2d1530 100%)',
+        metrics: ['+280% board inquiries', '$580K package', 'Speaking invitations: 6'],
+        challenge: 'Elena was transitioning from startup CTO to enterprise CDO — her brand still screamed startup engineer rather than enterprise executive.',
+        solution: 'Repositioned her entire brand narrative from "builder" to "transformation leader". New site architecture, executive bio, and LinkedIn restructure.',
+        stack: ['Next.js', 'Sanity CMS', 'Brand Strategy', 'LinkedIn SEO', 'Vercel'],
+        hasBeforeAfter: false
+      },
+      {
+        title: 'Robert Nkemelu — EVP Operations',
+        industry: 'Oil & Gas · EPC',
+        type: 'Executive Portfolio Build',
+        initials: 'RN',
+        bg: 'linear-gradient(135deg, #0a1a0f 0%, #112a1a 100%)',
+        metrics: ['+410% LinkedIn views', '$640K offer', '0 → 12K followers (6 mo)'],
+        challenge: 'Robert had the resume but no digital footprint. Headhunters weren\'t finding him and he didn\'t know why.',
+        solution: 'Built a keyword-rich executive portfolio with recruiter-optimized LinkedIn, published 4 ghost-written thought leadership articles, and set up a content calendar.',
+        stack: ['Webflow', 'LinkedIn SEO', 'Content Strategy', 'Ghost Writing', 'Analytics'],
+        hasBeforeAfter: false
+      }
+    ],
+
+    process: [
+      { title: 'Discovery Audit', desc: 'We review your current digital footprint, revenue goals, target opportunities, and competitive landscape. Completely free.' },
+      { title: 'Brand Strategy & Scope', desc: 'Clear positioning statement, site architecture, and project brief. You approve before anything is built.' },
+      { title: 'Design & Content', desc: 'High-fidelity Figma mockups + copy + content drafts. Two revision rounds. You see everything before we code.' },
+      { title: 'Build & QA', desc: 'We build in staging, run performance audits, and test across all devices. You get a preview link to review.' },
+      { title: 'Launch & Ongoing', desc: 'We handle deployment and analytics. Strategy calls included for 30–90 days depending on your package.' }
+    ],
+
+    skillCats: ['Design', 'Frontend', 'Strategy', 'AI & Automation'],
+    skillsData: {
+      'Design': [
+        { name: 'UI/UX Design', pct: 96 },
+        { name: 'Figma/Prototyping', pct: 94 },
+        { name: 'Brand Identity', pct: 92 },
+        { name: 'Motion Design', pct: 80 },
+        { name: 'Executive Photography Direction', pct: 85 }
+      ],
+      'Frontend': [
+        { name: 'HTML/CSS/Tailwind', pct: 98 },
+        { name: 'JavaScript/ES6+', pct: 95 },
+        { name: 'React/Next.js', pct: 91 },
+        { name: 'Performance Optimization', pct: 93 },
+        { name: 'Three.js/WebGL', pct: 76 }
+      ],
+      'Strategy': [
+        { name: 'Revenue Infrastructure Strategy', pct: 97 },
+        { name: 'LinkedIn SEO', pct: 94 },
+        { name: 'Content Strategy', pct: 88 },
+        { name: 'Personal Branding', pct: 96 },
+        { name: 'Conversion Optimization', pct: 90 }
+      ],
+      'AI & Automation': [
+        { name: 'AI Chatbot Integration', pct: 92 },
+        { name: 'Prompt Engineering', pct: 88 },
+        { name: 'Lead Capture Automation', pct: 85 },
+        { name: 'CRM Integration', pct: 80 },
+        { name: 'Analytics & GTM', pct: 87 }
+      ]
+    },
+
+    faqs: [
+      { q: 'How long does a typical project take?', a: 'Timelines depend on the package: the Executive Portfolio Build delivers in 2 weeks, the Full Personal Brand Transformation takes 4 weeks, the C-Suite Package runs 6–8 weeks, and the Revenue Infrastructure Build takes 8–12 weeks. We set a hard deadline at kickoff and honor it.' },
+      { q: 'What\'s included in each package?', a: 'Each tier is designed to match where you are and what you need most. The $2,995 Executive Portfolio includes your portfolio site, AI chat assistant, and basic SEO. The $6,995 Full Brand Transformation adds LinkedIn optimization, content strategy, and a full executive bio. The $12,995 C-Suite Package is the full ecosystem — site, chatbot, video showreel, 3 months of strategy calls, and ghost-written articles. The $18,500+ Revenue Infrastructure Build adds funnel architecture, CRM setup, email automation, sales pages, and analytics dashboards.' },
+      { q: 'Can I customize a package to fit my needs?', a: 'Absolutely. Our tiers are starting points, not ceilings. If you need funnel architecture from Lane 2 combined with a personal authority site from Lane 1, we\'ll build a custom scope and quote. Book a strategy call and we\'ll scope it together — no pressure, no obligation.' },
+      { q: 'Do you work with businesses as well as individuals?', a: 'Yes. While we have deep expertise in executive personal branding, we also build conversion-focused business websites, funnel architecture, and growth systems for founder-led and growth-stage businesses. If you\'re generating revenue and need your digital infrastructure to perform harder, we can help.' },
+      { q: 'How many revision rounds do I get?', a: 'The Executive Portfolio Build includes 2 revision rounds. The Full Personal Brand Transformation includes 4. The C-Suite Package and Revenue Infrastructure Build include unlimited revisions during the active build period.' },
+      { q: 'Do you offer payment plans?', a: 'Yes. For projects over $4,000, we offer a 50/50 split — 50% at kickoff, 50% at launch. For the C-Suite and Revenue Infrastructure packages, we offer a 3-payment structure: 40% at kickoff, 40% at design approval, 20% at launch. We accept major credit cards, ACH, and wire transfer.' },
+      { q: 'What happens after my site launches?', a: 'Every package includes post-launch support: 30 days for the Portfolio Build, 60 days for the Brand Transformation, and 90 days plus monthly strategy calls for the C-Suite and Revenue Infrastructure packages. After that, you can stay on a monthly retainer starting at $250/month for ongoing updates, content, and strategy.' },
+      { q: 'Will my site be optimized for search engines?', a: 'Yes — all sites are built with technical SEO foundations: clean HTML semantics, schema markup, fast load times (sub-2s target), mobile-first indexing, and meta optimization. For higher tiers, we also include keyword research tailored to your specific audience and LinkedIn SEO alignment.' },
+      { q: 'Can you integrate tools like Calendly, HubSpot, or a CRM?', a: 'Yes. We integrate any calendar tool (Calendly, Acuity, Savvycal), CRM (HubSpot, Salesforce, Notion-based), email platforms (Klaviyo, Mailchimp, ConvertKit), and analytics (GA4, Plausible, Hotjar). If you use a specific tool in your existing workflow, tell us in the strategy call and we\'ll make sure it connects cleanly.' },
+      { q: 'What makes Tivi Forge different from other agencies?', a: 'Most agencies build websites. We build digital revenue infrastructure. Every design decision, every line of copy, every system we install is calibrated to generate authority, capture leads, and close revenue. We\'re not a freelance shop or a template factory — we\'re a strategic partner. Our average client engagement generates 8.2× ROI.' },
+      { q: 'What is the $495 Website Revenue Review?', a: 'It\'s a comprehensive teardown of your existing site covering conversion gaps, SEO weaknesses, revenue leaks, and mobile performance. You receive a prioritized fix list with estimated impact for each item. It\'s the fastest way to understand exactly where your current digital presence is leaving money on the table — and many clients upgrade to a full build after seeing the report.' }
+    ],
+
+    testimonials: [
+      { quote: 'Tivi completely transformed how I showed up online. Within 8 weeks of launching my new site, I had three C-suite interviews and two board inquiries. The AI chatbot alone has booked 6 discovery calls while I sleep.', name: 'Marcus C.', role: 'COO, Industrial Construction', initials: 'MC', color: '#06d6f5' },
+      { quote: 'I went from invisible to Forbes-featured in 4 months. The brand strategy Tivi built for me was surgical — every word, every visual was calibrated for where I was going, not where I\'d been.', name: 'Priya N.', role: 'VP Digital Transformation, Energy', initials: 'PN', color: '#b2f724' },
+      { quote: 'The ROI is absurd. I paid $6,995 and landed a $580K package. That\'s an 83× return in 4 months. Tivi doesn\'t just build websites — she builds leverage.', name: 'Elena V.', role: 'CDO, Tech & Industrial', initials: 'EV', color: '#a78bfa' },
+      { quote: 'Deadline-driven, detail-obsessed, and invested in your outcome. Tivi delivered our full C-suite package in 3.5 weeks under a hard PE firm deadline. Extraordinary.', name: 'James O.', role: 'CEO, Heavy Civil', initials: 'JO', color: '#f97316' },
+      { quote: 'I had 47 LinkedIn connections and a phone-photo headshot. Now I have 12,000 followers, three thought leadership articles, and a $640K offer on the table. Game-changing.', name: 'Robert N.', role: 'EVP Operations, Oil & Gas', initials: 'RN', color: '#34d399' },
+      { quote: 'I\'ve hired agencies in New York and London. Tivi Forge outperformed both — more strategic, faster, and she actually understands what high-performance leaders need to communicate.', name: 'Sofia D.', role: 'CIO, Infrastructure', initials: 'SD', color: '#fb7185' }
+    ],
+
+    team: [
+      {
+        name: 'Tivi',
+        title: 'Founder & Digital Brand Architect',
+        bio: 'Revenue strategist and digital brand architect. 15+ years positioning founders, executives, and growth-stage businesses to compound authority and generate measurable outcomes.',
+        initials: 'TF',
+        avatarBg: 'linear-gradient(135deg, #06d6f5, #04a8c2)'
+      },
+      {
+        name: 'Jordan Ellis',
+        title: 'Senior Revenue Strategist',
+        bio: 'Former COO turned conversion strategist. Translates complex business narratives into digital infrastructure that generates inbound leads and closes high-ticket clients.',
+        initials: 'JE',
+        avatarBg: 'linear-gradient(135deg, #334155, #1e3a5f)'
+      },
+      {
+        name: 'Priya Nakamura',
+        title: 'AI Systems Engineer',
+        bio: 'Full-stack engineer specializing in AI integration, funnel automation, and performance-optimized digital systems. Built 40+ client sites with embedded revenue infrastructure.',
+        initials: 'PN',
+        avatarBg: 'linear-gradient(135deg, #7c3aed, #a78bfa)'
+      }
+    ],
+
+    // ─── Methods ───
+
+    init() {
+      setTimeout(() => { this.loadingDone = true; }, 1800);
+      setTimeout(() => {
+        const el = document.getElementById('loading-screen');
+        if (el) el.style.display = 'none';
+      }, 2500);
+      window.addEventListener('scroll', () => this.updateScroll());
+      this.updateScroll();
+      this.cookieAccepted = localStorage.getItem('tivi_cookie_accepted') === 'true';
+      this.$nextTick(() => {
+        if (typeof AOS !== 'undefined') AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
       });
-      alert('Thank you! Check your email for the first issue of The Forge Brief.');
-      this.reset();
-    });
-  </script>
+      this._initSkillObserver();
+      this._baActive = false;
+      this._baPct = 50;
+    },
+
+    updateScroll() {
+      const y = window.scrollY;
+      this.scrolled = y > 60;
+      this.showBackToTop = y > 400;
+      this.showStickyPill = y > 600;
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      this.scrollProgress = docH > 0 ? Math.round((y / docH) * 100) : 0;
+      document.getElementById('scroll-progress').style.width = this.scrollProgress + '%';
+    },
+
+    openProject(proj) { this.activeProject = proj; document.body.style.overflow = 'hidden'; },
+    closeProject() { this.activeProject = null; document.body.style.overflow = ''; },
+    scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); },
+    toggleFaq(i) { this.faqOpen = this.faqOpen === i ? null : i; },
+
+    validateField(field) {
+      if (field === 'first') this.formErrors.first = (!this.form.first || this.form.first.trim().length < 2) ? 'Name must be at least 2 characters.' : '';
+      if (field === 'email') { const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; this.formErrors.email = (!this.form.email || !re.test(this.form.email)) ? 'Please enter a valid email address.' : ''; }
+      if (field === 'message') this.formErrors.message = (!this.form.message || this.form.message.trim().length < 10) ? 'Please describe your project (min 10 characters).' : '';
+    },
+
+    submitForm() {
+      this.validateField('first'); this.validateField('email'); this.validateField('message');
+      if (this.formErrors.first || this.formErrors.email || this.formErrors.message) return;
+      this.formSent = true;
+    },
+
+    acceptCookies() { this.cookieAccepted = true; localStorage.setItem('tivi_cookie_accepted', 'true'); },
+
+    sendChat() { const txt = this.chatInput.trim(); if (!txt) return; this.chatInput = ''; this.sendChatMessage(txt); },
+
+    sendChatMessage(text) {
+      const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      this.chatMessages.push({ role: 'user', text, time: now });
+      this.chatTyping = true;
+      this._scrollChat();
+      const delay = 1200 + Math.random() * 400;
+      setTimeout(() => {
+        this.chatTyping = false;
+        const response = this.getBotResponse(text.toLowerCase());
+        const msgObj = { role: 'bot', text: response.text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), showBookingForm: false, showPortfolioBtn: false };
+        if (response.showBookingForm) { msgObj.showBookingForm = true; this.bookingSubmitted = false; this.bookingForm = { name: '', email: '', date: '', time: '' }; }
+        if (response.showPortfolioBtn) msgObj.showPortfolioBtn = true;
+        this.chatMessages.push(msgObj);
+        this._scrollChat();
+      }, delay);
+    },
+
+    // PHASE 3: Updated bot responses to include new pricing tiers
+    getBotResponse(input) {
+      if (/pricing|cost|price|how much|packages|afford|investment/.test(input)) {
+        return { text: "Here's our full revenue ladder:\n\n🆓 **Free Strategy Audit** — $0\nDigital presence audit + revenue positioning report\n\n🔍 **Website Revenue Review** — $495\nComprehensive teardown with prioritized fix list\n\n🔹 **Executive Portfolio Build** — $2,995\nSingle-page site, AI chat, basic SEO, 2-week delivery\n\n🔸 **Full Brand Transformation** — $6,995\nMulti-page site, LinkedIn rewrite, content strategy, 4-week delivery\n\n🏆 **C-Suite Digital Leadership** — $12,995\nFull ecosystem: site, AI chatbot, video showreel, 3 months strategy calls\n\n🔥 **Revenue Infrastructure Build** — $18,500+\nMulti-page site, funnels, CRM, email automation, sales page, analytics\n\n🔄 **Growth Retainer** — $250–$1,500/mo\nOngoing strategy, content, and optimization\n\nWant to book a free strategy call?" };
+      }
+      if (/book|call|schedule|meeting|calendar|discovery|strategy/.test(input)) {
+        return { text: "I'd love to set up a strategy call! Please fill in your details below and we'll confirm your slot right away.", showBookingForm: true };
+      }
+      if (/portfolio|projects|work|examples|case study/.test(input)) {
+        return { text: "Here are a few highlights from our recent work:\n\n🏗️ **Marcus Chen (COO)** — +340% LinkedIn views, landed $485K offer\n⚡ **Priya Nakamura (VP)** — Featured in Forbes, $610K package secured\n🏆 **James Okafor (CEO)** — PE board seat secured, $720K total comp\n\nWant to see more details?", showPortfolioBtn: true };
+      }
+      if (/lane|service|what do you do|offer|help/.test(input)) {
+        return { text: "We operate across three strategic service lanes:\n\n**Lane 01 — Personal Authority**\nExecutive websites, founder positioning, LinkedIn SEO, thought leadership\n\n**Lane 02 — Business Revenue Sites**\nConversion sites, funnels, landing pages, SEO infrastructure, monetization strategy\n\n**Lane 03 — Growth Systems**\nContent engines, email automation, offer packaging, high-ticket sales pages\n\nMost clients engage two or three lanes together. Want to map out the right build for you?" };
+      }
+      if (/about|who|tivi|background|experience|team/.test(input)) {
+        return { text: "Tivi is a digital brand architect and revenue strategist with 15+ years positioning founders, executives, and growth-stage businesses for measurable outcomes.\n\nThe Tivi Forge team includes senior revenue strategists and AI systems engineers — a combination that's rare in the agency world and critical for building digital infrastructure that actually performs." };
+      }
+      if (/guarantee|refund|risk|satisfied/.test(input)) {
+        return { text: "We only take engagements where we can deliver measurable impact. Before any commitment, we conduct a strategy call to confirm alignment between your goals and our capabilities.\n\nIf the fit isn't right, we'll tell you — before you spend a dollar. That's how we maintain a 100% client satisfaction record." };
+      }
+      if (/timeline|how long|delivery|turnaround|weeks/.test(input)) {
+        return { text: "Here's how our timelines break down:\n\n⏱️ **Executive Portfolio Build** — 2 weeks\n📅 **Full Brand Transformation** — 4 weeks\n🚀 **C-Suite Package** — 6–8 weeks\n🔥 **Revenue Infrastructure Build** — 8–12 weeks\n\nWe set a hard deadline at kickoff and honor it." };
+      }
+      if (/hello|hi|hey|sup|good morning|good afternoon/.test(input)) {
+        return { text: "Hey there! Welcome to Tivi Forge — your digital brand architecture and revenue infrastructure partner.\n\nWhat are you looking to build? Authority, revenue sites, growth systems — or all three?" };
+      }
+      if (/thanks|thank you|appreciate|bye|goodbye/.test(input)) {
+        return { text: "You're very welcome. If you have more questions down the road, I'm here 24/7.\n\nRemember — a high-performance digital presence isn't a nice-to-have. It's the infrastructure your revenue runs on." };
+      }
+      if (/review|audit|495|teardown/.test(input)) {
+        return { text: "Our **Website Revenue Review** ($495) is a comprehensive teardown of your existing site. We analyze conversion gaps, SEO weaknesses, revenue leaks, and mobile performance — then deliver a prioritized fix list with estimated impact.\n\nIt's the fastest way to see exactly where you're leaving money on the table. Many clients upgrade to a full build afterward. Want to get started?" };
+      }
+      if (/retainer|monthly|ongoing|maintenance/.test(input)) {
+        return { text: "Our **Growth Retainer** runs $250–$1,500/month depending on scope. It includes monthly strategy calls, content updates, conversion optimization, and priority support.\n\nIt's designed for clients who've launched and want to keep compounding results without rebuilding. Want me to set up a call to scope yours?" };
+      }
+      return { text: "Great question. For more specific or nuanced requests, I'd recommend booking a quick strategy call with Tivi directly — it's free and takes 20 minutes.\n\nWant me to set that up for you?" };
+    },
+
+    submitBooking() {
+      const email = this.bookingForm.email;
+      if (this.bookingForm.name) this.leadData.name = this.bookingForm.name;
+      if (email) this.leadData.email = email;
+      this.bookingSubmitted = true;
+      for (let i = this.chatMessages.length - 1; i >= 0; i--) {
+        if (this.chatMessages[i].showBookingForm) { this.chatMessages[i].showBookingForm = false; break; }
+      }
+      const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      this.chatMessages.push({ role: 'bot', text: `Your strategy call is booked! You'll receive a confirmation at ${email}. Looking forward to mapping out your revenue infrastructure together.`, time: now });
+      this.bookingForm = { name: '', email: '', date: '', time: '' };
+      this._scrollChat();
+    },
+
+    _scrollChat() {
+      this.$nextTick(() => {
+        const el = document.getElementById('chat-messages-container');
+        if (el) el.scrollTop = el.scrollHeight;
+      });
+    },
+
+    _initSkillObserver() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+              const w = bar.style.width;
+              bar.style.width = '0%';
+              setTimeout(() => { bar.style.width = w; }, 100);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      this.$nextTick(() => {
+        const el = document.getElementById('skills-container');
+        if (el) observer.observe(el);
+      });
+    },
+
+    startBA(e) {
+      this._baActive = true;
+      this.moveBA(e);
+      const moveFn = (ev) => this.moveBA(ev);
+      const stopFn = () => { this._baActive = false; document.removeEventListener('mousemove', moveFn); document.removeEventListener('mouseup', stopFn); document.removeEventListener('touchmove', moveFn); document.removeEventListener('touchend', stopFn); };
+      document.addEventListener('mousemove', moveFn);
+      document.addEventListener('mouseup', stopFn);
+      document.addEventListener('touchmove', moveFn);
+      document.addEventListener('touchend', stopFn);
+    },
+
+    moveBA(e) {
+      if (!this._baActive) return;
+      const slider = document.getElementById('ba-slider');
+      if (!slider) return;
+      const rect = slider.getBoundingClientRect();
+      const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+      const pct = Math.max(0, Math.min(100, (x / rect.width) * 100));
+      this._baPct = pct;
+      const after = document.getElementById('ba-after');
+      const divider = document.getElementById('ba-divider');
+      const handle = document.getElementById('ba-handle');
+      if (after) after.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+      if (divider) divider.style.left = pct + '%';
+      if (handle) handle.style.left = pct + '%';
+    }
+  };
+}
+</script>
 </body>
 </html>
