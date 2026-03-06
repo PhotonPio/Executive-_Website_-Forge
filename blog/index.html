@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forge Insights — Authority & Growth Strategy</title>
+  <meta name="description" content="Strategic insights on building digital authority, revenue systems, and scaling your business. Weekly articles on CEO positioning, SEO infrastructure, and growth.">
+  <link rel="stylesheet" href="/styles/main.css">
+  <style>
+    .blog-hero {
+      background: linear-gradient(135deg, #003d82 0%, #001f41 100%);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .blog-hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .blog-hero p {
+      font-size: 18px;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .blog-controls {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .search-box, .filter-select {
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 4px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 14px;
+    }
+
+    .search-box::placeholder {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .blog-container {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .featured-article {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .featured-article-image {
+      background: linear-gradient(135deg, #003d82 0%, #0052b3 100%);
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+    }
+
+    .featured-article-content {
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-article-content h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .featured-article-content p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .featured-meta {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 25px;
+      font-size: 14px;
+      color: #999;
+    }
+
+    .featured-read-more {
+      display: inline-block;
+      color: #003d82;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .featured-read-more:hover {
+      color: #0052b3;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .article-card {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-card:hover {
+      border-color: #003d82;
+      box-shadow: 0 10px 30px rgba(0, 61, 130, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .article-card-image {
+      background: linear-gradient(135deg, #003d82 0%, #0052b3 100%);
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 13px;
+    }
+
+    .article-card-content {
+      padding: 25px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-category {
+      font-size: 12px;
+      color: #003d82;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .article-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .article-card p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .article-card-meta {
+      font-size: 13px;
+      color: #999;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 15px;
+    }
+
+    .newsletter-cta {
+      background: #f9f9f9;
+      padding: 60px 20px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .newsletter-cta h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .newsletter-cta p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .newsletter-form button {
+      padding: 12px 30px;
+      background: #003d82;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .newsletter-form button:hover {
+      background: #0052b3;
+    }
+
+    @media (max-width: 768px) {
+      .featured-article {
+        grid-template-columns: 1fr;
+      }
+
+      .blog-hero h1 {
+        font-size: 32px;
+      }
+
+      .featured-article-content {
+        padding: 30px 20px;
+      }
+
+      .featured-article-image {
+        min-height: 250px;
+      }
+
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="logo">TiviForge</a>
+      <ul class="nav-links">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/blog">Insights</a></li>
+        <li><a href="/audit">Free Audit</a></li>
+        <li><a href="/#contact" class="btn btn-small">Book Call</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="blog-hero">
+    <div class="container">
+      <h1>Forge Insights</h1>
+      <p>Strategic insights on building digital authority, revenue systems, and scaling your business</p>
+
+      <div class="blog-controls">
+        <input type="text" class="search-box" placeholder="Search articles..." id="search-input">
+        <select class="filter-select" id="category-filter">
+          <option value="">All Categories</option>
+          <option value="authority">CEO Authority</option>
+          <option value="infrastructure">Digital Infrastructure</option>
+          <option value="growth">Growth Tactics</option>
+          <option value="conversion">Conversion Optimization</option>
+          <option value="market">Market Insights</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <div class="blog-container">
+    <article class="featured-article">
+      <div class="featured-article-image">Featured Article Image</div>
+      <div class="featured-article-content">
+        <span class="featured-meta">
+          <span>Authority Building</span>
+          <span>7 min read</span>
+        </span>
+        <h2>How Top CEOs Build Digital Authority That Attracts Investors</h2>
+        <p>The gap between unknown founders and industry authorities isn't talent or luck. It's a deliberate infrastructure built around positioning, authority signals, and consistent visibility.</p>
+        <a href="/blog/ceo-digital-authority" class="featured-read-more">Read Full Article →</a>
+      </div>
+    </article>
+
+    <div class="articles-grid">
+      <a href="/blog/why-agency-websites-fail" class="article-card" data-category="infrastructure">
+        <div class="article-card-image">Article Image</div>
+        <div class="article-card-content">
+          <span class="article-category">Infrastructure</span>
+          <h3>Why Most Agency Websites Fail to Convert</h3>
+          <p>Analysis of 200+ agency websites reveals the same 5 critical mistakes that cost them $50K-$200K annually in lost revenue.</p>
+          <div class="article-card-meta">
+            <span>March 5, 2024</span>
+            <span>5 min</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/blog/automation-systems-b2b" class="article-card" data-category="infrastructure">
+        <div class="article-card-image">Article Image</div>
+        <div class="article-card-content">
+          <span class="article-category">Infrastructure</span>
+          <h3>Automation Systems for B2B Growth</h3>
+          <p>The technical guide to building revenue infrastructure that scales with your business. From lead capture to revenue generation.</p>
+          <div class="article-card-meta">
+            <span>March 1, 2024</span>
+            <span>8 min</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/blog/seo-infrastructure" class="article-card" data-category="infrastructure">
+        <div class="article-card-image">Article Image</div>
+        <div class="article-card-content">
+          <span class="article-category">Infrastructure</span>
+          <h3>SEO Infrastructure for Scaling Companies</h3>
+          <p>How to build an SEO system that compounds over time and generates 50-200+ qualified leads monthly from organic search.</p>
+          <div class="article-card-meta">
+            <span>Feb 28, 2024</span>
+            <span>10 min</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/blog/authority-vs-brochure" class="article-card" data-category="conversion">
+        <div class="article-card-image">Article Image</div>
+        <div class="article-card-content">
+          <span class="article-category">Conversion</span>
+          <h3>The Authority Website vs The Brochure Website</h3>
+          <p>The single architectural difference that separates websites that generate leads from websites that look pretty but make no money.</p>
+          <div class="article-card-meta">
+            <span>Feb 25, 2024</span>
+            <span>6 min</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/blog/positioning-that-sells" class="article-card" data-category="authority">
+        <div class="article-card-image">Article Image</div>
+        <div class="article-card-content">
+          <span class="article-category">Authority</span>
+          <h3>Positioning vs. Service: Which Actually Sells?</h3>
+          <p>Most founders focus on service details. The founders making 10x more focus on positioning. Here's the framework that works.</p>
+          <div class="article-card-meta">
+            <span>Feb 22, 2024</span>
+            <span>7 min</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/blog/case-study-design" class="article-card" data-category="conversion">
+        <div class="article-card-image">Article Image</div>
+        <div class="article-card-content">
+          <span class="article-category">Conversion</span>
+          <h3>Case Study Design That Actually Sells</h3>
+          <p>Case studies aren't just proof. They're your sales team on steroids. Here's how to structure them for maximum conversion.</p>
+          <div class="article-card-meta">
+            <span>Feb 20, 2024</span>
+            <span>6 min</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/blog/conversion-optimization-framework" class="article-card" data-category="conversion">
+        <div class="article-card-image">Article Image</div>
+        <div class="article-card-content">
+          <span class="article-category">Conversion</span>
+          <h3>Conversion Rate Optimization: Data-Driven Framework</h3>
+          <p>Stop guessing. Use this framework to identify exactly where you're losing leads and revenue, and fix it systematically.</p>
+          <div class="article-card-meta">
+            <span>Feb 18, 2024</span>
+            <span>9 min</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/blog/founder-visibility-revenue" class="article-card" data-category="authority">
+        <div class="article-card-image">Article Image</div>
+        <div class="article-card-content">
+          <span class="article-category">Authority</span>
+          <h3>How Founder Visibility Influences Company Valuation</h3>
+          <p>Investors look for founders with authority. Here's the exact framework to build visibility that increases your company's value.</p>
+          <div class="article-card-meta">
+            <span>Feb 15, 2024</span>
+            <span>8 min</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/blog/lead-generation-automation" class="article-card" data-category="infrastructure">
+        <div class="article-card-image">Article Image</div>
+        <div class="article-card-content">
+          <span class="article-category">Infrastructure</span>
+          <h3>Lead Generation Technology Stack</h3>
+          <p>The exact tools, integrations, and workflows that generate 50-200 qualified leads monthly on autopilot.</p>
+          <div class="article-card-meta">
+            <span>Feb 12, 2024</span>
+            <span>7 min</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/blog/market-trends-analysis" class="article-card" data-category="market">
+        <div class="article-card-image">Article Image</div>
+        <div class="article-card-content">
+          <span class="article-category">Market</span>
+          <h3>What We're Seeing in the Market This Month</h3>
+          <p>Analysis of emerging trends, tool updates, and strategic shifts that impact how founders should build their authority.</p>
+          <div class="article-card-meta">
+            <span>March 4, 2024</span>
+            <span>5 min</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <section class="newsletter-cta">
+      <h2>Get Weekly Insights</h2>
+      <p>The Forge Brief: Strategic insights on authority, growth, and revenue systems</p>
+
+      <form class="newsletter-form" id="blog-newsletter-form" data-form="blog-newsletter">
+        <input type="email" placeholder="your@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+
+      <p style="font-size: 13px; color: #999; margin-top: 15px;">No spam. Unsubscribe anytime.</p>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>TiviForge</h4>
+          <p>Building digital authority infrastructure for scaling brands.</p>
+          <div class="social-links">
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/#services">Audit & Strategy</a></li>
+            <li><a href="/#services">Foundation Build</a></li>
+            <li><a href="/#services">Growth Engine</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/blog">Insights</a></li>
+            <li><a href="/case-studies">Case Studies</a></li>
+            <li><a href="/audit">Free Audit</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 TiviForge. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Search functionality
+    const searchInput = document.getElementById('search-input');
+    const categoryFilter = document.getElementById('category-filter');
+    const articleCards = document.querySelectorAll('.article-card');
+
+    function filterArticles() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const selectedCategory = categoryFilter.value;
+
+      articleCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const category = card.dataset.category;
+
+        const matchesSearch = title.includes(searchTerm);
+        const matchesCategory = !selectedCategory || category === selectedCategory;
+
+        card.style.display = (matchesSearch && matchesCategory) ? 'flex' : 'none';
+      });
+    }
+
+    searchInput.addEventListener('input', filterArticles);
+    categoryFilter.addEventListener('change', filterArticles);
+
+    // Analytics tracking
+    articleCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        gtag('event', 'article_click', {
+          event_category: 'content_engagement',
+          event_label: card.querySelector('h3').textContent,
+          article_category: card.dataset.category
+        });
+      });
+    });
+
+    // Newsletter form
+    document.getElementById('blog-newsletter-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      gtag('event', 'newsletter_signup', {
+        event_category: 'lead_generation',
+        event_label: 'blog_page'
+      });
+      alert('Thank you! Check your email for the first issue.');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Digital Authority Blueprint — Free Download</title>
+  <meta name="description" content="The exact framework high-authority founders use to generate unlimited inbound leads. 20-page guide + 90-day implementation plan.">
+  <link rel="stylesheet" href="/styles/main.css">
+  <style>
+    .blueprint-hero {
+      background: linear-gradient(135deg, #003d82 0%, #001f41 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .blueprint-hero h1 {
+      font-size: 44px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .blueprint-hero p {
+      font-size: 18px;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .blueprint-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .blueprint-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin: 80px auto;
+      align-items: center;
+    }
+
+    .blueprint-book {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .book-mockup {
+      background: linear-gradient(135deg, #003d82 0%, #0052b3 100%);
+      width: 250px;
+      height: 320px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+      box-shadow: 0 20px 60px rgba(0, 61, 130, 0.3);
+      margin-bottom: 30px;
+    }
+
+    .book-mockup-text {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .book-mockup-text h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .book-mockup-text p {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .book-features {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 25px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .book-features h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #003d82;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 15px;
+    }
+
+    .book-features ul {
+      list-style: none;
+    }
+
+    .book-features li {
+      font-size: 14px;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      color: #666;
+    }
+
+    .book-features li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #003d82;
+      font-weight: bold;
+    }
+
+    .blueprint-form-section {
+      padding: 50px;
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+    }
+
+    .blueprint-form-section h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #003d82;
+    }
+
+    .blueprint-form-section p {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #003d82;
+      box-shadow: 0 0 0 3px rgba(0, 61, 130, 0.1);
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 14px;
+      background: #003d82;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+
+    .form-submit:hover {
+      background: #0052b3;
+    }
+
+    .form-privacy {
+      font-size: 12px;
+      color: #999;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .what-youll-get {
+      background: #f9f9f9;
+      padding: 60px 20px;
+      margin: 80px 0;
+    }
+
+    .what-youll-get-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .what-youll-get h2 {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .benefit-card {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .benefit-card h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #003d82;
+    }
+
+    .benefit-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .social-proof {
+      padding: 60px 20px;
+      text-align: center;
+      background: white;
+    }
+
+    .social-proof-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .proof-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .proof-stat {
+      text-align: center;
+    }
+
+    .proof-stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      color: #003d82;
+    }
+
+    .proof-stat-label {
+      font-size: 14px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    .testimonial-section {
+      background: #f9f9f9;
+      padding: 60px 20px;
+    }
+
+    .testimonial-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .testimonial-section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 28px;
+    }
+
+    .testimonial-box {
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      border-left: 4px solid #003d82;
+    }
+
+    .testimonial-quote {
+      font-size: 16px;
+      font-style: italic;
+      margin-bottom: 20px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: #003d82;
+      margin-bottom: 5px;
+    }
+
+    .testimonial-title {
+      font-size: 13px;
+      color: #999;
+    }
+
+    .faq-section {
+      padding: 60px 20px;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 28px;
+    }
+
+    .faq-item {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 20px;
+      background: white;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .faq-question:hover {
+      background: #f9f9f9;
+    }
+
+    .faq-toggle {
+      font-size: 20px;
+      color: #003d82;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 20px;
+      max-height: 500px;
+    }
+
+    .final-cta-section {
+      background: linear-gradient(135deg, #003d82 0%, #001f41 100%);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .final-cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .final-cta-content h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .final-cta-content p {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .final-cta-button {
+      display: inline-block;
+      padding: 16px 50px;
+      background: white;
+      color: #003d82;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: transform 0.3s;
+    }
+
+    .final-cta-button:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .blueprint-hero h1 {
+        font-size: 32px;
+      }
+
+      .blueprint-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 40px auto;
+      }
+
+      .book-mockup {
+        width: 200px;
+        height: 260px;
+      }
+
+      .blueprint-form-section {
+        padding: 30px 20px;
+      }
+
+      .proof-stats {
+        gap: 20px;
+      }
+
+      .testimonial-box {
+        padding: 25px;
+      }
+
+      .final-cta-content h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="logo">TiviForge</a>
+      <ul class="nav-links">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/blog">Insights</a></li>
+        <li><a href="/audit">Free Audit</a></li>
+        <li><a href="/#contact" class="btn btn-small">Book Call</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="blueprint-hero">
+    <div class="blueprint-container">
+      <h1>The Digital Authority Blueprint</h1>
+      <p>The exact framework high-authority founders use to generate unlimited inbound leads and dominate their market</p>
+    </div>
+  </section>
+
+  <section class="blueprint-container" style="margin-top: 80px;">
+    <div class="blueprint-content">
+      <div class="blueprint-book">
+        <div class="book-mockup">
+          <div class="book-mockup-text">
+            <h3>Digital Authority Blueprint</h3>
+            <p>20-page guide<br>+ 90-day implementation plan</p>
+          </div>
+        </div>
+        <div class="book-features">
+          <h4>What's Included</h4>
+          <ul>
+            <li>20-page strategic guide</li>
+            <li>90-day roadmap</li>
+            <li>5 template frameworks</li>
+            <li>Tool recommendations</li>
+            <li>Checklist templates</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="blueprint-form-section">
+        <h2>Get Your Free Blueprint</h2>
+        <p>Enter your details below and we'll send the complete guide immediately. Plus weekly insights on building digital authority.</p>
+
+        <form id="blueprint-form" data-form="digital-authority-blueprint">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="Your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company (Optional)</label>
+            <input type="text" id="company" name="company" placeholder="Your company name">
+          </div>
+
+          <button type="submit" class="form-submit">Send Me The Blueprint</button>
+
+          <p class="form-privacy">We respect your privacy. Unsubscribe anytime. We'll send you weekly insights, no spam.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="social-proof">
+    <div class="social-proof-container">
+      <h2 style="margin-bottom: 30px;">Why Founders Love This Blueprint</h2>
+      <div class="proof-stats">
+        <div class="proof-stat">
+          <div class="proof-stat-number">500+</div>
+          <div class="proof-stat-label">Founders Downloaded</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-stat-number">4.8/5</div>
+          <div class="proof-stat-label">Average Rating</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-stat-number">87%</div>
+          <div class="proof-stat-label">Found It Actionable</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="what-youll-get">
+    <div class="what-youll-get-container">
+      <h2>What's Inside The Blueprint</h2>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <h3>Section 1: The Authority Advantage</h3>
+          <p>Why CEO authority matters more than ever. The revenue gap between positioned founders and unknown ones. Real case studies and data.</p>
+        </div>
+
+        <div class="benefit-card">
+          <h3>Section 2: The Three Pillars</h3>
+          <p>The exact framework separating 6-figure founders from 7-figure founders: Personal Authority, Digital Infrastructure, and Revenue Systems.</p>
+        </div>
+
+        <div class="benefit-card">
+          <h3>Section 3: The Digital Authority Stack</h3>
+          <p>The complete technical and strategic stack: website, SEO, authority channels, email systems, and automation that work together.</p>
+        </div>
+
+        <div class="benefit-card">
+          <h3>Section 4: The 90-Day Blueprint</h3>
+          <p>Phase-by-phase implementation plan. Exactly what to do each week. Checklist format so you can start immediately.</p>
+        </div>
+
+        <div class="benefit-card">
+          <h3>Implementation Resources</h3>
+          <p>Tool stack (free and paid options), template links, resource library, and next steps so you're never stuck or confused.</p>
+        </div>
+
+        <div class="benefit-card">
+          <h3>Email Sequence Templates</h3>
+          <p>Copy-and-paste email templates for building your authority nurture sequence. Proven messaging that converts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial-section">
+    <div class="testimonial-container">
+      <h2>What Founders Are Saying</h2>
+
+      <div class="testimonial-box">
+        <div class="testimonial-quote">"This framework completely changed how I think about my business. It's not about being better at my service—it's about being known. The blueprint gave me the roadmap. Applied it, and inbound leads tripled in 90 days."</div>
+        <div class="testimonial-author">Sarah Chen</div>
+        <div class="testimonial-title">CEO, Growth Tech Services</div>
+      </div>
+
+      <div class="testimonial-box" style="margin-top: 20px;">
+        <div class="testimonial-quote">"I've paid for expensive consulting. This blueprint is more practical. It doesn't waste time on theory—just actionable steps. The 90-day plan let me hit the ground running."</div>
+        <div class="testimonial-author">James Mitchell</div>
+        <div class="testimonial-title">Founder, Digital Agency</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="faq-container">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How long does it take to implement?</span>
+          <span class="faq-toggle">⬇</span>
+        </div>
+        <div class="faq-answer">The 90-day blueprint is designed so you can start seeing results in 30-60 days. Most founders complete Phase 1 (foundation) in 3-4 weeks. The timeline depends on how much you're implementing yourself vs. hiring help.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What tools do I need?</span>
+          <span class="faq-toggle">⬇</span>
+        </div>
+        <div class="faq-answer">The blueprint includes free and paid tool options. You can start with free tools (Mailchimp, Canva, etc.). As you scale, there are paid upgrades recommended. Total startup cost: $0-$500/month depending on your choices.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is this for agencies or founders?</span>
+          <span class="faq-toggle">⬇</span>
+        </div>
+        <div class="faq-answer">Both. The framework works for founders building personal brands, agency owners positioning their business, and executives establishing authority. Examples are tailored to different business types.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I customize this for my industry?</span>
+          <span class="faq-toggle">⬇</span>
+        </div>
+        <div class="faq-answer">Absolutely. The blueprint is a framework, not a template. Every strategy is customizable to your industry, audience, and business model. That's the whole point—you learn the system and apply it your way.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Do you offer support?</span>
+          <span class="faq-toggle">⬇</span>
+        </div>
+        <div class="faq-answer">The blueprint includes resources and templates. You can also book a strategy call if you want personalized guidance on implementation. Most founders successfully implement it on their own.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta-section">
+    <div class="final-cta-content">
+      <h2>Ready to Build Your Digital Authority?</h2>
+      <p>Get the blueprint that 500+ founders are using to dominate their market and generate unlimited leads.</p>
+      <a href="#" class="final-cta-button" onclick="document.querySelector('#blueprint-form').scrollIntoView({behavior: 'smooth'}); return false;">Download Free Blueprint</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>TiviForge</h4>
+          <p>Building digital authority infrastructure for scaling brands.</p>
+          <div class="social-links">
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/#services">Audit & Strategy</a></li>
+            <li><a href="/#services">Foundation Build</a></li>
+            <li><a href="/#services">Growth Engine</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/blog">Insights</a></li>
+            <li><a href="/case-studies">Case Studies</a></li>
+            <li><a href="/audit">Free Audit</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 TiviForge. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', function() {
+        const faqItem = this.parentElement;
+        faqItem.classList.toggle('active');
+      });
+    });
+
+    // Form submission
+    document.getElementById('blueprint-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const fname = document.getElementById('fname').value;
+      const email = document.getElementById('email').value;
+      const company = document.getElementById('company').value;
+
+      // Track in GA4
+      gtag('event', 'lead_magnet_signup', {
+        event_category: 'lead_generation',
+        event_label: 'digital_authority_blueprint',
+        user_name: fname,
+        user_email: email,
+        user_company: company
+      });
+
+      // Show success message
+      alert(`Thank you, ${fname}! Check your email for the blueprint. You'll also receive weekly insights on building digital authority.`);
+
+      // In production, send to email service here
+      console.log('Form data:', { fname, email, company });
+    });
+  </script>
+</body>
+</html>

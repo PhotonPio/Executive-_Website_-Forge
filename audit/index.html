@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Website Growth Audit — TiviForge</title>
+  <meta name="description" content="Get your website growth audit in 60 seconds. See your SEO score, conversion optimization score, authority signals score, and automation readiness score.">
+  <link rel="stylesheet" href="/styles/main.css">
+  <style>
+    .audit-hero {
+      background: linear-gradient(135deg, #003d82 0%, #001f41 100%);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .audit-hero h1 {
+      font-size: 44px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .audit-hero p {
+      font-size: 18px;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .audit-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .audit-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin: 80px auto;
+      align-items: flex-start;
+    }
+
+    .audit-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .benefit-item {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 25px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .benefit-icon {
+      width: 40px;
+      height: 40px;
+      background: #003d82;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .benefit-content h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+      color: #003d82;
+    }
+
+    .benefit-content p {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+    }
+
+    .audit-form-box {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 50px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      sticky: top 100px;
+    }
+
+    .audit-form-box h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #003d82;
+    }
+
+    .audit-form-box p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #003d82;
+      box-shadow: 0 0 0 3px rgba(0, 61, 130, 0.1);
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 14px;
+      background: #003d82;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+
+    .form-submit:hover {
+      background: #0052b3;
+    }
+
+    .form-privacy {
+      font-size: 12px;
+      color: #999;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    /* Results Screen */
+    .audit-results {
+      display: none;
+      padding: 60px 20px;
+      background: #f9f9f9;
+    }
+
+    .audit-results.show {
+      display: block;
+    }
+
+    .results-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .results-header {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 40px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .results-header h2 {
+      color: #003d82;
+    }
+
+    .results-header p {
+      color: #666;
+      font-size: 14px;
+      margin: 10px 0 0 0;
+    }
+
+    .overall-score {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 50px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .score-circle {
+      width: 200px;
+      height: 200px;
+      background: conic-gradient(#003d82 0% 62%, #e0e0e0 62% 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      box-shadow: 0 10px 30px rgba(0, 61, 130, 0.15);
+    }
+
+    .score-circle-inner {
+      width: 180px;
+      height: 180px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .score-number {
+      font-size: 48px;
+      font-weight: 700;
+      color: #003d82;
+    }
+
+    .score-label {
+      font-size: 12px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .score-message {
+      font-size: 16px;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    .score-breakdown {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 40px;
+      margin-bottom: 30px;
+    }
+
+    .score-breakdown h3 {
+      color: #003d82;
+      margin-bottom: 30px;
+    }
+
+    .score-item {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .score-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .score-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .score-item-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .score-item-score {
+      font-size: 20px;
+      font-weight: 700;
+      color: #003d82;
+    }
+
+    .score-bar {
+      background: #e0e0e0;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+
+    .score-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #003d82 0%, #0052b3 100%);
+      border-radius: 4px;
+      transition: width 0.8s ease;
+    }
+
+    .score-findings {
+      background: #f9f9f9;
+      border-left: 4px solid #003d82;
+      padding: 15px;
+      border-radius: 4px;
+      margin-top: 15px;
+    }
+
+    .score-findings h4 {
+      font-size: 13px;
+      color: #003d82;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .score-findings ul {
+      list-style: none;
+    }
+
+    .score-findings li {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 8px;
+      padding-left: 15px;
+      position: relative;
+    }
+
+    .score-findings li:before {
+      content: '✗';
+      position: absolute;
+      left: 0;
+      color: #ff6b35;
+      font-weight: bold;
+    }
+
+    .recommendations {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 40px;
+      margin-bottom: 30px;
+    }
+
+    .recommendations h3 {
+      color: #003d82;
+      margin-bottom: 30px;
+    }
+
+    .recommendation-item {
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .recommendation-number {
+      background: #003d82;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .recommendation-content h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .recommendation-content p {
+      font-size: 13px;
+      color: #666;
+      margin: 0;
+    }
+
+    .recommendation-impact {
+      font-size: 12px;
+      color: #003d82;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .revenue-impact {
+      background: linear-gradient(135deg, #003d82 0%, #0052b3 100%);
+      color: white;
+      border-radius: 8px;
+      padding: 40px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .revenue-impact h3 {
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .impact-stat {
+      text-align: center;
+    }
+
+    .impact-number {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .impact-label {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .revenue-impact p {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    .next-steps {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .next-steps h3 {
+      color: #003d82;
+      margin-bottom: 15px;
+    }
+
+    .next-steps p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .next-steps-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .loading {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .loading.show {
+      display: block;
+    }
+
+    .loading-spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid #e0e0e0;
+      border-top: 4px solid #003d82;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .audit-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .score-circle {
+        width: 150px;
+        height: 150px;
+      }
+
+      .score-circle-inner {
+        width: 130px;
+        height: 130px;
+      }
+
+      .score-number {
+        font-size: 36px;
+      }
+
+      .audit-form-box {
+        position: static;
+      }
+
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .next-steps-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="logo">TiviForge</a>
+      <ul class="nav-links">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/blog">Insights</a></li>
+        <li><a href="/audit">Free Audit</a></li>
+        <li><a href="/#contact" class="btn btn-primary btn-small">Book Call</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="audit-hero">
+    <div class="audit-container">
+      <h1>Get Your Website Growth Audit</h1>
+      <p>See exactly where your website is winning and losing leads. Get your score in 60 seconds.</p>
+    </div>
+  </section>
+
+  <section class="audit-container" style="margin: 80px auto 0;">
+    <!-- Form Section -->
+    <div class="audit-content" id="audit-form-section">
+      <div class="audit-benefits">
+        <div class="benefit-item">
+          <div class="benefit-icon">📊</div>
+          <div class="benefit-content">
+            <h3>See Your SEO Score</h3>
+            <p>Understand how your site ranks for key searches and what's holding you back.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">💰</div>
+          <div class="benefit-content">
+            <h3>Identify Revenue Leaks</h3>
+            <p>Discover exactly where you're losing leads and revenue in your funnel.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">🏆</div>
+          <div class="benefit-content">
+            <h3>Find Authority Gaps</h3>
+            <p>See what trust signals you're missing that competitors have.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">⚙️</div>
+          <div class="benefit-content">
+            <h3>Measure Automation</h3>
+            <p>Learn how ready your tech stack is for scaling revenue automatically.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="audit-form-box">
+        <h2>Run Your Audit</h2>
+        <p>Enter your website URL and email. We'll analyze your site and send results in seconds.</p>
+
+        <form id="audit-input-form" data-form="website-audit">
+          <div class="form-group">
+            <label for="website-url">Your Website URL</label>
+            <input type="url" id="website-url" name="website-url" placeholder="https://yoursite.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="audit-email">Email Address</label>
+            <input type="email" id="audit-email" name="audit-email" placeholder="you@company.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="business-type">Business Type</label>
+            <select id="business-type" name="business-type" required>
+              <option value="">Select...</option>
+              <option value="service">Service/Agency</option>
+              <option value="saas">SaaS/Software</option>
+              <option value="founder">Founder/Personal Brand</option>
+              <option value="b2b">B2B Company</option>
+              <option value="ecommerce">E-commerce</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <button type="submit" class="form-submit" data-cta="audit-submit">Analyze My Site</button>
+
+          <p class="form-privacy">No credit card required. Results delivered instantly.</p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading" id="audit-loading">
+      <div class="loading-spinner"></div>
+      <p>Analyzing your website...</p>
+      <p style="font-size: 13px; color: #999; margin-top: 15px;">This usually takes 30-60 seconds</p>
+    </div>
+
+    <!-- Results Screen -->
+    <div class="audit-results" id="audit-results">
+      <div class="results-container">
+        <div class="results-header">
+          <h2>Your Website Growth Audit Report</h2>
+          <p id="audit-url-display"></p>
+          <p style="margin-top: 8px;">Generated: <span id="audit-date"></span></p>
+        </div>
+
+        <!-- Overall Score -->
+        <div class="overall-score">
+          <h3>Overall Website Health Score</h3>
+          <div class="score-circle">
+            <div class="score-circle-inner">
+              <div class="score-number" id="overall-score">62</div>
+              <div class="score-label">/100</div>
+            </div>
+          </div>
+          <p class="score-message" id="score-message">Your site is capturing some leads, but there's significant room for improvement.</p>
+        </div>
+
+        <!-- Score Breakdown -->
+        <div class="score-breakdown">
+          <h3>Breakdown by Category</h3>
+
+          <div class="score-item">
+            <div class="score-item-header">
+              <span class="score-item-title">1. SEO Score</span>
+              <span class="score-item-score" id="seo-score">71<span style="font-size: 14px; color: #999;">/100</span></span>
+            </div>
+            <div class="score-bar">
+              <div class="score-bar-fill" style="width: 71%;"></div>
+            </div>
+            <div class="score-findings">
+              <h4>Key Findings</h4>
+              <ul>
+                <li>Mobile optimized and responsive</li>
+                <li>Good page speed (PageSpeed 78)</li>
+                <li>Missing target keywords in content</li>
+                <li>Low backlink authority</li>
+              </ul>
+            </div>
+            <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 4px;">
+              <strong style="color: #003d82;">Impact:</strong> This gap could be costing you 200+ organic leads per month
+            </div>
+          </div>
+
+          <div class="score-item">
+            <div class="score-item-header">
+              <span class="score-item-title">2. Conversion Score</span>
+              <span class="score-item-score" id="conversion-score">58<span style="font-size: 14px; color: #999;">/100</span></span>
+            </div>
+            <div class="score-bar">
+              <div class="score-bar-fill" style="width: 58%;"></div>
+            </div>
+            <div class="score-findings">
+              <h4>Key Findings</h4>
+              <ul>
+                <li>Clear headline and value proposition</li>
+                <li>CTAs lack prominence and clarity</li>
+                <li>Minimal social proof visible</li>
+                <li>Form has too many required fields</li>
+              </ul>
+            </div>
+            <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 4px;">
+              <strong style="color: #003d82;">Impact:</strong> Fixing these could increase conversions by 15-25%
+            </div>
+          </div>
+
+          <div class="score-item">
+            <div class="score-item-header">
+              <span class="score-item-title">3. Authority Signals</span>
+              <span class="score-item-score" id="authority-score">45<span style="font-size: 14px; color: #999;">/100</span></span>
+            </div>
+            <div class="score-bar">
+              <div class="score-bar-fill" style="width: 45%;"></div>
+            </div>
+            <div class="score-findings">
+              <h4>Key Findings</h4>
+              <ul>
+                <li>No client testimonials visible</li>
+                <li>Missing case studies section</li>
+                <li>No media mentions or press</li>
+                <li>Team/founder credentials not highlighted</li>
+              </ul>
+            </div>
+            <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 4px;">
+              <strong style="color: #003d82;">Impact:</strong> You're losing deals to trust objections that could be eliminated
+            </div>
+          </div>
+
+          <div class="score-item">
+            <div class="score-item-header">
+              <span class="score-item-title">4. Automation Readiness</span>
+              <span class="score-item-score" id="automation-score">34<span style="font-size: 14px; color: #999;">/100</span></span>
+            </div>
+            <div class="score-bar">
+              <div class="score-bar-fill" style="width: 34%;"></div>
+            </div>
+            <div class="score-findings">
+              <h4>Key Findings</h4>
+              <ul>
+                <li>No email capture system</li>
+                <li>No lead scoring mechanism</li>
+                <li>Manual follow-up processes</li>
+                <li>No marketing automation</li>
+              </ul>
+            </div>
+            <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 4px;">
+              <strong style="color: #003d82;">Impact:</strong> You're losing 30-40% of potential leads who bounce and never convert
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Recommendations -->
+        <div class="recommendations">
+          <h3>Top 5 Recommendations</h3>
+
+          <div class="recommendation-item">
+            <div class="recommendation-number">1</div>
+            <div class="recommendation-content">
+              <h4>Add Social Proof Section</h4>
+              <p>Implement testimonials, client logos, and case studies prominently on your homepage.</p>
+              <div class="recommendation-impact">Could increase conversions by 15-25%</div>
+            </div>
+          </div>
+
+          <div class="recommendation-item">
+            <div class="recommendation-number">2</div>
+            <div class="recommendation-content">
+              <h4>Optimize for Top Keywords</h4>
+              <p>Target your top 5 keywords with optimized content, headers, and meta descriptions.</p>
+              <div class="recommendation-impact">Could bring 200+ qualified visitors per month</div>
+            </div>
+          </div>
+
+          <div class="recommendation-item">
+            <div class="recommendation-number">3</div>
+            <div class="recommendation-content">
+              <h4>Implement Email Automation</h4>
+              <p>Add email capture forms and automated follow-up sequences to nurture leads.</p>
+              <div class="recommendation-impact">Could capture 40% of bouncing visitors</div>
+            </div>
+          </div>
+
+          <div class="recommendation-item">
+            <div class="recommendation-number">4</div>
+            <div class="recommendation-content">
+              <h4>Build Case Study Section</h4>
+              <p>Showcase your best results with detailed case studies and client testimonials.</p>
+              <div class="recommendation-impact">Could increase deal value by 40-60%</div>
+            </div>
+          </div>
+
+          <div class="recommendation-item">
+            <div class="recommendation-number">5</div>
+            <div class="recommendation-content">
+              <h4>Add Authority Indicators</h4>
+              <p>Highlight founder credentials, team expertise, media mentions, and recognition.</p>
+              <div class="recommendation-impact">Could increase trust signals by 50%+</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Revenue Impact -->
+        <div class="revenue-impact">
+          <h3>Improvement Potential</h3>
+
+          <div class="impact-grid">
+            <div class="impact-stat">
+              <div class="impact-number">Current</div>
+              <div class="impact-label">250 leads/month</div>
+            </div>
+            <div class="impact-stat">
+              <div class="impact-number">Potential</div>
+              <div class="impact-label">750+ leads/month</div>
+            </div>
+            <div class="impact-stat">
+              <div class="impact-number">Revenue Impact</div>
+              <div class="impact-label">+$180K/year</div>
+            </div>
+          </div>
+
+          <p>Based on your website analysis and industry benchmarks. Timeline: 6 months of focused strategy and execution.</p>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="next-steps">
+          <h3>What's Next?</h3>
+          <p>You have two options: implement these changes yourself, or work with us to accelerate your results.</p>
+
+          <div class="next-steps-buttons">
+            <a href="#" onclick="downloadReport(); return false;" class="btn btn-outline">Download Full Report</a>
+            <a href="https://calendly.com/tiviforge" target="_blank" class="btn btn-primary">Book Strategy Call</a>
+          </div>
+
+          <p style="margin-top: 25px; font-size: 13px; color: #999;">In a 45-minute call, we'll discuss your audit results and create your personalized growth roadmap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>TiviForge</h4>
+          <p>Building digital authority infrastructure for scaling brands.</p>
+          <div class="social-links">
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/#services">Audit & Strategy</a></li>
+            <li><a href="/#services">Foundation Build</a></li>
+            <li><a href="/#services">Growth Engine</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/blog">Insights</a></li>
+            <li><a href="/digital-authority-blueprint">Free Blueprint</a></li>
+            <li><a href="/audit">Free Audit</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 TiviForge. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const auditForm = document.getElementById('audit-input-form');
+    const auditFormSection = document.getElementById('audit-form-section');
+    const auditLoading = document.getElementById('audit-loading');
+    const auditResults = document.getElementById('audit-results');
+
+    auditForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const websiteUrl = document.getElementById('website-url').value;
+      const email = document.getElementById('audit-email').value;
+      const businessType = document.getElementById('business-type').value;
+
+      // Track in GA4
+      gtag('event', 'audit_start', {
+        event_category: 'lead_generation',
+        event_label: 'website_audit_tool',
+        website_url: websiteUrl,
+        business_type: businessType
+      });
+
+      // Show loading, hide form
+      auditFormSection.style.display = 'none';
+      auditLoading.classList.add('show');
+
+      // Simulate analysis (in production, this would be an API call)
+      setTimeout(() => {
+        auditLoading.classList.remove('show');
+        auditResults.classList.add('show');
+
+        // Populate results
+        document.getElementById('audit-url-display').textContent = websiteUrl;
+        document.getElementById('audit-date').textContent = new Date().toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+
+        // Animate scores
+        animateScore('overall-score', 62);
+        animateScore('seo-score', 71);
+        animateScore('conversion-score', 58);
+        animateScore('authority-score', 45);
+        animateScore('automation-score', 34);
+
+        // Track completion
+        gtag('event', 'audit_completed', {
+          event_category: 'lead_generation',
+          event_label: 'website_audit_results',
+          user_email: email,
+          audit_score: 62
+        });
+      }, 3000);
+    });
+
+    function animateScore(elementId, finalScore) {
+      const element = document.getElementById(elementId);
+      let currentScore = 0;
+      const increment = finalScore / 30; // Animate over ~300ms
+
+      const interval = setInterval(() => {
+        currentScore += increment;
+        if (currentScore >= finalScore) {
+          currentScore = finalScore;
+          clearInterval(interval);
+        }
+        element.textContent = Math.round(currentScore);
+      }, 10);
+    }
+
+    function downloadReport() {
+      gtag('event', 'report_downloaded', {
+        event_category: 'lead_magnet',
+        event_label: 'audit_report'
+      });
+      alert('Your full report PDF is ready to download. In production, this would trigger a PDF download.');
+    }
+  </script>
+</body>
+</html>
